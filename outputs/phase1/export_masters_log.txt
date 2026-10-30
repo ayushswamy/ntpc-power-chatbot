@@ -1,0 +1,22 @@
+Export masters - 2026-09-25 15:02:44
+  name: DB_PlantLive
+  compatibility_level: 140
+  is_read_committed_snapshot_on: False
+  snapshot_isolation_state_desc: OFF
+  recovery_model_desc: SIMPLE
+
+Indexes: 99 indexes on 54 tables -> indexes.csv
+
+  Master_Plants                         145 rows   0.01s
+  Master_Stages                         164 rows   0.01s
+  Master_Units                          347 rows   0.01s
+  Master_Part_Installed_Capacity        472 rows   0.09s
+  Master_Blocks                          96 rows   0.00s
+  Master_OutageCodes                    293 rows   0.02s
+  Master_PITags                         440 rows   0.04s
+  Master_GasUnitMapping                  38 rows   0.02s
+  Master_SKF                            352 rows   0.02s
+  Master_UnitSeq                         13 rows   0.04s
+  Performance_DayCum_Params             184 rows   0.01s
+  Performance_DayCum_Status             845 rows   0.09s
+  Data_SGPercentage                       9 rows   0.00s

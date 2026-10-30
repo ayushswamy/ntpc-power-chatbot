@@ -1,0 +1,17 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+logs/
+offline_packages/
+backups/
+
+# Local runtime data (SQLite sessions, Qdrant storage, binaries)
+data/
+qdrant_storage/
+tools_bin/

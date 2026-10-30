@@ -1,0 +1,873 @@
+[
+ {
+  "case": 1,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Current gross generation",
+   "unit": "MW",
+   "value": 1145,
+   "capacity_mw": 2000,
+   "units_running": [
+    "Singrauli Unit 2 (125 MW)",
+    "Singrauli Unit 3 (119 MW)",
+    "Singrauli Unit 4 (129 MW)",
+    "Singrauli Unit 5 (119 MW)",
+    "Singrauli Unit 6 (351 MW)",
+    "Singrauli Unit 7 (301 MW)"
+   ],
+   "units_not_running": [],
+   "units_without_live_data": [
+    "Singrauli Unit 1"
+   ]
+  },
+  "error": null
+ },
+ {
+  "case": 2,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1005",
+    "unit": 3
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Rihand Unit 3",
+   "metric": "Current gross generation",
+   "unit": "MW",
+   "value": 0,
+   "capacity_mw": 500
+  },
+  "error": null
+ },
+ {
+  "case": 3,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1005",
+    "stage": "STAGE2"
+   },
+   "actual_generation"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Rihand Stage 2",
+   "metric": "Current actual generation (AG)",
+   "unit": "MW",
+   "value": null,
+   "feed_stopped_since": "2024-08-23 14:28",
+   "latest_daily_value": 10.49,
+   "latest_daily_unit": "MU",
+   "latest_daily_date": "2026-10-05"
+  },
+  "error": null
+ },
+ {
+  "case": 4,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1017"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Korba",
+   "metric": "Current gross generation",
+   "unit": "MW",
+   "value": 1929,
+   "capacity_mw": 2600,
+   "units_running": [
+    "Korba Unit 1 (147 MW)",
+    "Korba Unit 2 (157 MW)",
+    "Korba Unit 3 (151 MW)",
+    "Korba Unit 4 (360 MW)",
+    "Korba Unit 5 (370 MW)",
+    "Korba Unit 6 (363 MW)",
+    "Korba Unit 7 (382 MW)"
+   ],
+   "units_not_running": [],
+   "units_without_live_data": []
+  },
+  "error": null
+ },
+ {
+  "case": 5,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "2492"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "AASPL",
+   "metric": "Current gross generation",
+   "unit": "MW",
+   "value": null,
+   "has_live_feed": false,
+   "latest_daily_value": 1.44,
+   "latest_daily_unit": "MU",
+   "latest_daily_date": "2026-10-05"
+  },
+  "error": null
+ },
+ {
+  "case": 6,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "frequency"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Grid",
+   "metric": "Grid frequency",
+   "value": 49.96,
+   "unit": "Hz",
+   "readings": 28
+  },
+  "error": null
+ },
+ {
+  "case": 7,
+  "tool": "get_realtime_summary",
+  "args": [
+   {}
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Current gross generation",
+   "value": 37372,
+   "unit": "MW",
+   "plants_included": 62,
+   "plants_total": 144,
+   "capacity_covered_mw": 70291,
+   "capacity_total_mw": 91456,
+   "coverage_percent": 76.9,
+   "block": 50
+  },
+  "error": null
+ },
+ {
+  "case": 8,
+  "tool": "get_realtime_summary",
+  "args": [
+   {
+    "fuel": [
+     "C"
+    ]
+   },
+   "gross_generation",
+   "plant"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+   "metric": "Current gross generation",
+   "value": 36157,
+   "unit": "MW",
+   "plants_included": 34,
+   "plants_total": 40,
+   "capacity_covered_mw": 63490,
+   "capacity_total_mw": 67364,
+   "coverage_percent": 94.2,
+   "block": 50
+  },
+  "error": null
+ },
+ {
+  "case": 9,
+  "tool": "get_realtime_summary",
+  "args": [
+   {
+    "company": "standalone"
+   },
+   "actual_generation"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC standalone",
+   "metric": "Current actual generation (AG)",
+   "value": 25866,
+   "unit": "MW",
+   "plants_included": 41,
+   "plants_total": 57,
+   "capacity_covered_mw": 54715,
+   "capacity_total_mw": 60992,
+   "coverage_percent": 89.7,
+   "block": 50
+  },
+  "error": null
+ },
+ {
+  "case": 10,
+  "tool": "get_today_so_far",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Gross generation today so far",
+   "value": 20.14,
+   "unit": "MU",
+   "up_to": "12:15",
+   "blocks_completed": 49
+  },
+  "error": null
+ },
+ {
+  "case": 11,
+  "tool": "get_today_so_far",
+  "args": [
+   {
+    "level": "group"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Gross generation today so far",
+   "value": 592.26,
+   "unit": "MU",
+   "up_to": "12:15",
+   "blocks_completed": 49
+  },
+  "error": null
+ },
+ {
+  "case": 12,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "gross_generation",
+   "today",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Gross generation",
+   "unit": "MU",
+   "period1": {
+    "period": "today so far (live, up to 12:15)",
+    "value": 20.14,
+    "unit": "MU",
+    "is_live": true
+   },
+   "period2": {
+    "period": "yesterday (05 Oct 2026)",
+    "value": 40.71,
+    "unit": "MU",
+    "method": "day value",
+    "days": 1
+   },
+   "difference": -20.57,
+   "change_percent": -50.53
+  },
+  "error": null
+ },
+ {
+  "case": 13,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Plant Load Factor (PLF)",
+   "value": 84.81,
+   "unit": "%",
+   "period": "yesterday (05 Oct 2026)",
+   "start": "2026-10-05",
+   "end": "2026-10-05",
+   "method": "day value"
+  },
+  "error": null
+ },
+ {
+  "case": 14,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "plant_code": "1005",
+    "unit": 3
+   },
+   "plf",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Rihand Unit 3",
+   "metric": "Plant Load Factor (PLF)",
+   "value": 0.0,
+   "unit": "%",
+   "period": "yesterday (05 Oct 2026)",
+   "start": "2026-10-05",
+   "end": "2026-10-05",
+   "method": "day value"
+  },
+  "error": null
+ },
+ {
+  "case": 15,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Gross generation",
+   "value": 1371.89,
+   "unit": "MU",
+   "period": "yesterday (05 Oct 2026)",
+   "start": "2026-10-05",
+   "end": "2026-10-05",
+   "method": "day value",
+   "plants_with_data": 144,
+   "plants_total": 144
+  },
+  "error": null
+ },
+ {
+  "case": 16,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "gross_generation",
+   "this month"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Gross generation",
+   "value": 185.47,
+   "unit": "MU",
+   "period": "01 Oct 2026 to 05 Oct 2026",
+   "start": "2026-10-01",
+   "end": "2026-10-05",
+   "method": "official month-to-date value"
+  },
+  "error": null
+ },
+ {
+  "case": 17,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "group"
+   },
+   "plf",
+   "last 30 days"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Plant Load Factor (PLF)",
+   "value": 59.27,
+   "unit": "%",
+   "period": "06 Sep 2026 to 05 Oct 2026",
+   "start": "2026-09-06",
+   "end": "2026-10-05",
+   "method": "combined from daily values",
+   "plants_with_data": 144,
+   "plants_total": 144
+  },
+  "error": null
+ },
+ {
+  "case": 18,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "2021-01-01",
+   "2021-03-31"
+  ],
+  "ok": false,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Plant Load Factor (PLF)"
+  },
+  "error": null
+ },
+ {
+  "case": 19,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "this month",
+   "last month"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Plant Load Factor (PLF)",
+   "unit": "%",
+   "period1": {
+    "period": "01 Oct 2026 to 05 Oct 2026",
+    "value": 77.28,
+    "unit": "%",
+    "method": "official month-to-date value",
+    "days": 5
+   },
+   "period2": {
+    "period": "September 2026",
+    "value": 67.05,
+    "unit": "%",
+    "method": "official month-to-date value",
+    "days": 30
+   },
+   "difference": 10.23,
+   "change_percent": 15.26,
+   "difference_note": "difference in percentage points"
+  },
+  "error": null
+ },
+ {
+  "case": 20,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "this fy",
+   "last fy"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Gross generation",
+   "unit": "MU",
+   "period1": {
+    "period": "01 Apr 2026 to 05 Oct 2026",
+    "value": 242107.5,
+    "unit": "MU",
+    "method": "official FY-to-date value",
+    "days": 188
+   },
+   "period2": {
+    "period": "FY 2025-26",
+    "value": 431508.02,
+    "unit": "MU",
+    "method": "official FY-to-date value",
+    "days": 365
+   },
+   "difference": -189400.52,
+   "change_percent": -43.89
+  },
+  "error": null
+ },
+ {
+  "case": 21,
+  "tool": "get_trend",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "this fy",
+   null,
+   "month"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Plant Load Factor (PLF)",
+   "unit": "%",
+   "granularity": "month",
+   "start": "2026-04-01",
+   "end": "2026-10-05",
+   "points": 7
+  },
+  "error": null
+ },
+ {
+  "case": 22,
+  "tool": "get_trend",
+  "args": [
+   {
+    "plant_code": "1014"
+   },
+   "gross_generation",
+   "last 30 days",
+   null,
+   "day"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Dadri-Gas",
+   "metric": "Gross generation",
+   "unit": "MU",
+   "granularity": "day",
+   "start": "2026-09-06",
+   "end": "2026-10-05",
+   "points": 30
+  },
+  "error": null
+ },
+ {
+  "case": 23,
+  "tool": "get_trend",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "2023-04-01",
+   "yesterday",
+   "fy"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "metric": "Gross generation",
+   "unit": "MU",
+   "granularity": "fy",
+   "start": "2023-04-01",
+   "end": "2026-10-05",
+   "points": 4
+  },
+  "error": null
+ },
+ {
+  "case": 24,
+  "tool": "rank_entities",
+  "args": [
+   "plf",
+   "this month",
+   null,
+   10
+  ],
+  "ok": true,
+  "answer": {
+   "metric": "Plant Load Factor (PLF)",
+   "unit": "%",
+   "period": "01 Oct 2026 to 05 Oct 2026",
+   "order": "desc",
+   "level": "plant",
+   "scope": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "count": 10
+  },
+  "error": null
+ },
+ {
+  "case": 25,
+  "tool": "rank_entities",
+  "args": [
+   "plf",
+   "this month",
+   null,
+   5,
+   "asc",
+   "plant",
+   {
+    "fuel": [
+     "C"
+    ]
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "metric": "Plant Load Factor (PLF)",
+   "unit": "%",
+   "period": "01 Oct 2026 to 05 Oct 2026",
+   "order": "asc",
+   "level": "plant",
+   "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+   "count": 5
+  },
+  "error": null
+ },
+ {
+  "case": 26,
+  "tool": "rank_entities",
+  "args": [
+   "forced_outage_loss",
+   "last month",
+   null,
+   5,
+   "desc",
+   "unit"
+  ],
+  "ok": true,
+  "answer": {
+   "metric": "Forced outage loss (equipment)",
+   "unit": "MU",
+   "period": "01 Sep 2026 to 30 Sep 2026",
+   "order": "desc",
+   "level": "unit",
+   "scope": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "count": 5
+  },
+  "error": null
+ },
+ {
+  "case": 27,
+  "tool": "get_outages",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "last 7 days"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "period": "29 Sep 2026 to 05 Oct 2026",
+   "units_affected": 1,
+   "new_outages_started": 0,
+   "unit_days_out_records": 7,
+   "generation_loss_mu": 33.6,
+   "units_still_out_at_end": 1,
+   "loss_by_reason": [
+    {
+     "reason": "Planned Outage",
+     "loss_mu": 33.6
+    }
+   ]
+  },
+  "error": null
+ },
+ {
+  "case": 28,
+  "tool": "get_outages",
+  "args": [
+   {
+    "level": "group",
+    "scope": {
+     "region": "NR"
+    }
+   },
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries), region NR",
+   "period": "05 Oct 2026",
+   "units_affected": 22,
+   "new_outages_started": 20,
+   "unit_days_out_records": 30,
+   "generation_loss_mu": 61.98,
+   "units_still_out_at_end": 7,
+   "loss_by_reason": [
+    {
+     "reason": "No Demand / Regulation",
+     "loss_mu": 27.76
+    },
+    {
+     "reason": "Planned Outage",
+     "loss_mu": 21.84
+    },
+    {
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "loss_mu": 12.38
+    }
+   ]
+  },
+  "error": null
+ },
+ {
+  "case": 29,
+  "tool": "get_trips",
+  "args": [
+   {
+    "level": "group"
+   },
+   "last 7 days",
+   "today"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "period": "29 Sep 2026 to 06 Oct 2026",
+   "trips": 26,
+   "not_yet_revived": 11,
+   "by_type": {
+    "Forced outage": 24,
+    "S (meaning not confirmed)": 1,
+    "Planned outage": 1
+   }
+  },
+  "error": null
+ },
+ {
+  "case": 30,
+  "tool": "get_trips",
+  "args": [
+   {
+    "plant_code": "1086"
+   },
+   "last 30 days",
+   "today"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NSTPS",
+   "period": "06 Sep 2026 to 06 Oct 2026",
+   "trips": 3,
+   "not_yet_revived": 0,
+   "by_type": {
+    "Forced outage": 3
+   }
+  },
+  "error": null
+ },
+ {
+  "case": 31,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "coal_stock",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Coal stock",
+   "value": 118376,
+   "unit": "tonnes",
+   "period": "05 Oct 2026",
+   "start": "2026-10-05",
+   "end": "2026-10-05",
+   "method": "closing value on 05 Oct 2026"
+  },
+  "error": null
+ },
+ {
+  "case": 32,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "group",
+    "scope": {
+     "fuel": [
+      "C"
+     ]
+    }
+   },
+   "coal_stock_days",
+   "yesterday"
+  ],
+  "ok": true,
+  "answer": {
+   "metric": "Coal stock (days)",
+   "unit": "days",
+   "period": "05 Oct 2026",
+   "order": "asc",
+   "level": "plant",
+   "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+   "count": 29
+  },
+  "error": null
+ },
+ {
+  "case": 33,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "coal_receipt",
+   "last 7 days"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "metric": "Coal receipt",
+   "value": 183916,
+   "unit": "tonnes",
+   "period": "29 Sep 2026 to 05 Oct 2026",
+   "start": "2026-09-29",
+   "end": "2026-10-05",
+   "method": "combined from daily values"
+  },
+  "error": null
+ },
+ {
+  "case": 34,
+  "tool": "get_capacity",
+  "args": [
+   {
+    "level": "group"
+   }
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+   "capacity_mw": 91456,
+   "unit": "MW",
+   "plants": 144
+  },
+  "error": null
+ },
+ {
+  "case": 35,
+  "tool": "get_capacity",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "2010-01-01"
+  ],
+  "ok": true,
+  "answer": {
+   "entity": "Singrauli",
+   "capacity_mw": 2000,
+   "unit": "MW",
+   "as_of": "2010-01-01",
+   "parts": 7
+  },
+  "error": null
+ }
+]

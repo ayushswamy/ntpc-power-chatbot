@@ -1,0 +1,287 @@
+{
+ "time": "2026-10-06T11:58:23",
+ "checks": {
+  "health": {
+   "status": "ok",
+   "model": "qwen3-8b-ntpc"
+  },
+  "deep_health": {
+   "status": "ok",
+   "checks": {
+    "database": {
+     "ok": true,
+     "ms": 356,
+     "rows": 1
+    },
+    "llm": {
+     "ok": true,
+     "ms": 617,
+     "model": "qwen3-8b-ntpc",
+     "model_available": true
+    },
+    "vector_db": {
+     "ok": true,
+     "ms": 481
+    }
+   }
+  },
+  "no_key_status": 401,
+  "too_long_status": 422
+ },
+ "conversation": [
+  {
+   "question": "Hello",
+   "seconds": 0.1,
+   "steps": [
+    "started"
+   ],
+   "token_events": 8,
+   "answer": {
+    "text": "Hello! I can answer questions about NTPC power data - live generation (\"current generation of Singrauli\"), today so far, daily and monthly generation, PLF, availability, outages, trips, coal stock and capacity.",
+    "table": null,
+    "chart": null,
+    "sources": [],
+    "as_of": null,
+    "is_live": false,
+    "clarification": false,
+    "source": "none",
+    "tool": "reply",
+    "session_id": "d44bf220879841048251e22b1388c408",
+    "timings": {
+     "total": 0.0
+    }
+   },
+   "event_names": [
+    "status",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "answer",
+    "done"
+   ]
+  },
+  {
+   "question": "Current total generation of NTPC",
+   "seconds": 225.3,
+   "steps": [
+    "started",
+    "planning",
+    "querying",
+    "writing answer"
+   ],
+   "token_events": 6,
+   "answer": {
+    "text": "36,233 MW, NTPC Group (NTPC + JVs/subsidiaries), live, as of 2026-10-06 12:02 Includes 61 of 144 plants with a live feed (69,791 of 91,456 MW capacity, 76%).",
+    "table": {
+     "columns": [
+      "name",
+      "mw",
+      "capacity_live_mw",
+      "capacity_mw",
+      "stages_live",
+      "stages"
+     ],
+     "rows": [
+      [
+       "Coal",
+       35031,
+       62990,
+       67364,
+       52,
+       59
+      ],
+      [
+       "Solar",
+       1164,
+       2139,
+       11807,
+       18,
+       69
+      ],
+      [
+       "Wind",
+       38,
+       196,
+       1016,
+       2,
+       10
+      ],
+      [
+       "Gas",
+       0,
+       3658,
+       6511,
+       6,
+       11
+      ],
+      [
+       "Hydro",
+       0,
+       808,
+       3757,
+       2,
+       13
+      ],
+      [
+       "Other",
+       0,
+       0,
+       1000,
+       0,
+       1
+      ]
+     ]
+    },
+    "chart": {
+     "type": "bar",
+     "title": "Current gross generation (MW)",
+     "x": [
+      "Coal",
+      "Solar",
+      "Wind",
+      "Gas",
+      "Hydro",
+      "Other"
+     ],
+     "series": [
+      {
+       "name": "MW",
+       "data": [
+        35031,
+        1164,
+        38,
+        0,
+        0,
+        0
+       ]
+      }
+     ]
+    },
+    "sources": [
+     "XML_RealView"
+    ],
+    "as_of": "2026-10-06 12:02",
+    "is_live": true,
+    "composer": "llm (attempt 1, 45.8s)",
+    "source": "live",
+    "tool": "get_live",
+    "session_id": "d44bf220879841048251e22b1388c408",
+    "timings": {
+     "plan": 179.3,
+     "tools": 0.09,
+     "compose": 45.8,
+     "total": 225.3
+    }
+   },
+   "event_names": [
+    "status",
+    "status",
+    "status",
+    "status",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "answer",
+    "done"
+   ]
+  },
+  {
+   "question": "PLF of Singrauli yesterday",
+   "seconds": 63.5,
+   "steps": [
+    "started",
+    "planning",
+    "querying",
+    "writing answer"
+   ],
+   "token_events": 9,
+   "answer": {
+    "text": "84.81% for Singrauli (coal, 2,000 MW) on 05 Oct 2026. Taken as Singrauli (coal, 2,000 MW); for Singrauli Solar PV (solar, 15 MW) or Singrauli Small Hydro (hydro, 8 MW), name it with its type (e.g. 'Singrauli solar').",
+    "table": null,
+    "chart": null,
+    "sources": [
+     "Performance_DayCum_Station"
+    ],
+    "as_of": null,
+    "is_live": false,
+    "composer": "llm (attempt 1, 33.6s)",
+    "source": "daily",
+    "tool": "get_value",
+    "session_id": "d44bf220879841048251e22b1388c408",
+    "timings": {
+     "plan": 29.8,
+     "tools": 0.1,
+     "compose": 33.6,
+     "total": 63.5
+    }
+   },
+   "event_names": [
+    "status",
+    "status",
+    "status",
+    "status",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "token",
+    "answer",
+    "done"
+   ]
+  },
+  {
+   "question": "And Korba?",
+   "seconds": 43.1,
+   "steps": [
+    "started",
+    "planning",
+    "querying",
+    "writing answer"
+   ],
+   "token_events": 3,
+   "answer": {
+    "text": "Korba's Plant Load Factor (PLF) is 97.74% as of 05 Oct 2026.",
+    "table": null,
+    "chart": null,
+    "sources": [
+     "Performance_DayCum_Station"
+    ],
+    "as_of": null,
+    "is_live": false,
+    "composer": "llm (attempt 1, 13.0s)",
+    "source": "daily",
+    "tool": "get_value",
+    "session_id": "d44bf220879841048251e22b1388c408",
+    "timings": {
+     "plan": 30.1,
+     "tools": 0.03,
+     "compose": 13.0,
+     "total": 43.1
+    }
+   },
+   "event_names": [
+    "status",
+    "status",
+    "status",
+    "status",
+    "token",
+    "token",
+    "token",
+    "answer",
+    "done"
+   ]
+  }
+ ]
+}

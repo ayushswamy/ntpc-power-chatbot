@@ -1,0 +1,353 @@
+﻿skf_no,UM,dummy,Description
+OP001,KU,,Gross Generation
+OP002,KU,,Gross Generation  (O/C)
+OP003,KU,,Gross Generation on Liquid
+OP004,KU,,Gross Generation on Liquid ( O/C)
+OP005,KU,,APC
+OP006,KU,,Colony Consumption
+OP007,KU,,Export
+OP008,KU,,Import
+OP009,KU,,Outage Loss
+OP010,KU,,Planned Outage Loss
+OP011,KU,,Grid Outage Loss
+OP012,KU,,Fuel Outage Loss
+OP013,KU,,Partial Loading Loss- Equipment
+OP014,KU,,Declared Capacity For the Day
+OP015,KU,,SG For the Day-ISGS
+OP016,KU,,Positive UI
+OP017,KU,,Negative UI
+OP018,KU,,AG
+OP019,NO,,Forced Outage Number
+OP020,KU,,Peak Hour Generation: Morning
+OP021,KU,,Peak Hour Generation :Evening
+OP022,NO,,Boiler Tube Leakageno)
+OP023,KU,,Declared Capacity: Gas
+OP024,KU,,Declared Capacity: Liquid
+OP025,KU,,Declared Capacity:RLNG
+OP026,KU,,SG -ISGS-Gas
+OP027,KU,,SG - ISGS-Liquid
+OP028,KU,,SG- ISGS-RLNG
+OP029,KU,,Corr. Sched. Generation: CSG
+OP030,KU,,Normative DC
+OP031,MGW,,Installed Capacity
+OP032,THR,,MCR Steam Flow
+OP033,KU,,Non Commercial Generation
+OP034,KL,,NC Naphtha Consumption
+OP035,KL,,NC HSD Consumption
+OP036,SCM,,NC Gas Consumption
+OP037,TO,,NC Coal Consumption
+OP038,KL,,NC Heavy Oil Consumption
+OP039,KL,,NC Light Oil Consumption
+OP040,KL,,Naphtha Consumption
+OP041,KL,,HSD Consumption
+OP042,KL,,O/C Liquid Fuel Consumption
+OP043,SCM,,Gas Consumption
+OP044,SCM,,O/CGas Consumption
+OP045,KL,,Heavy oil consumption
+OP046,KL,,Light oil consumption
+OP047,MT,,Cyc. DM Water Consumption
+OP048,MT,,Non Cyc DM Water Consumption
+OP049,TO,,Coal Consumption
+OP050,KCG,,GCV-Coal
+OP051,KCG,,GCV-Imported coal
+OP052,KCL,,GCV-HSD
+OP053,KCL,,GCV-LDO
+OP054,KCL,,GCV-HFO
+OP055,KCL,,GCV-LSHS
+OP056,KCS,,GCV-Gas
+OP057,KCS,,GCV-RLNG
+OP058,KCL,,GCV-Liquid Fuel
+OP059,GML,,Density Liquid Fuel
+OP060,GML,,Density HFO
+OP061,GML,,Density LSH
+OP062,GML,,Density HSD
+OP063,GML,,Density LDO
+OP064,TO,,Imported Coal Consumption
+OP065,KU,,CSG-ISGS-Gas
+OP066,KU,,CSG-ISGS-Liquid
+OP067,KU,,CSG-ISGS-RLNG
+OP068,SCM,,RLNG (00-24hrs)
+OP069,KU,,Forced outage(others)
+OP070,KU,,Total Partial Loss
+OP071,KU,,Grid Partial Loss
+OP072,KU,,Fuel Partial Loss
+OP073,KU,,Others Partial Loss
+OP074,KU,,Partial Loss Planned
+OP081,KL,,Light oil consumption -2
+OP082,SCM,,e-RLNG Consumption
+OP083,KU,,Declared Capacity: e-RLNG
+OP084,KU,,SG: e-RLNG
+OP085,KU,,CSG: e-RLNG
+OP086,KU,,Declared Capacity - Peak Hour
+OP092,KU,,Internal Target Day
+OP093,KU,,SG RRAS - Up
+OP094,KU,,SGRRAS - Up- Gas
+OP095,KU,,SGRRAS - Up- Liquid
+OP096,KU,,SGRRAS- Up-RLNG
+OP097,KU,,SGRRAS-Up- e-RLNG
+OP098,KU,,SG - IEX
+OP099,KU,,SG RRAS-Down
+OP103,MGW,,Load at 0700Hrs
+OP104,KU,,SG-IEX - Gas
+OP105,KU,,SG-IEX - Liquid
+OP106,KU,,SG-IEX- RLNG
+OP107,KU,,SG-IEX- e-RLNG
+OP111,NO,,Inverters installed
+OP113,W,,Average Solar Insolation per m2
+OP114,h,,Active Period Hours
+OP116,KU,,Generation at Inverter Input
+OP117,°C,,Average Ambient Temperature (Solar)
+OP118,M2,,Solar PV Area
+OP119,h,,Inverters outage hours
+OP120,KU,,Generation at Inverter Output
+OP123,KU,,Aux power cons from any external sourc
+OP124,KWH,,Solar insolation@plane of Array /m2
+OP125,MGW,,Highest day Generation (Instant.)
+OP126,W,,Highest day solar insolation per m2
+OP127,DEG,,Module Tilt Angle (Actual)
+OP128,DEG,,Module Tilt Angle (Design)
+OP129,KMH,,Avg. Wind Speed
+OP130,KWH,,Solar Insolation@Horizontal plane /m2
+OP131,MGW,,Day Max Generation (Instant.)
+OP151,CMP,,Maximum Inflow
+OP152,CMP,,Minimum Inflow
+OP153,CMP,,Average Inflow (available for generation
+OP154,M,,Reservoir level (Maximum)
+OP155,M,,Reservoir level (Minimum)
+OP156,M,,Tail Race Level (maximum)
+OP157,M,,Tail Race Level (minimum)
+OP158,TMC,,Spillage Hydro Station
+OP159,M,,Reservoir level@24h
+OP171,KU,,CSGRRAS - Up -Gas
+OP172,KU,,CSGRRAS - Up- Liquid
+OP173,KU,,CSGRRAS- Up-RLNG
+OP174,KU,,CSGRRAS- Up- e-RLNG
+OP175,KU,,CSG-IEX - Gas
+OP176,KU,,CSG-IEX- Liquid
+OP177,KU,,CSG-IEX- RLNG
+OP178,KU,,CSG-IEX-e-RLNG
+OP179,KU,,SGRRAS-Down - Gas
+OP180,KU,,SGRRAS-Down - Liquid
+OP181,KU,,SGRRAS-Down- RLNG
+OP182,KU,,SGRRAS-Down- e-RLNG
+OP183,KU,,CSGRRAS-Down - Gas
+OP184,KU,,CSGRRAS -Down- Liquid
+OP185,KU,,CSGRRAS- Down-RLNG
+OP186,KU,,CSGRRAS-Down- e-RLNG
+OP187,KU,,Declared Capacity (STOA)
+OP188,KU,,DC on Bar (PPA)
+OP189,KU,,DC on Bar (Liquid)
+OP190,KU,,DC on Bar (Gas)
+OP191,KU,,DC on Bar (RLNG)
+OP192,KU,,DC on Bar (e-RLNG)
+OP193,KU,,Outage Loss Reduced River Inflow
+OP194,°C,,Temperature(Maximum)
+OP195,°C,,Temperature(Minimum)
+OP196,%,,Humidity (Maxmium)
+OP197,%,,Humidity (Minimum)
+OP198,MM,,Rain for the Day
+OP199,h,,Forced Outage Hours
+OP200,h,,Grid Outage Hours
+OP201,h,,Outage Hours-Wind
+OP202,h,,Forced Outage Hours -  Others
+OP203,°C,,Average Ambient Temperature
+OP204,h,,Planned Outage Hours
+OP205,KCG,,GCV-Biomass Pallets
+OP206,KCG,,GCV-Torrified Biomass Pallets
+OP207,TO,,Biomass Pallets Cons.
+OP208,TO,,Torrified Biomass Pallets Cons.
+OP209,KU,,AGC - Up
+OP210,KU,,AGC - Down
+OP211,KU,,SG-AGC (UP)
+OP212,KU,,SG-AGC (DOWN)
+OP213,KU,,SG-SCED (UP)
+OP214,KU,,SG-SCED (DOWN)
+OP215,KU,,SG-FRAS(UP)
+OP216,KU,,SG-FRAS(DOWN)
+OP217,KWH,,Design GHI /M2
+OP218,KU,,Design Generation
+OP219,KU,,Corrected Design Generation
+OP220,KU,,Excess Generation-Solar
+OP221,KU,,PARTIAL LOADING LOSS-GRID
+OP222,TO,,Coal Consumption Domestic (E-Auction)
+OP223,TO,,Coal Consumption Domestic (NTPC Mines)
+OP224,KU,,SG-MTOA
+OP225,KU,,SG-STOA
+OP226,KU,,SG-LTA
+OP227,KU,,SG-PXI
+OP228,KU,,SG-URS
+OP229,KU,,DC-OFF BAR
+OP230,KU,,DC (Peak Hour-High Demand Season)-Day
+OP231,KU,,DC(Off Peak Hour-High Demand Season)-Day
+OP232,KU,,DC (Peak Hour-Low Demand Season)-Day
+OP233,KU,,DC(Off Peak Hour-Low Demand Season)-Day
+OP234,KU,,SG(Inc) (Peak Hour-High Demand)-Day
+OP235,KU,,SG(Inc) (Off Peak Hour-High Demand )-Day
+OP236,KU,,SG(Inc) (Peak Hour-Low Demand )-Day
+OP237,KU,,SG(Inc) (Off Peak Hour-Low Demand )-Day
+OP238,KU,,Normative DC(Peak Hour-High Demand )-Day
+OP239,KU,,Normative DC(Off Peak Hr-High Demand)Day
+OP240,KU,,Normative DC(Peak Hour-Low Demand )-Day
+OP241,KU,,Normative DC(Off Peak Hr-Low Demand) Day
+OP242,M3,,Water Drawl (Cubic Meter/Day)
+OP243,KU,,DC-CC-Gas
+OP244,KU,,DC-OC-Gas
+OP245,KU,,DC-OFF BAR-Gas
+OP246,KU,,DC-CC-Liquid
+OP247,KU,,DC-OC-Liquid
+OP248,KU,,DC-OFF BAR-Liquid
+OP249,KU,,DC-CC-RLNG
+OP250,KU,,DC-OC-RLNG
+OP251,KU,,DC-OFF BAR-RLNG
+OP252,KU,,DC-CC-NAPM
+OP253,KU,,DC-OC-NAPM
+OP254,KU,,DC-OFF BAR-NAPM
+OP255,KU,,DC-NAPM
+OP256,KU,,SG-MTOA - Gas
+OP257,KU,,SG-STOA - Gas
+OP258,KU,,SG-LTA - Gas
+OP259,KU,,SG-PXI- Gas
+OP260,KU,,SG-URS- Gas
+OP261,KU,,SG-MTOA - Liquid
+OP262,KU,,SG-STOA - Liquid
+OP263,KU,,SG-LTA - Liquid
+OP264,KU,,SG-PXI - Liquid
+OP265,KU,,SG-URS - Liquid
+OP266,KU,,SG-MTOA - RLNG
+OP267,KU,,SG-STOA - RLNG
+OP268,KU,,SG-LTA - RLNG
+OP269,KU,,SG-PXI - RLNG
+OP270,KU,,SG-URS - RLNG
+OP271,KU,,SG-ISGS - NAPM
+OP272,KU,,SG-MTOA - NAPM
+OP273,KU,,SG-STOA - NAPM
+OP274,KU,,SG-LTA - NAPM
+OP275,KU,,SG-IEX - NAPM
+OP276,KU,,SG-PXI - NAPM
+OP277,KU,,SG-URS - NAPM
+OP278,KU,,SGRRAS-Up- NAPM
+OP279,KU,,SGRRAS-Down- NAPM
+OP280,KU,,SG-SCED(UP) - NAPM
+OP281,KU,,SG-SCED(DOWN) - NAPM
+OP282,KU,,CSG-MTOA - GAS
+OP283,KU,,CSG-STOA - GAS
+OP284,KU,,CSG-LTA - GAS
+OP285,KU,,CSG-PXI - GAS
+OP286,KU,,CSG-URS - GAS
+OP287,KU,,CSG-MTOA - Liquid
+OP288,KU,,CSG-STOA - Liquid
+OP289,KU,,CSG-LTA - Liquid
+OP290,KU,,CSG-PXI - Liquid
+OP291,KU,,CSG-URS - Liquid
+OP292,KU,,CSG-MTOA - RLNG
+OP293,KU,,CSG-STOA - RLNG
+OP294,KU,,CSG-LTA- RLNG
+OP295,KU,,CSG-PXI - RLNG
+OP296,KU,,CSG-URS - RLNG
+OP297,KU,,CSG-ISGS - NAPM
+OP298,KU,,CSG-MTOA - NAPM
+OP299,KU,,CSG-STOA - NAPM
+OP301,KU,,CSG-LTA - NAPM
+OP302,KU,,CSG-IEX - NAPM
+OP303,KU,,CSG-PXI - NAPM
+OP304,KU,,CSG-URS - NAPM
+OP305,KU,,CSG-RRAS(Up) - NAPM
+OP306,KU,,CSG-RRAS(Down) - NAPM
+OP307,KU,,CSG-SCED(UP) - NAPM
+OP308,KU,,CSG-SCED(DOWN) - NAPM
+OP309,KU,,DC on Bar -NAPM
+OP310,KU,,CSG-PXI - eRLNG
+OP311,KU,,SG-PXI - eRLNG
+OP312,TO,,Consumption Special Arrangement Coal
+OP313,KCG,,GCV-Special Arrangement Coal
+OP314,KU,,SG-RTM-IEX
+OP315,KU,,SG-RTM-PXI
+OP316,KU,,SG-REMC
+OP317,KU,,DC-CRLNG
+OP318,KU,,DC on Bar -CRLNG
+OP319,KU,,DC-CC-CRLNG
+OP320,KU,,DC-OC-CRLNG
+OP321,KU,,DC-OFF BAR-CRLNG
+OP322,KU,,SG- ISGS-CRLNG
+OP323,KU,,SG-MTOA - CRLNG
+OP324,KU,,SG-STOA - CRLNG
+OP325,KU,,SG-LTA - CRLNG
+OP326,KU,,SG-URS - CRLNG
+OP327,KU,,SGRRAS- Up-CRLNG
+OP328,KU,,SGRRAS-Down- CRLNG
+OP329,KU,,SG-IEX- CRLNG
+OP330,KU,,SG-PXI - CRLNG
+OP331,KU,,CSG-ISGS-CRLNG
+OP332,KU,,CSG-MTOA - CRLNG
+OP333,KU,,CSG-STOA - CRLNG
+OP334,KU,,CSG-LTA- CRLNG
+OP335,KU,,CSG-URS - CRLNG
+OP336,KU,,CSG-RRAS- Up-CRLNG
+OP337,KU,,CSG-RRAS- Down-CRLNG
+OP338,KU,,CSG-IEX- CRLNG
+OP339,KU,,CSG-PXI - CRLNG
+OP340,KU,,SG- RTM-IEX-GAS
+OP341,KU,,SG- RTM-IEX-NAPM
+OP342,KU,,SG- RTM-IEX-LIQUID
+OP343,KU,,SG- RTM-IEX-RLNG
+OP344,KU,,SG- RTM-IEX-CRLNG
+OP345,KU,,SG- RTM-PXI-GAS
+OP346,KU,,SG- RTM-PXI-NAPM
+OP347,KU,,SG- RTM-PXI-LIQUID
+OP348,KU,,SG- RTM-PXI-RLNG
+OP349,KU,,SG- RTM-PXI-CRLNG
+OP350,KU,,Normative DC STOA
+OP351,KU,,CSG- RTM-IEX-GAS
+OP352,KU,,CSG- RTM-IEX-NAPM
+OP353,KU,,CSG- RTM-IEX-LIQUID
+OP354,KU,,CSG- RTM-IEX-RLNG
+OP355,KU,,CSG- RTM-IEX-CRLNG
+OP356,KU,,CSG- RTM-PXI-GAS
+OP357,KU,,CSG- RTM-PXI-NAPM
+OP358,KU,,CSG- RTM-PXI-LIQUID
+OP359,KU,,CSG- RTM-PXI-RLNG
+OP360,KU,,CSG- RTM-PXI-CRLNG
+OP361,KU,,DC-COM GAS
+OP362,KU,,DC-CC-COM GAS
+OP363,KU,,DC-OC-COM GAS
+OP364,KU,,DC on Bar - COM GAS
+OP365,KU,,DC-OFF BAR-COM GAS
+OP366,KU,,SG-ISGS - COM GAS
+OP367,KU,,SG-MTOA - COM GAS
+OP368,KU,,SG-STOA - COM GAS
+OP369,KU,,SG-LTA - COM GAS
+OP370,KU,,SG-URS - COM GAS
+OP371,KU,,SG-IEX - COM GAS
+OP372,KU,,SG-PXI - COM GAS
+OP373,KU,,SGRRAS-Up- COM GAS
+OP374,KU,,SGRRAS-Down- COM GAS
+OP375,KU,,CSG-ISGS - COM GAS
+OP376,KU,,CSG-MTOA - COM GAS
+OP377,KU,,CSG-STOA - COM GAS
+OP378,KU,,CSG-LTA - COM GAS
+OP379,KU,,CSG-URS - COM GAS
+OP380,KU,,CSG-IEX - COM GAS
+OP381,KU,,CSG-PXI - COM GAS
+OP382,KU,,CSG-RRAS(Up) - COM GAS
+OP383,KU,,CSG-RRAS(Down) - COM GAS
+OP384,KU,,SG- RTM-IEX-COM GAS
+OP385,KU,,SG- RTM-PXI-COM GAS
+OP386,KU,,CSG- RTM-IEX-COM GAS
+OP387,KU,,CSG- RTM-PXI-COM GAS
+OP388,TO,,Cons Discounted Special Arrangement Coal
+OP389,KU,,TENTATIVE DSM LOSS
+OP390,KU,,WATER CONSUMPTION IN MODULE WASHING
+OP391,MWH,,Inverter Outage in MWHrs- Grid
+OP392,MWH,,Inverter Outage in MWHrs- Forced
+OP393,MWH,,Inverter Outage in MWHrs- Planned
+OP394,MWH,,WTG Outage in MWHrs- Grid
+OP395,MWH,,WTG Outage in MWHrs- Forced
+OP396,MWH,,WTG Outage in MWHrs- Planned
+OP397,%,,Solar Design CUF
+OP398,KU,,Generation Loss Grid
+OP399,KU,,Generation Loss Forced
+OP400,KU,,Generation Loss Planned
+OP511,KU,,DC (Peak Hour)
+OP512,KU,,DC (Off Peak Hour)
+OP513,KU,,SG (Inc) (Peak Hour)
+OP514,KU,,SG (Inc) (Off Peak Hour)

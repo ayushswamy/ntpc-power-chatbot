@@ -1,0 +1,554 @@
+﻿Tool tests against the database - clock frozen at 2026-09-30 12:08:31
+ 1. OK   0.23s  get_realtime [{"level": "plant", "plant_code": "1004"}]
+      {"entity": "Singrauli", "metric": "Current gross generation", "unit": "MW", "value": 1061, "capacity_mw": 2000, "units_running": ["Singrauli Unit 2 (119 MW)", "Singrauli Unit 3 (117 MW)", "Singrauli Unit 4 (120 MW)", "Si...
+      note: Values used range from 12:00 to 12:07.
+ 2. OK   0.00s  get_realtime [{"plant_code": "1005", "unit": 3}]
+      {"entity": "Rihand Unit 3", "metric": "Current gross generation", "unit": "MW", "value": 0, "capacity_mw": 500}
+ 3. OK   0.04s  get_realtime [{"plant_code": "1005", "stage": "STAGE2"}, "actual_generation"]
+      {"entity": "Rihand Stage 2", "metric": "Current actual generation (AG)", "unit": "MW", "value": null, "feed_stopped_since": "2024-08-23 14:28", "latest_daily_value": 10.1, "latest_daily_unit": "MU", "latest_daily_date": ...
+      note: The live feed for Rihand Stage 2 has not updated since 23 Aug 2024 14:28, so no current value can be given.
+      note: Latest daily figure: Actual generation (AG, ex-bus) 10.1 MU on 29 Sep 2026 (daily report).
+ 4. OK   0.00s  get_realtime [{"plant_code": "1017"}]
+      {"entity": "Korba", "metric": "Current gross generation", "unit": "MW", "value": 1552, "capacity_mw": 2600, "units_running": ["Korba Unit 1 (130 MW)", "Korba Unit 2 (134 MW)", "Korba Unit 3 (127 MW)", "Korba Unit 4 (281 ...
+ 5. OK   0.02s  get_realtime [{"plant_code": "2492"}]
+      {"entity": "AASPL", "metric": "Current gross generation", "unit": "MW", "value": null, "has_live_feed": false, "latest_daily_value": 1.51, "latest_daily_unit": "MU", "latest_daily_date": "2026-09-29"}
+      note: AASPL has no live data feed in the real-time system.
+      note: Latest daily figure: Gross generation 1.51 MU on 29 Sep 2026 (daily report).
+ 6. OK   0.00s  get_realtime [{"level": "plant", "plant_code": "1004"}, "frequency"]
+      {"entity": "Grid", "metric": "Grid frequency", "value": 49.98, "unit": "Hz", "readings": 29}
+      note: Median of the frequency readings reported by plants with a live feed.
+ 7. OK   0.00s  get_realtime_summary [{}]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Current gross generation", "value": 33832, "unit": "MW", "plants_included": 61, "plants_total": 144, "capacity_covered_mw": 70281, "capacity_total_mw": 91302,...
+      note: Includes 61 of 144 plants with a live feed (70,281 of 91,302 MW capacity, 77%). Plants without a live value in the last 30 min are not counted.
+      note: Not included (no live feed): AASPL, ACSEPL, ARPFPL-BhujSolar, ARPFPL-JataveeraSolar, ARPFPL-Wind, ARPOPL, ARPSPL, ARPTPL and others.
+      note: Values used range from 11:45 to 12:09.
+ 8. OK   0.00s  get_realtime_summary [{"fuel": ["C"]}, "gross_generation", "plant"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries), coal plants", "metric": "Current gross generation", "value": 32623, "unit": "MW", "plants_included": 34, "plants_total": 40, "capacity_covered_mw": 63490, "capacity_total...
+      note: Includes 34 of 40 plants with a live feed (63,490 of 67,364 MW capacity, 94%). Plants without a live value in the last 30 min are not counted.
+      note: Not included (no live feed): Bhilai-Captive, Durgapur, Jhabua, Khurja, Rourkela, Sinnar.
+      note: Values used range from 11:45 to 12:09.
+ 9. OK   0.00s  get_realtime_summary [{"company": "standalone"}, "actual_generation"]
+      {"entity": "NTPC standalone", "metric": "Current actual generation (AG)", "value": 23482, "unit": "MW", "plants_included": 40, "plants_total": 57, "capacity_covered_mw": 54707, "capacity_total_mw": 60992, "coverage_perce...
+      note: Includes 40 of 57 plants with a live feed (54,707 of 60,992 MW capacity, 90%). Plants without a live value in the last 30 min are not counted.
+      note: Not included (no live feed): Andaman-Solar PV, AntaSolar, Auraiya, Auraiya FSPV, Darlipali, Faridabad-Solar PV, Kawas, Kayamkulam_FS-II and others.
+      note: Values used range from 11:55 to 12:12.
+10. OK   0.06s  get_today_so_far [{"level": "plant", "plant_code": "1004"}]
+      {"entity": "Singrauli", "metric": "Gross generation today so far", "value": 15.6, "unit": "MU", "up_to": "12:00", "blocks_completed": 48}
+      note: Estimated from the 48 completed 15-minute blocks of today (up to 12:00); official daily figures are published the next day.
+11. OK   0.19s  get_today_so_far [{"level": "group"}]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Gross generation today so far", "value": 545.13, "unit": "MU", "up_to": "12:00", "blocks_completed": 48}
+      note: Estimated from the 48 completed 15-minute blocks of today (up to 12:00); official daily figures are published the next day.
+      note: 4005 stage-block values had no live data and were not counted.
+      note: 62 of 144 plants contributed live data.
+12. OK   0.11s  compare_periods [{"level": "plant", "plant_code": "1004"}, "gross_generation", "today"...
+      {"entity": "Singrauli", "metric": "Gross generation", "unit": "MU", "period1": {"period": "today so far (live, up to 12:00)", "value": 15.6, "unit": "MU", "is_live": true}, "period2": {"period": "yesterday (29 Sep 2026)"...
+      note: Estimated from the 48 completed 15-minute blocks of today (up to 12:00); official daily figures are published the next day.
+      note: Today's value covers only part of the day, so it is not directly comparable with a full day.
+13. OK   0.03s  get_daily_metric [{"level": "plant", "plant_code": "1004"}, "plf", "yesterday"]
+      {"entity": "Singrauli", "metric": "Plant Load Factor (PLF)", "value": 64.71, "unit": "%", "period": "yesterday (29 Sep 2026)", "start": "2026-09-29", "end": "2026-09-29", "method": "day value"}
+14. OK   0.02s  get_daily_metric [{"plant_code": "1005", "unit": 3}, "plf", "yesterday"]
+      {"entity": "Rihand Unit 3", "metric": "Plant Load Factor (PLF)", "value": 0.0, "unit": "%", "period": "yesterday (29 Sep 2026)", "start": "2026-09-29", "end": "2026-09-29", "method": "day value"}
+15. OK   0.08s  get_daily_metric [{"level": "group"}, "gross_generation", "yesterday"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Gross generation", "value": 1280.96, "unit": "MU", "period": "yesterday (29 Sep 2026)", "start": "2026-09-29", "end": "2026-09-29", "method": "day value", "pl...
+16. OK   0.02s  get_metric_range [{"level": "plant", "plant_code": "1004"}, "gross_generation", "this m...
+      {"entity": "Singrauli", "metric": "Gross generation", "value": 932.32, "unit": "MU", "period": "01 Sep 2026 to 29 Sep 2026", "start": "2026-09-01", "end": "2026-09-29", "method": "official month-to-date value"}
+      note: Daily figures are up to 29 Sep 2026.
+17. OK   1.04s  get_metric_range [{"level": "group"}, "plf", "last 30 days"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Plant Load Factor (PLF)", "value": 59.01, "unit": "%", "period": "31 Aug 2026 to 29 Sep 2026", "start": "2026-08-31", "end": "2026-09-29", "method": "combined...
+      note: 5 value(s) recorded as 0 on days with generation were treated as not reported.
+18. NO   0.00s  get_metric_range [{"level": "plant", "plant_code": "1004"}, "plf", "2021-01-01", "2021-...
+      {"entity": "Singrauli", "metric": "Plant Load Factor (PLF)"}
+      note: Daily performance data is available from 01 Apr 2023 to 29 Sep 2026; there is no data for 01 Jan 2021 to 31 Mar 2021.
+19. OK   0.05s  compare_periods [{"level": "plant", "plant_code": "1004"}, "plf", "this month", "last ...
+      {"entity": "Singrauli", "metric": "Plant Load Factor (PLF)", "unit": "%", "period1": {"period": "01 Sep 2026 to 29 Sep 2026", "value": 66.98, "unit": "%", "method": "official month-to-date value", "days": 29}, "period2":...
+      note: Daily figures are up to 29 Sep 2026.
+20. OK   0.20s  compare_periods [{"level": "group"}, "gross_generation", "this fy", "last fy"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Gross generation", "unit": "MU", "period1": {"period": "01 Apr 2026 to 29 Sep 2026", "value": 234157.77, "unit": "MU", "method": "official FY-to-date value", ...
+      note: Daily figures are up to 29 Sep 2026.
+      note: 136 of 144 plants in NTPC Group (NTPC + JVs/subsidiaries) have Gross generation data for this period.
+      note: The periods have different lengths (182 vs 365 days), so the totals are not directly comparable.
+21. OK   0.06s  get_trend [{"level": "plant", "plant_code": "1004"}, "plf", "this fy", null, "mo...
+      {"entity": "Singrauli", "metric": "Plant Load Factor (PLF)", "unit": "%", "granularity": "month", "start": "2026-04-01", "end": "2026-09-29", "points": 6}
+      note: Daily figures are up to 29 Sep 2026.
+      note: Each month is the full calendar month (the last one up to 29 Sep 2026).
+22. OK   0.03s  get_trend [{"plant_code": "1014"}, "gross_generation", "last 30 days", null, "da...
+      {"entity": "Dadri-Gas", "metric": "Gross generation", "unit": "MU", "granularity": "day", "start": "2026-08-31", "end": "2026-09-29", "points": 30}
+23. OK   0.28s  get_trend [{"level": "group"}, "gross_generation", "2023-04-01", "yesterday", "f...
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "metric": "Gross generation", "unit": "MU", "granularity": "fy", "start": "2023-04-01", "end": "2026-09-29", "points": 4}
+      note: Each fy is the full calendar financial year (the last one up to 29 Sep 2026).
+24. OK   0.14s  rank_entities ["plf", "this month", null, 10]
+      {"metric": "Plant Load Factor (PLF)", "unit": "%", "period": "01 Sep 2026 to 29 Sep 2026", "order": "desc", "level": "plant", "scope": "NTPC Group (NTPC + JVs/subsidiaries)", "count": 10}
+      note: Daily figures are up to 29 Sep 2026.
+      note: Ranked 144 plants in NTPC Group (NTPC + JVs/subsidiaries) that have data.
+      note: Data-quality flag: some values are above 100% as recorded in the source data.
+25. OK   0.07s  rank_entities ["plf", "this month", null, 5, "asc", "plant", {"fuel": ["C"]}]
+      {"metric": "Plant Load Factor (PLF)", "unit": "%", "period": "01 Sep 2026 to 29 Sep 2026", "order": "asc", "level": "plant", "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants", "count": 5}
+      note: Daily figures are up to 29 Sep 2026.
+      note: Ranked 40 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data.
+      note: 2 plant(s) show 0 with no generation (shut down for the whole period).
+26. OK   0.12s  rank_entities ["forced_outage_loss", "last month", null, 5, "desc", "unit"]
+      {"metric": "Forced outage loss (equipment)", "unit": "MU", "period": "01 Aug 2026 to 31 Aug 2026", "order": "desc", "level": "unit", "scope": "NTPC Group (NTPC + JVs/subsidiaries)", "count": 5}
+      note: Ranked 346 units in NTPC Group (NTPC + JVs/subsidiaries) that have data.
+27. OK   0.02s  get_outages [{"level": "plant", "plant_code": "1004"}, "last 7 days"]
+      {"entity": "Singrauli", "period": "23 Sep 2026 to 29 Sep 2026", "units_affected": 1, "new_outages_started": 0, "unit_days_out_records": 7, "generation_loss_mu": 33.6, "units_still_out_at_end": 1, "loss_by_reason": [{"rea...
+      note: The table has one row per unit per day out; 'new' = the outage started that day, otherwise the unit was already out from an earlier day. 'back_at 24:00' means still out at midnight.
+28. OK   0.02s  get_outages [{"level": "group", "scope": {"region": "NR"}}, "yesterday"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries), region NR", "period": "29 Sep 2026", "units_affected": 24, "new_outages_started": 21, "unit_days_out_records": 30, "generation_loss_mu": 66.44, "units_still_out_at_end": ...
+      note: The table has one row per unit per day out; 'new' = the outage started that day, otherwise the unit was already out from an earlier day. 'back_at 24:00' means still out at midnight.
+29. OK   0.03s  get_trips [{"level": "group"}, "last 7 days", "today"]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "period": "23 Sep 2026 to 30 Sep 2026", "trips": 25, "not_yet_revived": 8, "by_type": {"Forced outage": 17, "Planned outage": 3, "Reserve shutdown (RSD)": 5}}
+30. OK   0.02s  get_trips [{"plant_code": "1086"}, "last 30 days", "today"]
+      {"entity": "NSTPS", "period": "31 Aug 2026 to 30 Sep 2026", "trips": 2, "not_yet_revived": 1, "by_type": {"Forced outage": 2}}
+31. OK   0.02s  get_coal [{"level": "plant", "plant_code": "1004"}, "coal_stock", "yesterday"]
+      {"entity": "Singrauli", "metric": "Coal stock", "value": 104461, "unit": "tonnes", "period": "29 Sep 2026", "start": "2026-09-29", "end": "2026-09-29", "method": "closing value on 29 Sep 2026"}
+      note: Unit assumed tonnes - to be confirmed.
+32. OK   0.06s  get_coal [{"level": "group", "scope": {"fuel": ["C"]}}, "coal_stock_days", "yes...
+      {"metric": "Coal stock (days)", "unit": "days", "period": "29 Sep 2026", "order": "asc", "level": "plant", "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants", "count": 29}
+      note: Ranked 29 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data.
+      note: 11 plant(s) recorded 0 while generating; treated as not reported and left out.
+      note: 2 plant(s) show 0 with no generation (shut down for the whole period).
+33. OK   0.03s  get_coal [{"level": "plant", "plant_code": "1004"}, "coal_receipt", "last 7 day...
+      {"entity": "Singrauli", "metric": "Coal receipt", "value": 154525, "unit": "tonnes", "period": "23 Sep 2026 to 29 Sep 2026", "start": "2026-09-23", "end": "2026-09-29", "method": "combined from daily values"}
+      note: Unit assumed tonnes (label in source says MMT) - to be confirmed.
+34. OK   0.00s  get_capacity [{"level": "group"}]
+      {"entity": "NTPC Group (NTPC + JVs/subsidiaries)", "capacity_mw": 91302, "unit": "MW", "plants": 144}
+      note: Current installed capacity of active plants (Master_Plants.GrossCapMW).
+35. OK   0.00s  get_capacity [{"level": "plant", "plant_code": "1004"}, "2010-01-01"]
+      {"entity": "Singrauli", "capacity_mw": 2000, "unit": "MW", "as_of": "2010-01-01", "parts": 7}
+      note: Non-commercial (trial) capacity is not included.
+
+Data checks...
+{
+ "a_today_so_far_method": {
+  "day": "2026-09-29",
+  "plants": [
+   {
+    "plant": "Singrauli",
+    "blocks_TOTALGEN_mu": 31.12,
+    "official_gross_gen_mu": 31.06,
+    "blocks_AG_mu": 28.09,
+    "official_ag_mu": 28.05
+   },
+   {
+    "plant": "Rihand",
+    "blocks_TOTALGEN_mu": 54.81,
+    "official_gross_gen_mu": 54.46,
+    "blocks_AG_mu": 50.77,
+    "official_ag_mu": 50.22
+   },
+   {
+    "plant": "Korba",
+    "blocks_TOTALGEN_mu": 49.91,
+    "official_gross_gen_mu": 49.83,
+    "blocks_AG_mu": 30.36,
+    "official_ag_mu": 46.43
+   },
+   {
+    "plant": "Kahalgaon",
+    "blocks_TOTALGEN_mu": 33.09,
+    "official_gross_gen_mu": 33.07,
+    "blocks_AG_mu": 30.35,
+    "official_ag_mu": 30.07
+   },
+   {
+    "plant": "Ramagundam",
+    "blocks_TOTALGEN_mu": 32.86,
+    "official_gross_gen_mu": 32.94,
+    "blocks_AG_mu": 32.17,
+    "official_ag_mu": 30.31
+   },
+   {
+    "plant": "Mouda",
+    "blocks_TOTALGEN_mu": 41.25,
+    "official_gross_gen_mu": 40.97,
+    "blocks_AG_mu": 37.87,
+    "official_ag_mu": 38.14
+   },
+   {
+    "plant": "Dadri-Gas",
+    "blocks_TOTALGEN_mu": 7.4,
+    "official_gross_gen_mu": 7.3,
+    "blocks_AG_mu": 7.4,
+    "official_ag_mu": null
+   },
+   {
+    "plant": "Kawas",
+    "blocks_TOTALGEN_mu": 7.99,
+    "official_gross_gen_mu": 7.98,
+    "blocks_AG_mu": 7.99,
+    "official_ag_mu": 7.75
+   },
+   {
+    "plant": "Jhajjar",
+    "blocks_TOTALGEN_mu": 29.21,
+    "official_gross_gen_mu": 29.02,
+    "blocks_AG_mu": 26.98,
+    "official_ag_mu": null
+   },
+   {
+    "plant": "Singrauli Solar PV",
+    "blocks_TOTALGEN_mu": 0.06,
+    "official_gross_gen_mu": 0.07,
+    "blocks_AG_mu": 0.06,
+    "official_ag_mu": null
+   }
+  ],
+  "stage_blocks_counted": {
+   "TOTALGEN": 1536,
+   "AG": 1536
+  },
+  "stage_blocks_skipped": {
+   "TOTALGEN": 0,
+   "AG": 0
+  }
+ },
+ "b_unit_column_numbering": [
+  {
+   "plant": "Korba",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Korba",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT07"
+   ],
+   "master_units_of_stage": [
+    "UNIT07"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT03",
+    "UNIT04"
+   ],
+   "master_units_of_stage": [
+    "UNIT03",
+    "UNIT04"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT03",
+    "UNIT04"
+   ],
+   "master_units_of_stage": [
+    "UNIT03",
+    "UNIT04"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT05"
+   ],
+   "master_units_of_stage": [
+    "UNIT05"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE4",
+   "U_columns_filled": [
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT07",
+    "UNIT08"
+   ],
+   "master_units_of_stage": [
+    "UNIT07",
+    "UNIT08"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT09",
+    "UNIT10"
+   ],
+   "master_units_of_stage": [
+    "UNIT09",
+    "UNIT10"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE4",
+   "U_columns_filled": [
+    "UNIT11",
+    "UNIT12"
+   ],
+   "master_units_of_stage": [
+    "UNIT11",
+    "UNIT12"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE5",
+   "U_columns_filled": [
+    "UNIT13"
+   ],
+   "master_units_of_stage": [
+    "UNIT13"
+   ]
+  }
+ ],
+ "c_trip_plant_codes": {
+  "mapped": [
+   [
+    "AnGPS",
+    "Anta",
+    16
+   ],
+   [
+    "AuGPS",
+    "Auraiya",
+    23
+   ],
+   [
+    "BARAUNI",
+    "Barauni",
+    21
+   ],
+   [
+    "BARH",
+    "Barh",
+    72
+   ],
+   [
+    "BONGAIGAON",
+    "Bongaigaon",
+    8
+   ],
+   [
+    "BRBCL",
+    "BRBCL",
+    21
+   ],
+   [
+    "BhNSPCL",
+    "Bhilai",
+    3
+   ],
+   [
+    "DARLIPALI",
+    "Darlipali",
+    14
+   ],
+   [
+    "DaGPS",
+    "Dadri-Gas",
+    16
+   ],
+   [
+    "FSTPS",
+    "Farakka",
+    53
+   ],
+   [
+    "FdGPS",
+    "Faridabad",
+    16
+   ],
+   [
+    "FgUTPS",
+    "Unchahar",
+    35
+   ],
+   [
+    "GADARWARA",
+    "Gadarwara",
+    9
+   ],
+   [
+    "JHABUA",
+    "Jhabua",
+    22
+   ],
+   [
+    "JHAJJAR",
+    "Jhajjar",
+    18
+   ],
+   [
+    "JgGPS",
+    "Jhanor-Gandhar",
+    11
+   ],
+   [
+    "KHARGONE",
+    "Khargone",
+    9
+   ],
+   [
+    "KSTPS",
+    "Korba",
+    28
+   ],
+   [
+    "KUDGI",
+    "Kudgi",
+    13
+   ],
+   [
+    "KdHPS",
+    "Koldam",
+    19
+   ],
+   [
+    "KhSTPS",
+    "Kahalgaon",
+    55
+   ],
+   [
+    "Khurja",
+    "Khurja",
+    35
+   ],
+   [
+    "KwGPS",
+    "Kawas",
+    24
+   ],
+   [
+    "LARA",
+    "Lara",
+    8
+   ],
+   [
+    "MEJA",
+    "Meja",
+    15
+   ],
+   [
+    "MSTPS",
+    "Mouda",
+    24
+   ],
+   [
+    "MTPS",
+    "Kanti",
+    8
+   ],
+   [
+    "NPGC",
+    "NSTPS",
+    23
+   ],
+   [
+    "NcTPS",
+    "Dadri-Coal",
+    64
+   ],
+   [
+    "NorthKP",
+    "North Karanpura",
+    26
+   ],
+   [
+    "Patratu",
+    "Patratu",
+    21
+   ],
+   [
+    "RGPPL",
+    "Ratnagiri",
+    26
+   ],
+   [
+    "RSTPS",
+    "Ramagundam",
+    85
+   ],
+   [
+    "RhSTPS",
+    "Rih
+
+34/35 cases returned data. Saved outputs/tools/*_20260930_1208.* and tests/fixtures/

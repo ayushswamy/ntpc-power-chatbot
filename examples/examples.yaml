@@ -1,0 +1,186 @@
+# =============================================================================
+# examples.yaml - example questions with the tool call the chatbot should make.
+#
+# Used for:
+#   1. few-shot retrieval (Qdrant): the 3 most similar examples are shown to the LLM
+#   2. evaluation (Phase 4): eval/run_eval.py checks tool, arguments and source
+#
+# Fields:
+#   question  what a user types
+#   tool      the planner tool that should be called (see app/agent/tool_specs.py)
+#   args      the arguments it should fill (plant names as the user wrote them)
+#   source    live | daily | mixed | none   (which data the answer must come from)
+#   sql       (sql_query examples only) a good SQL answer - shown to the LLM as a pattern
+#   expect_text           (eval) the answer must contain at least one of these phrases (case-insensitive)
+#   expect_clarification  (eval) the bot must ask a clarifying question instead of answering
+#
+# Relative periods ("yesterday", "this month") are resolved by the tools at run time.
+# {today-1y} / {today-2d} are replaced with real dates (YYYY-MM-DD) when examples are used.
+# To add an example: copy a block, change it, then re-run scripts\index_qdrant.py
+# =============================================================================
+
+examples:
+  # ------------------------------------------------------------------ live (now / current)
+  - {id: L01, question: "What is the current generation of Singrauli?", tool: get_live, args: {plant: Singrauli, metric: gross_generation}, source: live}
+  - {id: L02, question: "How much is Rihand generating right now?", tool: get_live, args: {plant: Rihand, metric: gross_generation}, source: live}
+  - {id: L03, question: "Current total generation of NTPC", tool: get_live, args: {group: ntpc, metric: gross_generation}, source: live}
+  - {id: L04, question: "What is the live load of Vindhyachal unit 13?", tool: get_live, args: {plant: Vindhyachal, unit: 13, metric: gross_generation}, source: live}
+  - {id: L05, question: "Present MW of all coal plants", tool: get_live, args: {group: ntpc, fuel: coal, metric: gross_generation}, source: live}
+  - {id: L06, question: "What is the grid frequency now?", tool: get_live, args: {metric: frequency}, source: live}
+  - {id: L07, question: "Current AG of Korba", tool: get_live, args: {plant: Korba, metric: actual_generation}, source: live}
+  - {id: L08, question: "How much is NTPC generating in the northern region at present?", tool: get_live, args: {group: ntpc, region: NR, metric: gross_generation}, source: live}
+  - {id: L09, question: "Live solar generation of NTPC", tool: get_live, args: {group: ntpc, fuel: solar, metric: gross_generation}, source: live}
+  - {id: L10, question: "Is Barh stage 2 running now?", tool: get_live, args: {plant: Barh, stage: 2, metric: gross_generation}, source: live}
+  - {id: L11, question: "Today's generation of Sipat so far", tool: get_today_so_far, args: {plant: Sipat}, source: live}
+  - {id: L12, question: "How many MU has NTPC generated today?", tool: get_today_so_far, args: {group: ntpc}, source: live}
+  - {id: L13, question: "Which units tripped today?", tool: get_trips, args: {group: ntpc, period: today}, source: live}
+  - {id: L14, question: "Current generation of NTPC standalone plants", tool: get_live, args: {group: ntpc_standalone, metric: gross_generation}, source: live}
+
+  # ------------------------------------------------------------------ mixed (today vs past)
+  - {id: M01, question: "Compare today's generation of Talcher Kaniha with yesterday", tool: compare_periods, args: {plant: Talcher Kaniha, metric: gross_generation, period1: today, period2: yesterday}, source: mixed}
+  - {id: M02, question: "NTPC generation today vs yesterday", tool: compare_periods, args: {group: ntpc, metric: gross_generation, period1: today, period2: yesterday}, source: mixed}
+  - {id: M03, question: "Is Farakka generating more today than on the same day last year?", tool: compare_periods, args: {plant: Farakka, metric: gross_generation, period1: today, period2: "{today-1y}"}, source: mixed}
+  - {id: M04, question: "Kahalgaon today so far versus the day before yesterday", tool: compare_periods, args: {plant: Kahalgaon, metric: gross_generation, period1: today, period2: "{today-2d}"}, source: mixed}
+
+  # ------------------------------------------------------------------ daily values
+  - {id: D01, question: "What was the PLF of Singrauli yesterday?", tool: get_value, args: {plant: Singrauli, metric: plf, period: yesterday}, source: daily}
+  - {id: D02, question: "Gross generation of Rihand on 15 September 2026", tool: get_value, args: {plant: Rihand, metric: gross_generation, period: "2026-09-15"}, source: daily}
+  - {id: D03, question: "NTPC total generation yesterday", tool: get_value, args: {group: ntpc, metric: gross_generation, period: yesterday}, source: daily}
+  - {id: D04, question: "What is the PLF of Mouda this month?", tool: get_value, args: {plant: Mouda, metric: plf, period: this month}, source: daily}
+  - {id: D05, question: "Year to date generation of NTPC coal stations", tool: get_value, args: {group: ntpc, fuel: coal, metric: gross_generation, period: this fy}, source: daily}
+  - {id: D06, question: "Availability of Sipat stage 1 last month", tool: get_value, args: {plant: Sipat, stage: 1, metric: availability, period: last month}, source: daily}
+  - {id: D07, question: "Heat rate of Kudgi in August 2026", tool: get_value, args: {plant: Kudgi, metric: heat_rate, period: "2026-08"}, source: daily}
+  - {id: D08, question: "APC of Barh for FY 2025-26", tool: get_value, args: {plant: Barh, metric: apc, period: "fy 2025-26"}, source: daily}
+  - {id: D09, question: "PLF of unit 3 of Rihand yesterday", tool: get_value, args: {plant: Rihand, unit: 3, metric: plf, period: yesterday}, source: daily}
+  - {id: D10, question: "Generation of Dadri Gas between 1 and 20 September 2026", tool: get_value, args: {plant: Dadri Gas, metric: gross_generation, start: "2026-09-01", end: "2026-09-20"}, source: daily}
+  - {id: D11, question: "What was NTPC's PLF in the last 30 days?", tool: get_value, args: {group: ntpc, metric: plf, period: last 30 days}, source: daily}
+  - {id: D12, question: "Forced outage loss of Korba this year", tool: get_value, args: {plant: Korba, metric: forced_outage_loss, period: this fy}, source: daily}
+  - {id: D13, question: "Declared capacity of Simhadri yesterday", tool: get_value, args: {plant: Simhadri, metric: declared_capacity, period: yesterday}, source: daily}
+  - {id: D14, question: "How many boiler tube leakages at Farakka this FY?", tool: get_value, args: {plant: Farakka, metric: btl_count, period: this fy}, source: daily}
+  - {id: D15, question: "Actual generation of Jhajjar last week", tool: get_value, args: {plant: Jhajjar, metric: actual_generation, period: last 7 days}, source: daily}
+  - {id: D16, question: "Solar generation of NTPC last month", tool: get_value, args: {group: ntpc, fuel: solar, metric: gross_generation, period: last month}, source: daily}
+
+  # ------------------------------------------------------------------ comparisons (past vs past)
+  - {id: C01, question: "Compare Singrauli PLF this month with last month", tool: compare_periods, args: {plant: Singrauli, metric: plf, period1: this month, period2: last month}, source: daily}
+  - {id: C02, question: "NTPC generation this FY vs last FY", tool: compare_periods, args: {group: ntpc, metric: gross_generation, period1: this fy, period2: last fy}, source: daily}
+  - {id: C03, question: "Was Vindhyachal's availability better in August or July 2026?", tool: compare_periods, args: {plant: Vindhyachal, metric: availability, period1: "2026-08", period2: "2026-07"}, source: daily}
+  - {id: C04, question: "Yesterday vs day before yesterday generation of Ramagundam", tool: compare_periods, args: {plant: Ramagundam, metric: gross_generation, period1: yesterday, period2: "{today-2d}"}, source: daily}
+
+  # ------------------------------------------------------------------ trends (charts)
+  - {id: T01, question: "Show the monthly PLF trend of Singrauli this financial year", tool: get_trend, args: {plant: Singrauli, metric: plf, period: this fy, granularity: month}, source: daily}
+  - {id: T02, question: "Daily generation of Barh for the last 30 days", tool: get_trend, args: {plant: Barh, metric: gross_generation, period: last 30 days, granularity: day}, source: daily}
+  - {id: T03, question: "NTPC generation by financial year since 2023", tool: get_trend, args: {group: ntpc, metric: gross_generation, start: "2023-04-01", end: yesterday, granularity: fy}, source: daily}
+  - {id: T04, question: "Plot coal stock of Farakka over the last 15 days", tool: get_trend, args: {plant: Farakka, metric: coal_stock, period: last 15 days, granularity: day}, source: daily}
+
+  # ------------------------------------------------------------------ rankings
+  - {id: R01, question: "Top 5 plants by PLF this month", tool: rank, args: {metric: plf, period: this month, top_n: 5, order: desc, level: plant}, source: daily}
+  - {id: R02, question: "Which coal plant had the lowest PLF yesterday?", tool: rank, args: {metric: plf, period: yesterday, top_n: 1, order: asc, level: plant, fuel: coal}, source: daily}
+  - {id: R03, question: "Units with the highest forced outage loss last month", tool: rank, args: {metric: forced_outage_loss, period: last month, top_n: 10, order: desc, level: unit}, source: daily}
+  - {id: R04, question: "Best heat rate stations this FY", tool: rank, args: {metric: heat_rate, period: this fy, top_n: 10, order: asc, level: plant}, source: daily}
+  - {id: R05, question: "Top 3 generating stations in the western region yesterday", tool: rank, args: {metric: gross_generation, period: yesterday, top_n: 3, order: desc, level: plant, region: WR}, source: daily}
+
+  # ------------------------------------------------------------------ outages, trips
+  - {id: O01, question: "Outages at Singrauli in the last 7 days", tool: get_outages, args: {plant: Singrauli, period: last 7 days}, source: daily}
+  - {id: O02, question: "Which units were under outage yesterday in the eastern region?", tool: get_outages, args: {group: ntpc, region: ER, period: yesterday}, source: daily}
+  - {id: O03, question: "Why was Tanda unit 6 out on 24 September?", tool: get_outages, args: {plant: Tanda, unit: 6, period: "2026-09-24"}, source: daily}
+  - {id: O04, question: "Trips at Kahalgaon this month", tool: get_trips, args: {plant: Kahalgaon, period: this month}, source: daily}
+  - {id: O05, question: "How many unit trips did NTPC have in the last 7 days?", tool: get_trips, args: {group: ntpc, period: last 7 days}, source: daily}
+  - {id: O06, question: "How many forced trips were there at Farakka last month?", tool: get_trips, args: {plant: Farakka, period: last month, trip_type: forced}, source: daily}
+  - {id: D17, question: "SG percentage of Sipat this month", tool: get_value, args: {plant: Sipat, metric: scheduled_generation_percent, period: this month}, source: daily}
+  - {id: D18, question: "Generation of Kawas yesterday", tool: get_value, args: {plant: Kawas, metric: gross_generation, period: yesterday}, source: daily,
+     note: "Plain name = main conventional station (Kawas gas), not Kawas solar."}
+
+  # ------------------------------------------------------------------ coal
+  - {id: F01, question: "Coal stock at Singrauli", tool: get_coal, args: {plant: Singrauli, metric: coal_stock, period: yesterday}, source: daily}
+  - {id: F02, question: "Which plants have the lowest coal stock days?", tool: get_coal, args: {group: ntpc, metric: coal_stock_days, period: yesterday}, source: daily}
+  - {id: F03, question: "Coal received at Rihand last week", tool: get_coal, args: {plant: Rihand, metric: coal_receipt, period: last 7 days}, source: daily}
+  - {id: F04, question: "Coal consumption of Mouda this month", tool: get_coal, args: {plant: Mouda, metric: coal_consumption, period: this month}, source: daily}
+  - {id: F05, question: "Coal stock at Dadri", tool: get_coal, args: {plant: Dadri, metric: coal_stock, period: yesterday}, source: daily,
+     note: "A coal question decides Dadri = Dadri coal (no clarification needed)."}
+
+  # ------------------------------------------------------------------ capacity
+  - {id: K01, question: "What is the installed capacity of NTPC?", tool: get_capacity, args: {group: ntpc}, source: daily}
+  - {id: K02, question: "Capacity of Vindhyachal", tool: get_capacity, args: {plant: Vindhyachal}, source: daily}
+  - {id: K03, question: "What was Barh's capacity on 1 April 2020?", tool: get_capacity, args: {plant: Barh, as_of: "2020-04-01"}, source: daily}
+  - {id: K04, question: "Total solar capacity of NTPC", tool: get_capacity, args: {group: ntpc, fuel: solar}, source: daily}
+
+  # ------------------------------------------------------------------ out of range / not available
+  - {id: X01, question: "PLF of Singrauli in March 2021", tool: get_value, args: {plant: Singrauli, metric: plf, period: "2021-03"}, source: daily,
+     note: "Performance data starts 2023-04-01 - answer must say so, no number.", expect_text: ["01 Apr 2023", "april 2023", "2023-04-01"]}
+  - {id: X02, question: "Scheduled generation of Rihand yesterday", tool: get_value, args: {plant: Rihand, metric: scheduled_generation, period: yesterday}, source: daily,
+     note: "SG re-enabled (decision 3): sg_mu; if SG > DC the answer carries a data-quality warning."}
+  - {id: X03, question: "What is the PLF of Korba right now?", tool: get_value, args: {plant: Korba, metric: plf, period: yesterday}, source: daily,
+     note: "PLF is daily - give yesterday's and say so.", expect_text: ["yesterday", "daily", "once a day"]}
+
+  # ------------------------------------------------------------------ definitions, greetings, clarification, out of scope
+  - {id: G01, question: "What is PLF?", tool: explain_term, args: {term: PLF}, source: none}
+  - {id: G02, question: "What does DC mean?", tool: explain_term, args: {term: DC}, source: none}
+  - {id: G03, question: "Difference between MW and MU", tool: explain_term, args: {term: MU}, source: none}
+  - {id: G04, question: "Hello", tool: reply, args: {text: "Hello! Ask me about NTPC generation, PLF, outages, coal or live plant data."}, source: none}
+  - {id: G05, question: "What is the weather in Delhi?", tool: reply, args: {text: "I can only answer questions about NTPC power plant data."}, source: none, expect_text: ["NTPC", "only answer", "can't", "cannot"]}
+  - {id: G06, question: "Generation of Dadri yesterday", tool: get_value, args: {plant: Dadri, metric: gross_generation, period: yesterday}, source: daily,
+     note: "Dadri is ambiguous (coal / gas / solar) - the entity resolver must ask which one.", expect_clarification: true}
+  - {id: G07, question: "Tell me about the plant", tool: ask_clarification, args: {question: "Which plant would you like to know about, and what information (generation, PLF, outages, coal)?"}, source: none, expect_clarification: true}
+
+  # ------------------------------------------------------------------ text-to-SQL fallback (no predefined tool fits)
+  - id: S01
+    question: "List the units of Rihand with their commissioning dates"
+    tool: sql_query
+    args: {question: "List the units of Rihand with their commissioning dates"}
+    source: daily
+    sql: "SELECT TOP 50 Unit, Stage, CapacityMW, CommissioningDate FROM dbo.Master_Units WHERE PlantCode = '1005' AND IsActive = 1 ORDER BY Unit"
+  - id: S02
+    question: "Which outage reason caused the most generation loss in NTPC last month?"
+    tool: sql_query
+    args: {question: "Which outage reason caused the most generation loss in NTPC last month?"}
+    source: daily
+    sql: "SELECT TOP 20 ParamCode, SUM(MonthCY) AS loss_mu FROM dbo.Performance_DayCum_Station WHERE ReportDate = '2026-08-31' AND ParamCode IN ('outg_blr', 'outg_tur', 'outg_gen', 'outg_cni', 'outg_offsite', 'outg_oprnind', 'outg_fuel', 'outg_grid', 'outg_plan', 'outg_nodmd', 'outg_others', 'rsd_mu') GROUP BY ParamCode ORDER BY loss_mu DESC"
+  - id: S03
+    question: "How many supercritical stages does NTPC have?"
+    tool: sql_query
+    args: {question: "How many supercritical stages does NTPC have?"}
+    source: daily
+    sql: "SELECT TOP 1 COUNT(*) AS stages, SUM(CapacityMW) AS capacity_mw FROM dbo.Master_Stages WHERE Plant_Type = 'Supercritical' AND IsActive = 1 AND IsDeleted = 0"
+  - id: S04
+    question: "Which plants were commissioned after 2024?"
+    tool: sql_query
+    args: {question: "Which plants were commissioned after 2024?"}
+    source: daily
+    sql: "SELECT TOP 100 PlantCode, StationName, GrossCapMW, Comm_Date FROM dbo.Master_Plants WHERE Comm_Date >= '2025-01-01' AND IsActive = 1 ORDER BY Comm_Date"
+  - id: S05
+    question: "Number of trips per trip type in the last 30 days"
+    tool: sql_query
+    args: {question: "Number of trips per trip type in the last 30 days"}
+    source: daily
+    sql: "SELECT TOP 20 TRIP_TYPE, COUNT(*) AS trips FROM dbo.Data_Trips WHERE TRP_DT >= DATEADD(day, -30, CAST(GETDATE() AS date)) GROUP BY TRIP_TYPE ORDER BY trips DESC"
+
+# Multi-turn conversations: later questions depend on the earlier ones (context resolver).
+conversations:
+  - id: CV1
+    turns:
+      - {question: "What is today's generation of Rihand so far?", tool: get_today_so_far, args: {plant: Rihand}, source: live}
+      - {question: "Compare with yesterday", tool: compare_periods, args: {plant: Rihand, metric: gross_generation, period1: today, period2: yesterday}, source: mixed}
+      - {question: "Show the last 30 days", tool: get_trend, args: {plant: Rihand, metric: gross_generation, period: last 30 days, granularity: day}, source: daily}
+  - id: CV2
+    turns:
+      - {question: "PLF of Sipat last month", tool: get_value, args: {plant: Sipat, metric: plf, period: last month}, source: daily}
+      - {question: "And Korba?", tool: get_value, args: {plant: Korba, metric: plf, period: last month}, source: daily}
+      - {question: "What about availability?", tool: get_value, args: {plant: Korba, metric: availability, period: last month}, source: daily}
+  - id: CV3
+    turns:
+      - {question: "Current generation of Farakka", tool: get_live, args: {plant: Farakka, metric: gross_generation}, source: live}
+      - {question: "Which of its units are running?", tool: get_live, args: {plant: Farakka, metric: gross_generation}, source: live}
+      - {question: "Any trips there this week?", tool: get_trips, args: {plant: Farakka, period: last 7 days}, source: daily}
+  - id: CV4
+    turns:
+      - {question: "Top 5 coal plants by PLF yesterday", tool: rank, args: {metric: plf, period: yesterday, top_n: 5, order: desc, level: plant, fuel: coal}, source: daily}
+      - {question: "Now the bottom 5", tool: rank, args: {metric: plf, period: yesterday, top_n: 5, order: asc, level: plant, fuel: coal}, source: daily}
+  - id: CV5
+    turns:
+      - {question: "Coal stock at Barh", tool: get_coal, args: {plant: Barh, metric: coal_stock, period: yesterday}, source: daily}
+      - {question: "How many days is that?", tool: get_coal, args: {plant: Barh, metric: coal_stock_days, period: yesterday}, source: daily}
+      - {question: "Trend for this month", tool: get_trend, args: {plant: Barh, metric: coal_stock_days, period: this month, granularity: day}, source: daily}
+  - id: CV6
+    turns:
+      - {question: "Generation of Dadri yesterday", tool: get_value, args: {plant: Dadri, metric: gross_generation, period: yesterday}, source: daily, expect_clarification: true}
+      - {question: "The coal one", tool: get_value, args: {plant: Dadri Coal, metric: gross_generation, period: yesterday}, source: daily}

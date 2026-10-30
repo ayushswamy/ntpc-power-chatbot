@@ -1,0 +1,159 @@
+Profile tables - 2026-09-25 15:02:59
+
+=== Performance_DayCum_Station (date column: ReportDate) ===
+  valid range 2023-04-01 .. 2026-09-24   1900 rows: no   latest future date: None   (0.07s)
+  sample: 226 rows from 2026-09-24  (0.11s)
+  distinct ParamCode: 226 values (on 2026-09-24, 0.11s)
+
+=== Performance_DayCum_Stage (date column: ReportDate) ===
+  valid range 2023-04-01 .. 2026-09-24   1900 rows: no   latest future date: None   (0.12s)
+  sample: 219 rows from 2026-09-24  (0.04s)
+  distinct ParamCode: 219 values (on 2026-09-24, 0.06s)
+
+=== Performance_DayCum_Unit (date column: ReportDate) ===
+  valid range 2023-04-01 .. 2026-09-24   1900 rows: no   latest future date: None   (0.03s)
+  sample: 994 rows from 2026-09-24  (0.03s)
+  distinct ParamCode: 142 values (on 2026-09-24, 0.05s)
+
+=== Data_Generation (date column: p_date) ===
+  valid range 2001-04-21 00:00:00 .. 2026-09-25 00:00:00   1900 rows: no   latest future date: 2030-04-21 00:00:00   (0.07s)
+  sample: 2 rows from 2026-09-25 00:00:00  (0.02s)
+  distinct skf_code: 2 values (on 2026-09-25 00:00:00, 0.01s)
+  distinct UM: 1 values (on 2026-09-25 00:00:00, 1.50s)
+  distinct p_code: 55 values (on 2026-09-25 00:00:00, 0.01s)
+
+=== XML_RealView (date column: ReportDate) ===
+  valid range 2019-12-23 .. 2026-09-25   1900 rows: no   latest future date: None   (0.04s)
+  sample: 61 rows from 2026-09-25  (0.05s)
+  distinct PlantCode: 143 values (on 2026-09-25, 0.06s)
+  distinct TYPE: 6 values (on 2026-09-25, 0.09s)
+  distinct REGION: 11 values (on 2026-09-25, 0.12s)
+  distinct STATUS: 1 values (on 2026-09-25, 0.73s)
+  distinct BLK: 61 values (on 2026-09-25, 0.02s)
+
+=== Data_Outage (date column: OutageDate) ===
+  valid range 2007-04-01 .. 2026-09-24   1900 rows: no   latest future date: None   (0.04s)
+  sample: 20 rows from 2026-09-24  (0.01s)
+  distinct OutageType: 1 values (on 2026-09-24, 0.01s)
+  distinct RSN_Code: 6 values (on 2026-09-24, 0.01s)
+  distinct PlantCode: 21 values (on 2026-09-24, 0.02s)
+
+=== Data_Partial (date column: OutageDate) ===
+  SKIPPED: no index starts with OutageDate - querying it would scan the whole table
+
+=== Report_Generation (date column: ReportDate) ===
+  valid range 2023-04-01 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (1.29s)
+  sample: 40 rows from 2026-09-24  (0.06s)
+  distinct CY_Group: 3 values (all rows, 1.35s)
+  distinct CY_Fuel: 7 values (all rows, 0.30s)
+  distinct PlantCode: 143 values (all rows, 0.13s)
+
+=== XML_DayFig_Station (date column: ReportDate) ===
+  valid range 2024-07-13 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (2.04s)
+  sample: 5 rows from 2026-09-24  (0.06s)
+  distinct stn_type: 6 values (all rows, 2.57s)
+  distinct stn_fuel_link: 4 values (all rows, 0.62s)
+  distinct stn_cd: 143 values (all rows, 0.17s)
+
+=== XML_DayFig_Stage (date column: ReportDate) ===
+  valid range 2024-07-13 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.55s)
+  sample: 5 rows from 2026-09-24  (0.05s)
+  distinct stn_cd: 143 values (all rows, 0.22s)
+
+=== XML_DayFig_Unit (date column: ReportDate) ===
+  valid range 2024-07-13 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.97s)
+  sample: 5 rows from 2026-09-24  (0.06s)
+  distinct comstatus: 2 values (all rows, 2.19s)
+  distinct cstg: 6 values (all rows, 0.92s)
+
+=== XML_CumYearFig_Station (date column: ReportDate) ===
+  valid range 2024-07-16 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.35s)
+  sample: 5 rows from 2026-09-24  (0.04s)
+  distinct stn_type: 6 values (all rows, 2.39s)
+
+=== XML_CumYearFig_Stage (date column: ReportDate) ===
+  valid range 2024-07-16 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.42s)
+  sample: 5 rows from 2026-09-24  (0.04s)
+
+=== XML_CumYearFig_Unit (date column: ReportDate) ===
+  valid range 2024-07-16 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.92s)
+  sample: 5 rows from 2026-09-24  (0.09s)
+  distinct cstg: 7 values (all rows, 4.32s)
+
+=== Data_DailyFigures (date column: thisday) ===
+  valid range 2010-09-22 00:00:00 .. 2026-09-24 00:00:00   1900 rows: 5   future rows: 0 (up to None)   NULL dates: 2   (0.41s)
+  sample: 5 rows from 2026-09-24 00:00:00  (0.08s)
+  distinct PlantCode: 37 values (all rows, 0.04s)
+  distinct PROJECT: 38 values (all rows, 1.25s)
+
+=== Data_Generation_JV (date column: p_date) ===
+  valid range 2008-07-20 00:00:00 .. 2026-09-24 00:00:00   1900 rows: 602   future rows: 0 (up to None)   NULL dates: 3   (0.25s)
+  sample: 5 rows from 2026-09-24 00:00:00  (0.01s)
+  distinct JVstation_code: 94 values (all rows, 0.09s)
+
+=== Report_OutageBreakup (date column: ReportDate) ===
+  valid range 2024-04-01 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (1.14s)
+  sample: 10 rows from 2026-09-24  (0.13s)
+  distinct OutageType: 3 values (all rows, 0.43s)
+  distinct OutageCategory: 5 values (all rows, 4.29s)
+  distinct AreaName: 17 values (all rows, 1.97s)
+  distinct FinYear: 4 values (all rows, 0.20s)
+
+=== Data_Trips (date column: TRP_DT) ===
+  valid range 2003-10-06 00:00:00 .. 2026-09-25 05:56:42   1900 rows: 73   future rows: 0 (up to None)   NULL dates: 0   (0.12s)
+  sample: 1 rows from 2026-09-25 05:56:42  (0.08s)
+  distinct TRIP_TYPE: 6 values (all rows, 0.19s)
+  distinct PLN_CD: 51 values (all rows, 0.01s)
+
+=== Report_CoalTripData (date column: ReportDate) ===
+  valid range 2022-02-01 .. 2024-05-03   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.20s)
+  sample: 5 rows from 2024-05-03  (0.02s)
+  distinct TYPE: 4 values (all rows, 0.08s)
+  distinct REASON: 6 values (all rows, 0.05s)
+
+=== XML_CoalTrip (date column: TRP_DT) ===
+  valid range 2013-07-15 16:25:59 .. 2026-09-25 05:56:42   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.02s)
+  sample: 1 rows from 2026-09-25 05:56:42  (0.01s)
+  distinct TRIP_TYPE: 4 values (all rows, 0.00s)
+  distinct FuelType: 3 values (all rows, 0.01s)
+
+=== Data_FuelReceipt (date column: txn_date) ===
+  valid range 2007-06-01 00:00:00 .. 2026-09-24 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.93s)
+  sample: 6 rows from 2026-09-24 00:00:00  (0.15s)
+  distinct fuel_code: 13 values (all rows, 0.13s)
+  distinct p_code: 45 values (all rows, 0.06s)
+
+=== Data_FuelConsumption (date column: txn_date) ===
+  valid range 2023-04-01 00:00:00 .. 2026-09-23 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (1.44s)
+  sample: 2 rows from 2026-09-23 00:00:00  (0.18s)
+  distinct fuel_code: 13 values (all rows, 0.12s)
+  distinct txn_code: 226 values (all rows, 0.16s)
+
+=== Data_SPCoal (date column: year) ===
+  valid range 2009-04-01 00:00:00 .. 2026-04-01 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.77s)
+  sample: 5 rows from 2026-04-01 00:00:00  (0.18s)
+  distinct PlantCode: 37 values (all rows, 0.12s)
+
+=== Data_DCSG (date column: gendate) ===
+  valid range 2019-04-01 00:00:00 .. 2024-05-06 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (3.11s)
+  sample: 5 rows from 2024-05-06 00:00:00  (0.04s)
+  distinct site: 322 values (all rows, 0.44s)
+  distinct parameter: 13 values (all rows, 0.45s)
+
+=== DC_SG_MobileApp_dashboard (date column: Date) ===
+  valid range 2025-06-03 00:00:00 .. 2026-09-25 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.01s)
+  sample: 1 rows from 2026-09-25 00:00:00  (0.02s)
+
+=== URS_MobileApp (date column: Date) ===
+  valid range 2025-03-04 00:00:00 .. 2026-09-25 00:00:00   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.05s)
+  sample: 1 rows from 2026-09-25 00:00:00  (0.02s)
+
+=== MorningMeeting_Remarks (date column: ReportDate) ===
+  valid range 2026-09-01 .. 2026-09-24   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.02s)
+  sample: 5 rows from 2026-09-24  (0.02s)
+  distinct RemarkKey: 41 values (all rows, 0.01s)
+
+=== Data_RealTime_Alert (date column: UpdatedOn) ===
+  valid range 2025-05-16 00:01:56.713000 .. 2025-09-23 16:34:43.770000   1900 rows: 0   future rows: 0 (up to None)   NULL dates: 0   (0.03s)
+  sample: 1 rows from 2025-09-23 16:34:43.770000  (0.03s)
+  distinct PlantCode: 11 values (all rows, 0.01s)

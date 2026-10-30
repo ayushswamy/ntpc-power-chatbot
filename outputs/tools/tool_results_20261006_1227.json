@@ -1,0 +1,3402 @@
+[
+ {
+  "case": 1,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   }
+  ],
+  "seconds": 0.22,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Current gross generation",
+    "unit": "MW",
+    "value": 1145,
+    "capacity_mw": 2000,
+    "units_running": [
+     "Singrauli Unit 2 (125 MW)",
+     "Singrauli Unit 3 (119 MW)",
+     "Singrauli Unit 4 (129 MW)",
+     "Singrauli Unit 5 (119 MW)",
+     "Singrauli Unit 6 (351 MW)",
+     "Singrauli Unit 7 (301 MW)"
+    ],
+    "units_not_running": [],
+    "units_without_live_data": [
+     "Singrauli Unit 1"
+    ]
+   },
+   "table": [
+    {
+     "unit": "Singrauli Unit 1",
+     "mw": 0,
+     "capacity_mw": 200,
+     "time": "2026-10-05 16:36",
+     "status": "stale"
+    },
+    {
+     "unit": "Singrauli Unit 2",
+     "mw": 125,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Singrauli Unit 3",
+     "mw": 119,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Singrauli Unit 4",
+     "mw": 129,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Singrauli Unit 5",
+     "mw": 119,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:25",
+     "status": "live"
+    },
+    {
+     "unit": "Singrauli Unit 6",
+     "mw": 351,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:25",
+     "status": "live"
+    },
+    {
+     "unit": "Singrauli Unit 7",
+     "mw": 301,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    }
+   ],
+   "as_of": "2026-10-06 12:26",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "1 unit value(s) are not live (feed older than 30 min) and are not included."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 2,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1005",
+    "unit": 3
+   }
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "Rihand Unit 3",
+    "metric": "Current gross generation",
+    "unit": "MW",
+    "value": 0,
+    "capacity_mw": 500
+   },
+   "table": [
+    {
+     "unit": "Rihand Unit 3",
+     "mw": 0,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    }
+   ],
+   "as_of": "2026-10-06 12:26",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 3,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1005",
+    "stage": "STAGE2"
+   },
+   "actual_generation"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "Rihand Stage 2",
+    "metric": "Current actual generation (AG)",
+    "unit": "MW",
+    "value": null,
+    "feed_stopped_since": "2024-08-23 14:28",
+    "latest_daily_value": 10.49,
+    "latest_daily_unit": "MU",
+    "latest_daily_date": "2026-10-05"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": true,
+   "sources": [
+    "XML_RealView",
+    "Performance_DayCum"
+   ],
+   "notes": [
+    "The live feed for Rihand Stage 2 has not updated since 23 Aug 2024 14:28, so no current value can be given.",
+    "Latest daily figure: Actual generation (AG, ex-bus) 10.49 MU on 05 Oct 2026 (daily report)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 4,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "1017"
+   }
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "Korba",
+    "metric": "Current gross generation",
+    "unit": "MW",
+    "value": 1929,
+    "capacity_mw": 2600,
+    "units_running": [
+     "Korba Unit 1 (147 MW)",
+     "Korba Unit 2 (157 MW)",
+     "Korba Unit 3 (151 MW)",
+     "Korba Unit 4 (360 MW)",
+     "Korba Unit 5 (370 MW)",
+     "Korba Unit 6 (363 MW)",
+     "Korba Unit 7 (382 MW)"
+    ],
+    "units_not_running": [],
+    "units_without_live_data": []
+   },
+   "table": [
+    {
+     "unit": "Korba Unit 1",
+     "mw": 147,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 2",
+     "mw": 157,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 3",
+     "mw": 151,
+     "capacity_mw": 200,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 4",
+     "mw": 360,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:25",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 5",
+     "mw": 370,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 6",
+     "mw": 363,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    },
+    {
+     "unit": "Korba Unit 7",
+     "mw": 382,
+     "capacity_mw": 500,
+     "time": "2026-10-06 12:26",
+     "status": "live"
+    }
+   ],
+   "as_of": "2026-10-06 12:26",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 5,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "plant_code": "2492"
+   }
+  ],
+  "seconds": 0.02,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "AASPL",
+    "metric": "Current gross generation",
+    "unit": "MW",
+    "value": null,
+    "has_live_feed": false,
+    "latest_daily_value": 1.44,
+    "latest_daily_unit": "MU",
+    "latest_daily_date": "2026-10-05"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": true,
+   "sources": [
+    "XML_RealView",
+    "Performance_DayCum"
+   ],
+   "notes": [
+    "AASPL has no live data feed in the real-time system.",
+    "Latest daily figure: Gross generation 1.44 MU on 05 Oct 2026 (daily report)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 6,
+  "tool": "get_realtime",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "frequency"
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime",
+   "ok": true,
+   "answer": {
+    "entity": "Grid",
+    "metric": "Grid frequency",
+    "value": 49.96,
+    "unit": "Hz",
+    "readings": 28
+   },
+   "table": null,
+   "as_of": "2026-10-06 12:28",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Median of the frequency readings reported by plants with a live feed."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 7,
+  "tool": "get_realtime_summary",
+  "args": [
+   {}
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime_summary",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Current gross generation",
+    "value": 37372,
+    "unit": "MW",
+    "plants_included": 62,
+    "plants_total": 144,
+    "capacity_covered_mw": 70291,
+    "capacity_total_mw": 91456,
+    "coverage_percent": 76.9,
+    "block": 50
+   },
+   "table": [
+    {
+     "name": "Coal",
+     "mw": 36157,
+     "capacity_live_mw": 63490,
+     "capacity_mw": 67364,
+     "stages_live": 53,
+     "stages": 59
+    },
+    {
+     "name": "Solar",
+     "mw": 1177,
+     "capacity_live_mw": 2139,
+     "capacity_mw": 11807,
+     "stages_live": 18,
+     "stages": 69
+    },
+    {
+     "name": "Wind",
+     "mw": 38,
+     "capacity_live_mw": 196,
+     "capacity_mw": 1016,
+     "stages_live": 2,
+     "stages": 10
+    },
+    {
+     "name": "Gas",
+     "mw": 0,
+     "capacity_live_mw": 3658,
+     "capacity_mw": 6511,
+     "stages_live": 6,
+     "stages": 11
+    },
+    {
+     "name": "Hydro",
+     "mw": 0,
+     "capacity_live_mw": 808,
+     "capacity_mw": 3757,
+     "stages_live": 2,
+     "stages": 13
+    },
+    {
+     "name": "Other",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 1000,
+     "stages_live": 0,
+     "stages": 1
+    }
+   ],
+   "as_of": "2026-10-06 12:28",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Includes 62 of 144 plants with a live feed (70,291 of 91,456 MW capacity, 77%). Plants without a live value in the last 30 min are not counted.",
+    "Not included (no live feed): AASPL, ACSEPL, ARPFPL-BhujSolar, ARPFPL-JataveeraSolar, ARPFPL-Wind, ARPOPL, ARPSPL, ARPTPL and others.",
+    "Values used range from 12:09 to 12:28."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 8,
+  "tool": "get_realtime_summary",
+  "args": [
+   {
+    "fuel": [
+     "C"
+    ]
+   },
+   "gross_generation",
+   "plant"
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime_summary",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+    "metric": "Current gross generation",
+    "value": 36157,
+    "unit": "MW",
+    "plants_included": 34,
+    "plants_total": 40,
+    "capacity_covered_mw": 63490,
+    "capacity_total_mw": 67364,
+    "coverage_percent": 94.2,
+    "block": 50
+   },
+   "table": [
+    {
+     "name": "Vindhyachal",
+     "mw": 2703,
+     "capacity_live_mw": 4760,
+     "capacity_mw": 4760,
+     "stages_live": 5,
+     "stages": 5
+    },
+    {
+     "name": "Barh",
+     "mw": 2341,
+     "capacity_live_mw": 3300,
+     "capacity_mw": 3300,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Talcher Kaniha",
+     "mw": 2145,
+     "capacity_live_mw": 3000,
+     "capacity_mw": 3000,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Rihand",
+     "mw": 1971,
+     "capacity_live_mw": 3000,
+     "capacity_mw": 3000,
+     "stages_live": 3,
+     "stages": 3
+    },
+    {
+     "name": "Korba",
+     "mw": 1929,
+     "capacity_live_mw": 2600,
+     "capacity_mw": 2600,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Sipat",
+     "mw": 1834,
+     "capacity_live_mw": 2980,
+     "capacity_mw": 2980,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "BIFPCL Maitree (Bangladesh)",
+     "mw": 1312,
+     "capacity_live_mw": 1320,
+     "capacity_mw": 1320,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Farakka",
+     "mw": 1237,
+     "capacity_live_mw": 2100,
+     "capacity_mw": 2100,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Simhadri",
+     "mw": 1232,
+     "capacity_live_mw": 2000,
+     "capacity_mw": 2000,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Ramagundam",
+     "mw": 1201,
+     "capacity_live_mw": 2600,
+     "capacity_mw": 2600,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Mouda",
+     "mw": 1153,
+     "capacity_live_mw": 2320,
+     "capacity_mw": 2320,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Singrauli",
+     "mw": 1145,
+     "capacity_live_mw": 2000,
+     "capacity_mw": 2000,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Lara",
+     "mw": 1138,
+     "capacity_live_mw": 1600,
+     "capacity_mw": 1600,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "NSTPS",
+     "mw": 1131,
+     "capacity_live_mw": 1980,
+     "capacity_mw": 1980,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "North Karanpura",
+     "mw": 1128,
+     "capacity_live_mw": 1980,
+     "capacity_mw": 1980,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Dadri-Coal",
+     "mw": 1124,
+     "capacity_live_mw": 1840,
+     "capacity_mw": 1840,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Kahalgaon",
+     "mw": 1041,
+     "capacity_live_mw": 2340,
+     "capacity_mw": 2340,
+     "stages_live": 2,
+     "stages": 2
+    },
+    {
+     "name": "Kudgi",
+     "mw": 983,
+     "capacity_live_mw": 2400,
+     "capacity_mw": 2400,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Patratu",
+     "mw": 956,
+     "capacity_live_mw": 1600,
+     "capacity_mw": 1600,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Unchahar",
+     "mw": 918,
+     "capacity_live_mw": 1550,
+     "capacity_mw": 1550,
+     "stages_live": 4,
+     "stages": 4
+    },
+    {
+     "name": "Tanda",
+     "mw": 792,
+     "capacity_live_mw": 1320,
+     "capacity_mw": 1320,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Solapur",
+     "mw": 754,
+     "capacity_live_mw": 1320,
+     "capacity_mw": 1320,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Khargone",
+     "mw": 749,
+     "capacity_live_mw": 1320,
+     "capacity_mw": 1320,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Meja",
+     "mw": 748,
+     "capacity_live_mw": 1320,
+     "capacity_mw": 1320,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Jhajjar",
+     "mw": 697,
+     "capacity_live_mw": 1500,
+     "capacity_mw": 1500,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Darlipali",
+     "mw": 624,
+     "capacity_live_mw": 1600,
+     "capacity_mw": 1600,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "BRBCL",
+     "mw": 594,
+     "capacity_live_mw": 1000,
+     "capacity_mw": 1000,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Telangana",
+     "mw": 512,
+     "capacity_live_mw": 1600,
+     "capacity_mw": 1600,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Gadarwara",
+     "mw": 453,
+     "capacity_live_mw": 1600,
+     "capacity_mw": 1600,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Bongaigaon",
+     "mw": 390,
+     "capacity_live_mw": 750,
+     "capacity_mw": 750,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Vallur",
+     "mw": 322,
+     "capacity_live_mw": 1500,
+     "capacity_mw": 1500,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Barauni",
+     "mw": 310,
+     "capacity_live_mw": 500,
+     "capacity_mw": 500,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Bhilai",
+     "mw": 308,
+     "capacity_live_mw": 500,
+     "capacity_mw": 500,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Kanti",
+     "mw": 282,
+     "capacity_live_mw": 390,
+     "capacity_mw": 390,
+     "stages_live": 1,
+     "stages": 1
+    },
+    {
+     "name": "Bhilai-Captive",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 74,
+     "stages_live": 0,
+     "stages": 1
+    },
+    {
+     "name": "Durgapur",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 160,
+     "stages_live": 0,
+     "stages": 1
+    },
+    {
+     "name": "Jhabua",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 600,
+     "stages_live": 0,
+     "stages": 1
+    },
+    {
+     "name": "Khurja",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 1320,
+     "stages_live": 0,
+     "stages": 1
+    },
+    {
+     "name": "Rourkela",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 370,
+     "stages_live": 0,
+     "stages": 1
+    },
+    {
+     "name": "Sinnar",
+     "mw": 0,
+     "capacity_live_mw": 0,
+     "capacity_mw": 1350,
+     "stages_live": 0,
+     "stages": 1
+    }
+   ],
+   "as_of": "2026-10-06 12:28",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Includes 34 of 40 plants with a live feed (63,490 of 67,364 MW capacity, 94%). Plants without a live value in the last 30 min are not counted.",
+    "Not included (no live feed): Bhilai-Captive, Durgapur, Jhabua, Khurja, Rourkela, Sinnar.",
+    "Values used range from 12:09 to 12:28."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 9,
+  "tool": "get_realtime_summary",
+  "args": [
+   {
+    "company": "standalone"
+   },
+   "actual_generation"
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_realtime_summary",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC standalone",
+    "metric": "Current actual generation (AG)",
+    "value": 25866,
+    "unit": "MW",
+    "plants_included": 41,
+    "plants_total": 57,
+    "capacity_covered_mw": 54715,
+    "capacity_total_mw": 60992,
+    "coverage_percent": 89.7,
+    "block": 50
+   },
+   "table": [
+    {
+     "name": "Coal",
+     "mw": 25607,
+     "capacity_live_mw": 50650,
+     "capacity_mw": 54750,
+     "stages_live": 42,
+     "stages": 46
+    },
+    {
+     "name": "Solar",
+     "mw": 259,
+     "capacity_live_mw": 263,
+     "capacity_mw": 1417,
+     "stages_live": 8,
+     "stages": 21
+    },
+    {
+     "name": "Gas",
+     "mw": 0,
+     "capacity_live_mw": 2994,
+     "capacity_mw": 4017,
+     "stages_live": 5,
+     "stages": 7
+    },
+    {
+     "name": "Hydro",
+     "mw": 0,
+     "capacity_live_mw": 808,
+     "capacity_mw": 808,
+     "stages_live": 2,
+     "stages": 2
+    }
+   ],
+   "as_of": "2026-10-06 12:32",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Includes 41 of 57 plants with a live feed (54,715 of 60,992 MW capacity, 90%). Plants without a live value in the last 30 min are not counted.",
+    "Not included (no live feed): Andaman-Solar PV, AntaSolar, Auraiya, Auraiya FSPV, Darlipali, Faridabad-Solar PV, Kawas, Kayamkulam_FS-II and others.",
+    "Values used range from 12:15 to 12:32."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 10,
+  "tool": "get_today_so_far",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   }
+  ],
+  "seconds": 0.13,
+  "result": {
+   "tool": "get_today_so_far",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Gross generation today so far",
+    "value": 20.14,
+    "unit": "MU",
+    "up_to": "12:15",
+    "blocks_completed": 49
+   },
+   "table": null,
+   "as_of": "2026-10-06 12:15",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Estimated from the 49 completed 15-minute blocks of today (up to 12:15); official daily figures are published the next day."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 11,
+  "tool": "get_today_so_far",
+  "args": [
+   {
+    "level": "group"
+   }
+  ],
+  "seconds": 0.26,
+  "result": {
+   "tool": "get_today_so_far",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Gross generation today so far",
+    "value": 592.26,
+    "unit": "MU",
+    "up_to": "12:15",
+    "blocks_completed": 49
+   },
+   "table": [
+    {
+     "name": "Vindhyachal",
+     "mu": 48.92
+    },
+    {
+     "name": "Barh",
+     "mu": 37.58
+    },
+    {
+     "name": "Korba",
+     "mu": 30.29
+    },
+    {
+     "name": "Talcher Kaniha",
+     "mu": 29.46
+    },
+    {
+     "name": "Rihand",
+     "mu": 28.73
+    },
+    {
+     "name": "Sipat",
+     "mu": 27.81
+    },
+    {
+     "name": "Simhadri",
+     "mu": 21.0
+    },
+    {
+     "name": "Farakka",
+     "mu": 20.94
+    },
+    {
+     "name": "NSTPS",
+     "mu": 20.93
+    },
+    {
+     "name": "Singrauli",
+     "mu": 20.14
+    },
+    {
+     "name": "Kahalgaon",
+     "mu": 19.61
+    },
+    {
+     "name": "Ramagundam",
+     "mu": 17.98
+    },
+    {
+     "name": "Lara",
+     "mu": 17.86
+    },
+    {
+     "name": "Dadri-Coal",
+     "mu": 17.74
+    },
+    {
+     "name": "Telangana",
+     "mu": 15.89
+    },
+    {
+     "name": "Mouda",
+     "mu": 15.68
+    },
+    {
+     "name": "Unchahar",
+     "mu": 15.34
+    },
+    {
+     "name": "Kudgi",
+     "mu": 14.86
+    },
+    {
+     "name": "Tanda",
+     "mu": 13.91
+    },
+    {
+     "name": "North Karanpura",
+     "mu": 13.89
+    },
+    {
+     "name": "Khargone",
+     "mu": 13.73
+    },
+    {
+     "name": "Patratu",
+     "mu": 12.77
+    },
+    {
+     "name": "Meja",
+     "mu": 12.16
+    },
+    {
+     "name": "BRBCL",
+     "mu": 10.43
+    },
+    {
+     "name": "Jhajjar",
+     "mu": 9.74
+    },
+    {
+     "name": "Darlipali",
+     "mu": 9.44
+    },
+    {
+     "name": "Solapur",
+     "mu": 9.09
+    },
+    {
+     "name": "Gadarwara",
+     "mu": 8.58
+    },
+    {
+     "name": "Bongaigaon",
+     "mu": 6.39
+    },
+    {
+     "name": "Barauni",
+     "mu": 5.77
+    },
+    {
+     "name": "Vallur",
+     "mu": 5.17
+    },
+    {
+     "name": "Dadri-Gas",
+     "mu": 4.71
+    },
+    {
+     "name": "BIFPCL Maitree (Bangladesh)",
+     "mu": 4.59
+    },
+    {
+     "name": "Kanti",
+     "mu": 4.14
+    },
+    {
+     "name": "Jhanor-Gandhar",
+     "mu": 3.79
+    },
+    {
+     "name": "Auraiya",
+     "mu": 3.75
+    },
+    {
+     "name": "Kawas",
+     "mu": 2.81
+    },
+    {
+     "name": "Bhilai",
+     "mu": 2.77
+    },
+    {
+     "name": "Faridabad",
+     "mu": 2.64
+    },
+    {
+     "name": "Koldam",
+     "mu": 2.03
+    },
+    {
+     "name": "Anta",
+     "mu": 1.64
+    },
+    {
+     "name": "Jetsar",
+     "mu": 1.57
+    },
+    {
+     "name": "Kolyat-SKB2",
+     "mu": 1.31
+    },
+    {
+     "name": "Fategarh",
+     "mu": 0.96
+    },
+    {
+     "name": "Nokhra",
+     "mu": 0.82
+    },
+    {
+     "name": "Ettayapuram",
+     "mu": 0.82
+    },
+    {
+     "name": "Chattargarh",
+     "mu": 0.38
+    },
+    {
+     "name": "Rojmal Wind",
+     "mu": 0.36
+    },
+    {
+     "name": "Kayamkulam Floating",
+     "mu": 0.34
+    },
+    {
+     "name": "Ramagundam-FSPV",
+     "mu": 0.28
+    },
+    {
+     "name": "Mandsaur",
+     "mu": 0.23
+    },
+    {
+     "name": "Dayapar Wind",
+     "mu": 0.13
+    },
+    {
+     "name": "AntaSolar",
+     "mu": 0.09
+    },
+    {
+     "name": "Auraiya-Solar PV",
+     "mu": 0.07
+    },
+    {
+     "name": "Kolyat-SKB1",
+     "mu": 0.06
+    },
+    {
+     "name": "Gandhar",
+     "mu": 0.05
+    },
+    {
+     "name": "Singrauli Solar PV",
+     "mu": 0.03
+    },
+    {
+     "name": "Solapur Solar",
+     "mu": 0.03
+    },
+    {
+     "name": "Talcher Kaniha Solar PV",
+     "mu": 0.02
+    },
+    {
+     "name": "Unchahar Solar PV",
+     "mu": 0.02
+    },
+    {
+     "name": "Dadri Solar PV",
+     "mu": 0.01
+    },
+    {
+     "name": "Ramagundam Solar PV",
+     "mu": 0.01
+    },
+    {
+     "name": "Singrauli Small Hydro",
+     "mu": 0.0
+    }
+   ],
+   "as_of": "2026-10-06 12:15",
+   "is_live": true,
+   "sources": [
+    "XML_RealView"
+   ],
+   "notes": [
+    "Estimated from the 49 completed 15-minute blocks of today (up to 12:15); official daily figures are published the next day.",
+    "4050 stage-block values had no live data and were not counted.",
+    "63 of 144 plants contributed live data."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 12,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "gross_generation",
+   "today",
+   "yesterday"
+  ],
+  "seconds": 0.08,
+  "result": {
+   "tool": "compare_periods",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Gross generation",
+    "unit": "MU",
+    "period1": {
+     "period": "today so far (live, up to 12:15)",
+     "value": 20.14,
+     "unit": "MU",
+     "is_live": true
+    },
+    "period2": {
+     "period": "yesterday (05 Oct 2026)",
+     "value": 40.71,
+     "unit": "MU",
+     "method": "day value",
+     "days": 1
+    },
+    "difference": -20.57,
+    "change_percent": -50.53
+   },
+   "table": null,
+   "as_of": "2026-10-06 12:15",
+   "is_live": true,
+   "sources": [
+    "Performance_DayCum_Station",
+    "XML_RealView"
+   ],
+   "notes": [
+    "Estimated from the 49 completed 15-minute blocks of today (up to 12:15); official daily figures are published the next day.",
+    "Today's value covers only part of the day, so it is not directly comparable with a full day."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 13,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "yesterday"
+  ],
+  "seconds": 0.02,
+  "result": {
+   "tool": "get_daily_metric",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Plant Load Factor (PLF)",
+    "value": 84.81,
+    "unit": "%",
+    "period": "yesterday (05 Oct 2026)",
+    "start": "2026-10-05",
+    "end": "2026-10-05",
+    "method": "day value"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 14,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "plant_code": "1005",
+    "unit": 3
+   },
+   "plf",
+   "yesterday"
+  ],
+  "seconds": 0.02,
+  "result": {
+   "tool": "get_daily_metric",
+   "ok": true,
+   "answer": {
+    "entity": "Rihand Unit 3",
+    "metric": "Plant Load Factor (PLF)",
+    "value": 0.0,
+    "unit": "%",
+    "period": "yesterday (05 Oct 2026)",
+    "start": "2026-10-05",
+    "end": "2026-10-05",
+    "method": "day value"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Unit"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 15,
+  "tool": "get_daily_metric",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "yesterday"
+  ],
+  "seconds": 0.06,
+  "result": {
+   "tool": "get_daily_metric",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Gross generation",
+    "value": 1371.89,
+    "unit": "MU",
+    "period": "yesterday (05 Oct 2026)",
+    "start": "2026-10-05",
+    "end": "2026-10-05",
+    "method": "day value",
+    "plants_with_data": 144,
+    "plants_total": 144
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 16,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "gross_generation",
+   "this month"
+  ],
+  "seconds": 0.02,
+  "result": {
+   "tool": "get_metric_range",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Gross generation",
+    "value": 185.47,
+    "unit": "MU",
+    "period": "01 Oct 2026 to 05 Oct 2026",
+    "start": "2026-10-01",
+    "end": "2026-10-05",
+    "method": "official month-to-date value"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 17,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "group"
+   },
+   "plf",
+   "last 30 days"
+  ],
+  "seconds": 0.8,
+  "result": {
+   "tool": "get_metric_range",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Plant Load Factor (PLF)",
+    "value": 59.27,
+    "unit": "%",
+    "period": "06 Sep 2026 to 05 Oct 2026",
+    "start": "2026-09-06",
+    "end": "2026-10-05",
+    "method": "combined from daily values",
+    "plants_with_data": 144,
+    "plants_total": 144
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "7 value(s) recorded as 0 on days with generation were treated as not reported."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 18,
+  "tool": "get_metric_range",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "2021-01-01",
+   "2021-03-31"
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_metric_range",
+   "ok": false,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Plant Load Factor (PLF)"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily performance data is available from 01 Apr 2023 to 05 Oct 2026; there is no data for 01 Jan 2021 to 31 Mar 2021."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 19,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "this month",
+   "last month"
+  ],
+  "seconds": 0.04,
+  "result": {
+   "tool": "compare_periods",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Plant Load Factor (PLF)",
+    "unit": "%",
+    "period1": {
+     "period": "01 Oct 2026 to 05 Oct 2026",
+     "value": 77.28,
+     "unit": "%",
+     "method": "official month-to-date value",
+     "days": 5
+    },
+    "period2": {
+     "period": "September 2026",
+     "value": 67.05,
+     "unit": "%",
+     "method": "official month-to-date value",
+     "days": 30
+    },
+    "difference": 10.23,
+    "change_percent": 15.26,
+    "difference_note": "difference in percentage points"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 20,
+  "tool": "compare_periods",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "this fy",
+   "last fy"
+  ],
+  "seconds": 0.15,
+  "result": {
+   "tool": "compare_periods",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Gross generation",
+    "unit": "MU",
+    "period1": {
+     "period": "01 Apr 2026 to 05 Oct 2026",
+     "value": 242107.5,
+     "unit": "MU",
+     "method": "official FY-to-date value",
+     "days": 188
+    },
+    "period2": {
+     "period": "FY 2025-26",
+     "value": 431508.02,
+     "unit": "MU",
+     "method": "official FY-to-date value",
+     "days": 365
+    },
+    "difference": -189400.52,
+    "change_percent": -43.89
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026.",
+    "136 of 144 plants in NTPC Group (NTPC + JVs/subsidiaries) have Gross generation data for this period.",
+    "The periods have different lengths (188 vs 365 days), so the totals are not directly comparable."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 21,
+  "tool": "get_trend",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "plf",
+   "this fy",
+   null,
+   "month"
+  ],
+  "seconds": 0.04,
+  "result": {
+   "tool": "get_trend",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Plant Load Factor (PLF)",
+    "unit": "%",
+    "granularity": "month",
+    "start": "2026-04-01",
+    "end": "2026-10-05",
+    "points": 7
+   },
+   "table": [
+    {
+     "period": "Apr 2026",
+     "value": 77.17,
+     "as_of": "2026-04-30"
+    },
+    {
+     "period": "May 2026",
+     "value": 88.25,
+     "as_of": "2026-05-31"
+    },
+    {
+     "period": "Jun 2026",
+     "value": 86.55,
+     "as_of": "2026-06-30"
+    },
+    {
+     "period": "Jul 2026",
+     "value": 84.71,
+     "as_of": "2026-07-31"
+    },
+    {
+     "period": "Aug 2026",
+     "value": 69.65,
+     "as_of": "2026-08-31"
+    },
+    {
+     "period": "Sep 2026",
+     "value": 67.05,
+     "as_of": "2026-09-30"
+    },
+    {
+     "period": "Oct 2026",
+     "value": 77.28,
+     "as_of": "2026-10-05"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026.",
+    "Each month is the full calendar month (the last one up to 05 Oct 2026)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 22,
+  "tool": "get_trend",
+  "args": [
+   {
+    "plant_code": "1014"
+   },
+   "gross_generation",
+   "last 30 days",
+   null,
+   "day"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_trend",
+   "ok": true,
+   "answer": {
+    "entity": "Dadri-Gas",
+    "metric": "Gross generation",
+    "unit": "MU",
+    "granularity": "day",
+    "start": "2026-09-06",
+    "end": "2026-10-05",
+    "points": 30
+   },
+   "table": [
+    {
+     "period": "2026-09-06",
+     "value": 0.38
+    },
+    {
+     "period": "2026-09-07",
+     "value": 5.01
+    },
+    {
+     "period": "2026-09-08",
+     "value": 4.78
+    },
+    {
+     "period": "2026-09-09",
+     "value": 6.32
+    },
+    {
+     "period": "2026-09-10",
+     "value": 5.98
+    },
+    {
+     "period": "2026-09-11",
+     "value": 6.61
+    },
+    {
+     "period": "2026-09-12",
+     "value": 7.87
+    },
+    {
+     "period": "2026-09-13",
+     "value": 0.0
+    },
+    {
+     "period": "2026-09-14",
+     "value": 4.32
+    },
+    {
+     "period": "2026-09-15",
+     "value": 9.66
+    },
+    {
+     "period": "2026-09-16",
+     "value": 8.02
+    },
+    {
+     "period": "2026-09-17",
+     "value": 8.98
+    },
+    {
+     "period": "2026-09-18",
+     "value": 7.63
+    },
+    {
+     "period": "2026-09-19",
+     "value": 7.65
+    },
+    {
+     "period": "2026-09-20",
+     "value": 6.47
+    },
+    {
+     "period": "2026-09-21",
+     "value": 6.24
+    },
+    {
+     "period": "2026-09-22",
+     "value": 6.13
+    },
+    {
+     "period": "2026-09-23",
+     "value": 4.13
+    },
+    {
+     "period": "2026-09-24",
+     "value": 3.87
+    },
+    {
+     "period": "2026-09-25",
+     "value": 3.78
+    },
+    {
+     "period": "2026-09-26",
+     "value": 3.15
+    },
+    {
+     "period": "2026-09-27",
+     "value": 0.06
+    },
+    {
+     "period": "2026-09-28",
+     "value": 3.86
+    },
+    {
+     "period": "2026-09-29",
+     "value": 7.3
+    },
+    {
+     "period": "2026-09-30",
+     "value": 7.02
+    },
+    {
+     "period": "2026-10-01",
+     "value": 8.29
+    },
+    {
+     "period": "2026-10-02",
+     "value": 5.1
+    },
+    {
+     "period": "2026-10-03",
+     "value": 6.3
+    },
+    {
+     "period": "2026-10-04",
+     "value": 7.13
+    },
+    {
+     "period": "2026-10-05",
+     "value": 6.03
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 23,
+  "tool": "get_trend",
+  "args": [
+   {
+    "level": "group"
+   },
+   "gross_generation",
+   "2023-04-01",
+   "yesterday",
+   "fy"
+  ],
+  "seconds": 0.25,
+  "result": {
+   "tool": "get_trend",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "metric": "Gross generation",
+    "unit": "MU",
+    "granularity": "fy",
+    "start": "2023-04-01",
+    "end": "2026-10-05",
+    "points": 4
+   },
+   "table": [
+    {
+     "period": "FY 2023-24",
+     "value": 422247.87,
+     "as_of": "2024-03-31"
+    },
+    {
+     "period": "FY 2024-25",
+     "value": 439813.0,
+     "as_of": "2025-03-31"
+    },
+    {
+     "period": "FY 2025-26",
+     "value": 431508.02,
+     "as_of": "2026-03-31"
+    },
+    {
+     "period": "FY 2026-27",
+     "value": 242107.5,
+     "as_of": "2026-10-05"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Each fy is the full calendar financial year (the last one up to 05 Oct 2026)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 24,
+  "tool": "rank_entities",
+  "args": [
+   "plf",
+   "this month",
+   null,
+   10
+  ],
+  "seconds": 0.16,
+  "result": {
+   "tool": "rank_entities",
+   "ok": true,
+   "answer": {
+    "metric": "Plant Load Factor (PLF)",
+    "unit": "%",
+    "period": "01 Oct 2026 to 05 Oct 2026",
+    "order": "desc",
+    "level": "plant",
+    "scope": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "count": 10
+   },
+   "table": [
+    {
+     "rank": 1,
+     "name": "Kameng HEP",
+     "plant_code": "3012",
+     "value": 98.36,
+     "unit": "%"
+    },
+    {
+     "rank": 2,
+     "name": "Turial HEP",
+     "plant_code": "3010",
+     "value": 95.83,
+     "unit": "%"
+    },
+    {
+     "rank": 3,
+     "name": "Korba",
+     "plant_code": "1017",
+     "value": 92.31,
+     "unit": "%"
+    },
+    {
+     "rank": 4,
+     "name": "Jhabua",
+     "plant_code": "2420",
+     "value": 91.67,
+     "unit": "%"
+    },
+    {
+     "rank": 5,
+     "name": "Barauni",
+     "plant_code": "1072",
+     "value": 90.88,
+     "unit": "%"
+    },
+    {
+     "rank": 6,
+     "name": "Lara",
+     "plant_code": "1047",
+     "value": 90.21,
+     "unit": "%"
+    },
+    {
+     "rank": 7,
+     "name": "Sipat",
+     "plant_code": "1019",
+     "value": 89.37,
+     "unit": "%"
+    },
+    {
+     "rank": 8,
+     "name": "Bhilai",
+     "plant_code": "2030",
+     "value": 88.28,
+     "unit": "%"
+    },
+    {
+     "rank": 9,
+     "name": "Barh",
+     "plant_code": "1028",
+     "value": 88.18,
+     "unit": "%"
+    },
+    {
+     "rank": 10,
+     "name": "Tanda",
+     "plant_code": "1007",
+     "value": 86.95,
+     "unit": "%"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026.",
+    "Ranked 144 plants in NTPC Group (NTPC + JVs/subsidiaries) that have data."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 25,
+  "tool": "rank_entities",
+  "args": [
+   "plf",
+   "this month",
+   null,
+   5,
+   "asc",
+   "plant",
+   {
+    "fuel": [
+     "C"
+    ]
+   }
+  ],
+  "seconds": 0.07,
+  "result": {
+   "tool": "rank_entities",
+   "ok": true,
+   "answer": {
+    "metric": "Plant Load Factor (PLF)",
+    "unit": "%",
+    "period": "01 Oct 2026 to 05 Oct 2026",
+    "order": "asc",
+    "level": "plant",
+    "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+    "count": 5
+   },
+   "table": [
+    {
+     "rank": 1,
+     "name": "BIFPCL Maitree (Bangladesh)",
+     "plant_code": "2079",
+     "value": 0.0,
+     "unit": "%"
+    },
+    {
+     "rank": 2,
+     "name": "Sinnar",
+     "plant_code": "2593",
+     "value": 0.0,
+     "unit": "%"
+    },
+    {
+     "rank": 3,
+     "name": "Bhilai-Captive",
+     "plant_code": "2130",
+     "value": 9.91,
+     "unit": "%"
+    },
+    {
+     "rank": 4,
+     "name": "Gadarwara",
+     "plant_code": "1049",
+     "value": 25.79,
+     "unit": "%"
+    },
+    {
+     "rank": 5,
+     "name": "Jhajjar",
+     "plant_code": "2040",
+     "value": 48.64,
+     "unit": "%"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Daily figures are up to 05 Oct 2026.",
+    "Ranked 40 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data.",
+    "2 plant(s) show 0 with no generation (shut down for the whole period)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 26,
+  "tool": "rank_entities",
+  "args": [
+   "forced_outage_loss",
+   "last month",
+   null,
+   5,
+   "desc",
+   "unit"
+  ],
+  "seconds": 0.18,
+  "result": {
+   "tool": "rank_entities",
+   "ok": true,
+   "answer": {
+    "metric": "Forced outage loss (equipment)",
+    "unit": "MU",
+    "period": "01 Sep 2026 to 30 Sep 2026",
+    "order": "desc",
+    "level": "unit",
+    "scope": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "count": 5
+   },
+   "table": [
+    {
+     "rank": 1,
+     "name": "Vallur Unit 3",
+     "plant_code": "2050",
+     "value": 116.49,
+     "unit": "MU"
+    },
+    {
+     "rank": 2,
+     "name": "Barh Unit 1",
+     "plant_code": "1028",
+     "value": 106.37,
+     "unit": "MU"
+    },
+    {
+     "rank": 3,
+     "name": "Lara Unit 2",
+     "plant_code": "1047",
+     "value": 79.16,
+     "unit": "MU"
+    },
+    {
+     "rank": 4,
+     "name": "Barh Unit 3",
+     "plant_code": "1028",
+     "value": 77.7,
+     "unit": "MU"
+    },
+    {
+     "rank": 5,
+     "name": "Ramagundam Unit 2",
+     "plant_code": "1033",
+     "value": 65.06,
+     "unit": "MU"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Unit"
+   ],
+   "notes": [
+    "Ranked 348 units in NTPC Group (NTPC + JVs/subsidiaries) that have data."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 27,
+  "tool": "get_outages",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "last 7 days"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_outages",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "period": "29 Sep 2026 to 05 Oct 2026",
+    "units_affected": 1,
+    "new_outages_started": 0,
+    "unit_days_out_records": 7,
+    "generation_loss_mu": 33.6,
+    "units_still_out_at_end": 1,
+    "loss_by_reason": [
+     {
+      "reason": "Planned Outage",
+      "loss_mu": 33.6
+     }
+    ]
+   },
+   "table": [
+    {
+     "date": "2026-09-29",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-09-30",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-01",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-02",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-03",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-04",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Data_Outage",
+    "Master_OutageCodes"
+   ],
+   "notes": [
+    "The table has one row per unit per day out; 'new' = the outage started that day, otherwise the unit was already out from an earlier day. 'back_at 24:00' means still out at midnight."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 28,
+  "tool": "get_outages",
+  "args": [
+   {
+    "level": "group",
+    "scope": {
+     "region": "NR"
+    }
+   },
+   "yesterday"
+  ],
+  "seconds": 0.01,
+  "result": {
+   "tool": "get_outages",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries), region NR",
+    "period": "05 Oct 2026",
+    "units_affected": 22,
+    "new_outages_started": 20,
+    "unit_days_out_records": 30,
+    "generation_loss_mu": 61.98,
+    "units_still_out_at_end": 7,
+    "loss_by_reason": [
+     {
+      "reason": "No Demand / Regulation",
+      "loss_mu": 27.76
+     },
+     {
+      "reason": "Planned Outage",
+      "loss_mu": 21.84
+     },
+     {
+      "reason": "Fuel Primary- Coal,  Gas & Water",
+      "loss_mu": 12.38
+     }
+    ]
+   },
+   "table": [
+    {
+     "date": "2026-10-05",
+     "unit": "Singrauli Unit 1",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 4.8,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Rihand Unit 3",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 12.0,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 1",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:00",
+     "back_at": "17:55",
+     "hours": 17.92,
+     "loss_mu": 1.992,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 2",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:00",
+     "back_at": "16:40",
+     "hours": 16.67,
+     "loss_mu": 1.853,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 3",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:28",
+     "back_at": "15:45",
+     "hours": 14.28,
+     "loss_mu": 1.588,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 4",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:16",
+     "back_at": "13:28",
+     "hours": 12.2,
+     "loss_mu": 1.357,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 5",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:00",
+     "back_at": "18:46",
+     "hours": 18.77,
+     "loss_mu": 2.051,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Auraiya Unit 6",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:17",
+     "back_at": "15:41",
+     "hours": 14.4,
+     "loss_mu": 1.574,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 1",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:18",
+     "back_at": "16:20",
+     "hours": 15.03,
+     "loss_mu": 1.957,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 2",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:45",
+     "back_at": "14:01",
+     "hours": 12.27,
+     "loss_mu": 1.597,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 3",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:43",
+     "back_at": "16:44",
+     "hours": 16.02,
+     "loss_mu": 2.085,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 4",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:56",
+     "back_at": "14:00",
+     "hours": 13.07,
+     "loss_mu": 1.701,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 5",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "01:41",
+     "back_at": "16:06",
+     "hours": 14.42,
+     "loss_mu": 2.228,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Dadri-Gas Unit 6",
+     "reason": "No Demand / Regulation",
+     "detail": "Low Schedule",
+     "out_from": "00:49",
+     "back_at": "16:32",
+     "hours": 15.72,
+     "loss_mu": 2.428,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Faridabad Unit 1",
+     "reason": "No Demand / Regulation",
+     "detail": "No Schedule For Open Cycle Opn",
+     "out_from": "03:41",
+     "back_at": "15:00",
+     "hours": 11.32,
+     "loss_mu": 1.559,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Faridabad Unit 2",
+     "reason": "No Demand / Regulation",
+     "detail": "No Schedule For Open Cycle Opn",
+     "out_from": "03:12",
+     "back_at": "16:17",
+     "hours": 13.08,
+     "loss_mu": 1.802,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Faridabad Unit 3",
+     "reason": "No Demand / Regulation",
+     "detail": "No Schedule For Open Cycle Opn",
+     "out_from": "03:15",
+     "back_at": "15:58",
+     "hours": 12.72,
+     "loss_mu": 1.985,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Vindhyachal Unit 5",
+     "reason": "Planned Outage",
+     "detail": "Planned Overhaul Blr,Turb&Gen",
+     "out_from": "00:00",
+     "back_at": "24:00",
+     "hours": 24.0,
+     "loss_mu": 5.04,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 1",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "00:00",
+     "back_at": "05:25",
+     "hours": 5.42,
+     "loss_mu": 1.083,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 1",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "08:15",
+     "back_at": "17:13",
+     "hours": 8.97,
+     "loss_mu": 1.793,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 1",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "23:15",
+     "back_at": "24:00",
+     "hours": 0.75,
+     "loss_mu": 0.15,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 2",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "00:00",
+     "back_at": "05:11",
+     "hours": 5.18,
+     "loss_mu": 1.037,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 2",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "08:00",
+     "back_at": "17:27",
+     "hours": 9.45,
+     "loss_mu": 1.89,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 2",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "23:00",
+     "back_at": "24:00",
+     "hours": 1.0,
+     "loss_mu": 0.2,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 3",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "00:00",
+     "back_at": "04:59",
+     "hours": 4.98,
+     "loss_mu": 0.997,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 3",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "07:29",
+     "back_at": "16:59",
+     "hours": 9.5,
+     "loss_mu": 1.9,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 3",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "22:45",
+     "back_at": "24:00",
+     "hours": 1.25,
+     "loss_mu": 0.25,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 4",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "00:00",
+     "back_at": "04:42",
+     "hours": 4.7,
+     "loss_mu": 0.94,
+     "new": false
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 4",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "07:29",
+     "back_at": "16:42",
+     "hours": 9.22,
+     "loss_mu": 1.843,
+     "new": true
+    },
+    {
+     "date": "2026-10-05",
+     "unit": "Koldam Unit 4",
+     "reason": "Fuel Primary- Coal,  Gas & Water",
+     "detail": "Less Water Inflow",
+     "out_from": "22:30",
+     "back_at": "24:00",
+     "hours": 1.5,
+     "loss_mu": 0.3,
+     "new": true
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Data_Outage",
+    "Master_OutageCodes"
+   ],
+   "notes": [
+    "The table has one row per unit per day out; 'new' = the outage started that day, otherwise the unit was already out from an earlier day. 'back_at 24:00' means still out at midnight."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 29,
+  "tool": "get_trips",
+  "args": [
+   {
+    "level": "group"
+   },
+   "last 7 days",
+   "today"
+  ],
+  "seconds": 0.02,
+  "result": {
+   "tool": "get_trips",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "period": "29 Sep 2026 to 06 Oct 2026",
+    "trips": 26,
+    "not_yet_revived": 11,
+    "by_type": {
+     "Forced outage": 24,
+     "S (meaning not confirmed)": 1,
+     "Planned outage": 1
+    }
+   },
+   "table": [
+    {
+     "tripped_at": "2026-10-06 12:01",
+     "unit": "Kahalgaon Unit 4",
+     "reason": "Generator H2 lekaage",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-07 12:19",
+     "analysis": "Stopped at 12:01 due to generator H2 leakage at"
+    },
+    {
+     "tripped_at": "2026-10-06 10:28",
+     "unit": "Vindhyachal Unit 11",
+     "reason": "TG vib hi",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-08 10:38",
+     "analysis": "Stopped at 10:28 hrs of 06.10.2026 due to TG vib Hi"
+    },
+    {
+     "tripped_at": "2026-10-06 09:02",
+     "unit": "Telangana Unit 2",
+     "reason": "BTL-27m cor-2",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-09 09:23",
+     "analysis": "3rd BTL since COD: 01.03.2024. Last BTL-WW: 02.07.2026 - 05.07.2026, cooling i/p"
+    },
+    {
+     "tripped_at": "2026-10-06 05:00",
+     "unit": "Khurja Unit 1",
+     "reason": "Unit running",
+     "type": "S (meaning not confirmed)",
+     "revived_at": "1900-01-01 00:00",
+     "expected_revival": null,
+     "analysis": ""
+    },
+    {
+     "tripped_at": "2026-10-06 05:00",
+     "unit": "Bongaigaon Unit 3",
+     "reason": "BTL-2nd pass 37m",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-08 04:15",
+     "analysis": "4th BTL since OH: 25/02/2025 - 14/04/2025, Last BTL-LTSH: 03/12/2025 - 06/12/2025. Cooling ip"
+    },
+    {
+     "tripped_at": "2026-10-06 03:39",
+     "unit": "Patratu Unit 2",
+     "reason": "HPCV-1 control oil lkg",
+     "type": "Forced outage",
+     "revived_at": "2026-10-06 04:15",
+     "expected_revival": null,
+     "analysis": "HPCV1 actuator oil inlet flange due to oring damage, attended, BLU done at 05:38 hrs of 06.10.2026, sync'd at 09:26 hrs of 06.10.2026."
+    },
+    {
+     "tripped_at": "2026-10-05 23:02",
+     "unit": "Khurja Unit 1",
+     "reason": "Flame Failure",
+     "type": "Forced outage",
+     "revived_at": "2026-10-06 00:17",
+     "expected_revival": null,
+     "analysis": "Boiler Light Up done at 00:11 hrs of 06.10.2026"
+    },
+    {
+     "tripped_at": "2026-10-05 18:00",
+     "unit": "Anta Unit 3",
+     "reason": "Leakage from WHRB.",
+     "type": "Forced outage",
+     "revived_at": "2026-10-06 09:43",
+     "expected_revival": null,
+     "analysis": "Leakage from WHRB. DC withdrawn wef 18:00 hrs of 05.10.2026. Cooling i/p."
+    },
+    {
+     "tripped_at": "2026-10-05 09:37",
+     "unit": "Sipat Unit 5",
+     "reason": "BTL-WW(Gooseneck area)",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-07 11:28",
+     "analysis": "5Th BTL since AOH:26.07.2025-19.09.2025, last BTL-Penthouse:27.06.2026-29.06.2026. total 4 joints found, cutting ip"
+    },
+    {
+     "tripped_at": "2026-10-05 06:13",
+     "unit": "Vallur Unit 1",
+     "reason": "BTL-S panel",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-07 05:03",
+     "analysis": "Stopped at 06:13 hrs of 05.10.2026 due to BTL-S panel, 4th BTL since PO: 01.12.2025-13.01.2026. Last BTL(WW)- 15.07.2026 - 18.07.2026. Total 2 joints found, tube cutting i/p."
+    },
+    {
+     "tripped_at": "2026-10-05 03:03",
+     "unit": "Darlipali Unit 1",
+     "reason": "BTL-WW 29m",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-07 08:18",
+     "analysis": "Stopped at 03:03 hrs of 05.10.2026 due to BTL-WW (29m),1st BTL since last OH: 3/8/2026-14/9/2026. Total 8 joints found, welding ip"
+    },
+    {
+     "tripped_at": "2026-10-04 18:00",
+     "unit": "Ramagundam Unit 5",
+     "reason": "BTL-PtSH",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-06 18:03",
+     "analysis": "Stopped at 18:00 hrs of 04.10.2026, BTL-Gooseneck Area (1st BTL Since PO: 17.08.2026-30.09.2026), 2 joints found, attended. BLU done at 08:00 hrs today."
+    },
+    {
+     "tripped_at": "2026-10-04 13:42",
+     "unit": "Mouda Unit 1",
+     "reason": "BTL-Eco",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-06 13:49",
+     "analysis": "Stopped at 13:42 hrs of 04.10.2026 due to BTL-Eco (3rd BTL Since PO: 15.06.2025-22.07.2025, Last BTL -WW: 14.09.2026 - 17.09.2026), Total 14 joints work done, 3 joints failed in RT, attended, 6 joints found during thickness check, RTdone, Boiler filling i/p."
+    },
+    {
+     "tripped_at": "2026-10-04 04:00",
+     "unit": "Vallur Unit 3",
+     "reason": "BTL-WW- 42mtr",
+     "type": "Forced outage",
+     "revived_at": "2026-10-06 04:14",
+     "expected_revival": null,
+     "analysis": "Stopped at 04:00 hrs of 04.10.2026.due to BTL-WW (4th BTL since last OH: 23.06.2025-07.08.2025, Last BTL: 6/17/2026 - 6/19/2026 (WW 50m). Total 12 joints found, work done, RT done. Boiling filling done, 4joints found on inspection. work done,Boiler Filling done.Inspection i/p"
+    },
+    {
+     "tripped_at": "2026-10-03 14:06",
+     "unit": "Gadarwara Unit 1",
+     "reason": "Leakage from PtSH header vent.",
+     "type": "Forced outage",
+     "revived_at": "2026-10-05 09:16",
+     "expected_revival": null,
+     "analysis": "Stopped on 09:40 Hrs. of 03-10-2026 on Leakage from PTSH header vent, work done. Boiler filling and checking done.BLU done at 22:52 hrs of 04.10.2026.,sync'd at 08:52 hrs of 05.10.2026"
+    },
+    {
+     "tripped_at": "2026-10-03 08:31",
+     "unit": "Unchahar Unit 6",
+     "reason": "Ash Build up in boiler",
+     "type": "Forced outage",
+     "revived_at": "2026-10-04 09:16",
+     "expected_revival": null,
+     "analysis": "Stopped on 08:31 Hrs. of 03-10-2026 on Ash Build up in boiler, Ash Build up in S-panel (9.5 m-LHS). Poking and jet hammering i/p. Clearance expected tomorrow early morning."
+    },
+    {
+     "tripped_at": "2026-10-03 00:52",
+     "unit": "Kahalgaon Unit 7",
+     "reason": "BTL - WW",
+     "type": "Forced outage",
+     "revived_at": "2026-10-04 17:30",
+     "expected_revival": null,
+     "analysis": "Stopped on 00:52 Hrs. of 03-10-2026 on BTL - 55mtr, 6th BTL since PO: 14.07.2025-24.08.2025, last BTL-RH: 01/09/2026 - 04/09/2026. Total 2 tubes found, work done. Boiler filling done, BLU done at 12:11 hrs of 04.10.2026, Syn expected by 18:30 hrs of 04.10.2026."
+    },
+    {
+     "tripped_at": "2026-10-02 10:09",
+     "unit": "BRBCL Unit 2",
+     "reason": "BTL-WW",
+     "type": "Forced outage",
+     "revived_at": "2026-10-03 19:33",
+     "expected_revival": null,
+     "analysis": "2nd BTL Since last OH 06-11-25 to 17-12-2025. Last BTL-WW: 03/07/2026-05/07/2026. 2 joint identified welding done . Rt done. BLU done at 18:12 hrs of 03.10.2026."
+    },
+    {
+     "tripped_at": "2026-10-02 09:55",
+     "unit": "Jhajjar Unit 2",
+     "reason": "Coal feeding issues",
+     "type": "Forced outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-06 19:57",
+     "analysis": "Stopped on 09:55 Hrs. of 02-10-2026 on Coal feeding issues, Mill CDF were not available while unit was running on oil support (Mill-C/F (scrapper damage), Mill-D (Reject choke)). PAPH -A/B seal setting i/p. GT-B cooler Oil Flow Indicator replaced and auto change over checked. Vacuum trip device repl"
+    },
+    {
+     "tripped_at": "2026-10-02 09:33",
+     "unit": "Vindhyachal Unit 7",
+     "reason": "BTL-S panel",
+     "type": "Forced outage",
+     "revived_at": "2026-10-04 09:41",
+     "expected_revival": null,
+     "analysis": "2nd BTL Since Last OH: 18.11.25-05.01.26, Last BTL-Eco: 12/04/2026-14/04/2026. 4 joints identified, welding done. BLU done at 18:20 hrs of 03-10-2026."
+    },
+    {
+     "tripped_at": "2026-10-01 19:09",
+     "unit": "NSTPS Unit 2",
+     "reason": "BTL-LTRH 70m",
+     "type": "Forced outage",
+     "revived_at": "2026-10-05 08:10",
+     "expected_revival": null,
+     "analysis": "Stopped on 19:09 Hrs. of 01-10-2026 on BTL-LTRH 70m, 7th BTL since O/H:15.12.2023-09.02.2024, last BTL-PTSH 80m: 27.09.2026-01.10.2026), Total 26 joints identified. Welding work done, during RT 2 joints failed. Work done.24/26 joints SR done, remaining 2 joints done, SR done. Sync at 18:45 hrs of 05"
+    },
+    {
+     "tripped_at": "2026-10-01 17:07",
+     "unit": "Dadri-Coal Unit 3",
+     "reason": "Drum Level Low",
+     "type": "Forced outage",
+     "revived_at": "2026-10-01 17:29",
+     "expected_revival": null,
+     "analysis": "Tripped at 17:07 hrs of 01.10.2026 due to drum level low. During ramp up, when mill F taken i/s, drum pressure increased and drum safety valve lifted and as pressure dropped, coal flow increased and again drum safety valve lifted due to which drum level got disturbed and unit trip on drum level low."
+    },
+    {
+     "tripped_at": "2026-10-01 11:22",
+     "unit": "Kahalgaon Unit 4",
+     "reason": "Generator H2 leakage",
+     "type": "Forced outage",
+     "revived_at": "2026-10-02 08:16",
+     "expected_revival": null,
+     "analysis": "Stopped at 11:22 hrs of 01.10.2026 due to H2 leakage from Gen Bushing. R-phase neutral bushing tightness done. BLU done at 0006 hrs of 02.10.2026, HPCV drain line lkg observed, boiler boxed up. BLU clearance expected by 0900 hrs today"
+    },
+    {
+     "tripped_at": "2026-10-01 11:00",
+     "unit": "Kawas Unit 5",
+     "reason": "AOH for 20 days (R0:20.10.2026)",
+     "type": "Planned outage",
+     "revived_at": null,
+     "expected_revival": "2026-10-20 18:59",
+     "analysis": "Taken in PO for AOH (20 days) since 11:00 hrs of 01.10.2026"
+    },
+    {
+     "tripped_at": "2026-09-29 10:35",
+     "unit": "Barh Unit 3",
+     "reason": "BTL-ECO",
+     "type": "Forced outage",
+     "revived_at": "2026-10-01 05:44",
+     "expected_revival": null,
+     "analysis": "12th BTL since COD: 01.07.2025, Last BTL: 17.09.26-20.09.26 (LTRH), eco-4 tubes, SR done, gooseneck-1 tube, welding done, Shielding work done. BLU done at 05:21 hrs of 01.10.2026."
+    },
+    {
+     "tripped_at": "2026-09-29 03:06",
+     "unit": "Barauni Unit 8",
+     "reason": "Flame failure",
+     "type": "Forced outage",
+     "revived_at": "2026-09-29 03:36",
+     "expected_revival": null,
+     "analysis": "Sync ta 07:24 hrs of 29.09.2026"
+    }
+   ],
+   "as_of": "2026-10-06 12:27",
+   "is_live": true,
+   "sources": [
+    "Data_Trips"
+   ],
+   "notes": [
+    "Trip types S and C are shown as recorded; their meanings are not confirmed yet."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 30,
+  "tool": "get_trips",
+  "args": [
+   {
+    "plant_code": "1086"
+   },
+   "last 30 days",
+   "today"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_trips",
+   "ok": true,
+   "answer": {
+    "entity": "NSTPS",
+    "period": "06 Sep 2026 to 06 Oct 2026",
+    "trips": 3,
+    "not_yet_revived": 0,
+    "by_type": {
+     "Forced outage": 3
+    }
+   },
+   "table": [
+    {
+     "tripped_at": "2026-10-01 19:09",
+     "unit": "NSTPS Unit 2",
+     "reason": "BTL-LTRH 70m",
+     "type": "Forced outage",
+     "revived_at": "2026-10-05 08:10",
+     "expected_revival": null,
+     "analysis": "Stopped on 19:09 Hrs. of 01-10-2026 on BTL-LTRH 70m, 7th BTL since O/H:15.12.2023-09.02.2024, last BTL-PTSH 80m: 27.09.2026-01.10.2026), Total 26 joints identified. Welding work done, during RT 2 joints failed. Work done.24/26 joints SR done, remaining 2 joints done, SR done. Sync at 18:45 hrs of 05"
+    },
+    {
+     "tripped_at": "2026-09-27 01:27",
+     "unit": "NSTPS Unit 2",
+     "reason": "BTL-PtSH",
+     "type": "Forced outage",
+     "revived_at": "2026-10-01 08:20",
+     "expected_revival": null,
+     "analysis": "Stopped at 01:27 hrs of 27.09.2026, BTL-PtSH (6th BTL since O/H:15.12.2023-09.02.2024, last BTL-FSH: 11.05.2026-15.05.2026). Total 4 joints, welding done, SR done. LPBP-B line leakage (crake in the dump tube i.e. downstream of LPBP CV), welding done, SR done. Boiler filling done. BLU done at 23:02 h"
+    },
+    {
+     "tripped_at": "2026-09-12 16:34",
+     "unit": "NSTPS Unit 3",
+     "reason": "BTL-WW 20m",
+     "type": "Forced outage",
+     "revived_at": "2026-09-14 16:53",
+     "expected_revival": null,
+     "analysis": "9th BTL since AOH: 06/12/2024- 22/01/2025, Last BTL: 10.05.26-12.05.26(WW). Total 5 joints found, Attended. Boiler filling done, BLU done at 00:03 hrs of 15-09-2026 sync exp. by 09:00 hrs today"
+    }
+   ],
+   "as_of": "2026-10-06 12:27",
+   "is_live": true,
+   "sources": [
+    "Data_Trips"
+   ],
+   "notes": [],
+   "error": null
+  }
+ },
+ {
+  "case": 31,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "coal_stock",
+   "yesterday"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_metric_range",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Coal stock",
+    "value": 118376,
+    "unit": "tonnes",
+    "period": "05 Oct 2026",
+    "start": "2026-10-05",
+    "end": "2026-10-05",
+    "method": "closing value on 05 Oct 2026"
+   },
+   "table": null,
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Unit assumed tonnes - to be confirmed."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 32,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "group",
+    "scope": {
+     "fuel": [
+      "C"
+     ]
+    }
+   },
+   "coal_stock_days",
+   "yesterday"
+  ],
+  "seconds": 0.09,
+  "result": {
+   "tool": "get_coal",
+   "ok": true,
+   "answer": {
+    "metric": "Coal stock (days)",
+    "unit": "days",
+    "period": "05 Oct 2026",
+    "order": "asc",
+    "level": "plant",
+    "scope": "NTPC Group (NTPC + JVs/subsidiaries), coal plants",
+    "count": 29
+   },
+   "table": [
+    {
+     "rank": 1,
+     "name": "BIFPCL Maitree (Bangladesh)",
+     "plant_code": "2079",
+     "value": 0,
+     "unit": "days"
+    },
+    {
+     "rank": 2,
+     "name": "Sinnar",
+     "plant_code": "2593",
+     "value": 0,
+     "unit": "days"
+    },
+    {
+     "rank": 3,
+     "name": "Solapur",
+     "plant_code": "1045",
+     "value": 1,
+     "unit": "days"
+    },
+    {
+     "rank": 4,
+     "name": "North Karanpura",
+     "plant_code": "1029",
+     "value": 2,
+     "unit": "days"
+    },
+    {
+     "rank": 5,
+     "name": "Ramagundam",
+     "plant_code": "1033",
+     "value": 3,
+     "unit": "days"
+    },
+    {
+     "rank": 6,
+     "name": "Kudgi",
+     "plant_code": "1046",
+     "value": 3,
+     "unit": "days"
+    },
+    {
+     "rank": 7,
+     "name": "Khargone",
+     "plant_code": "1054",
+     "value": 3,
+     "unit": "days"
+    },
+    {
+     "rank": 8,
+     "name": "Singrauli",
+     "plant_code": "1004",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 9,
+     "name": "Dadri-Coal",
+     "plant_code": "1011",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 10,
+     "name": "Sipat",
+     "plant_code": "1019",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 11,
+     "name": "Talcher Kaniha",
+     "plant_code": "1026",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 12,
+     "name": "Mouda",
+     "plant_code": "1043",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 13,
+     "name": "NSTPS",
+     "plant_code": "1086",
+     "value": 4,
+     "unit": "days"
+    },
+    {
+     "rank": 14,
+     "name": "Vindhyachal",
+     "plant_code": "1018",
+     "value": 5,
+     "unit": "days"
+    },
+    {
+     "rank": 15,
+     "name": "Barh",
+     "plant_code": "1028",
+     "value": 5,
+     "unit": "days"
+    },
+    {
+     "rank": 16,
+     "name": "Unchahar",
+     "plant_code": "1006",
+     "value": 6,
+     "unit": "days"
+    },
+    {
+     "rank": 17,
+     "name": "Tanda",
+     "plant_code": "1007",
+     "value": 6,
+     "unit": "days"
+    },
+    {
+     "rank": 18,
+     "name": "Farakka",
+     "plant_code": "1024",
+     "value": 6,
+     "unit": "days"
+    },
+    {
+     "rank": 19,
+     "name": "Telangana",
+     "plant_code": "1057",
+     "value": 6,
+     "unit": "days"
+    },
+    {
+     "rank": 20,
+     "name": "Simhadri",
+     "plant_code": "1035",
+     "value": 7,
+     "unit": "days"
+    },
+    {
+     "rank": 21,
+     "name": "Bongaigaon",
+     "plant_code": "1042",
+     "value": 7,
+     "unit": "days"
+    },
+    {
+     "rank": 22,
+     "name": "Gadarwara",
+     "plant_code": "1049",
+     "value": 7,
+     "unit": "days"
+    },
+    {
+     "rank": 23,
+     "name": "Rihand",
+     "plant_code": "1005",
+     "value": 8,
+     "unit": "days"
+    },
+    {
+     "rank": 24,
+     "name": "Barauni",
+     "plant_code": "1072",
+     "value": 8,
+     "unit": "days"
+    },
+    {
+     "rank": 25,
+     "name": "Korba",
+     "plant_code": "1017",
+     "value": 10,
+     "unit": "days"
+    },
+    {
+     "rank": 26,
+     "name": "Kahalgaon",
+     "plant_code": "1025",
+     "value": 10,
+     "unit": "days"
+    },
+    {
+     "rank": 27,
+     "name": "Lara",
+     "plant_code": "1047",
+     "value": 12,
+     "unit": "days"
+    },
+    {
+     "rank": 28,
+     "name": "Kanti",
+     "plant_code": "1087",
+     "value": 17,
+     "unit": "days"
+    },
+    {
+     "rank": 29,
+     "name": "Darlipali",
+     "plant_code": "1053",
+     "value": 21,
+     "unit": "days"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Ranked 29 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data.",
+    "11 plant(s) recorded 0 while generating; treated as not reported and left out.",
+    "2 plant(s) show 0 with no generation (shut down for the whole period)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 33,
+  "tool": "get_coal",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "coal_receipt",
+   "last 7 days"
+  ],
+  "seconds": 0.03,
+  "result": {
+   "tool": "get_metric_range",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "metric": "Coal receipt",
+    "value": 183916,
+    "unit": "tonnes",
+    "period": "29 Sep 2026 to 05 Oct 2026",
+    "start": "2026-09-29",
+    "end": "2026-10-05",
+    "method": "combined from daily values"
+   },
+   "table": [
+    {
+     "period": "2026-09-29",
+     "value": 23021
+    },
+    {
+     "period": "2026-09-30",
+     "value": 22030
+    },
+    {
+     "period": "2026-10-01",
+     "value": 27896
+    },
+    {
+     "period": "2026-10-02",
+     "value": 28849
+    },
+    {
+     "period": "2026-10-03",
+     "value": 28082
+    },
+    {
+     "period": "2026-10-04",
+     "value": 26704
+    },
+    {
+     "period": "2026-10-05",
+     "value": 27334
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Performance_DayCum_Station"
+   ],
+   "notes": [
+    "Unit assumed tonnes (label in source says MMT) - to be confirmed."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 34,
+  "tool": "get_capacity",
+  "args": [
+   {
+    "level": "group"
+   }
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_capacity",
+   "ok": true,
+   "answer": {
+    "entity": "NTPC Group (NTPC + JVs/subsidiaries)",
+    "capacity_mw": 91456,
+    "unit": "MW",
+    "plants": 144
+   },
+   "table": [
+    {
+     "fuel": "Coal",
+     "plants": 40,
+     "mw": 67364
+    },
+    {
+     "fuel": "Solar",
+     "plants": 69,
+     "mw": 11807
+    },
+    {
+     "fuel": "Gas",
+     "plants": 11,
+     "mw": 6511
+    },
+    {
+     "fuel": "Hydro",
+     "plants": 13,
+     "mw": 3757
+    },
+    {
+     "fuel": "Wind",
+     "plants": 10,
+     "mw": 1016
+    },
+    {
+     "fuel": "Pumped storage",
+     "plants": 1,
+     "mw": 1000
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Master_Plants"
+   ],
+   "notes": [
+    "Current installed capacity of active plants (Master_Plants.GrossCapMW)."
+   ],
+   "error": null
+  }
+ },
+ {
+  "case": 35,
+  "tool": "get_capacity",
+  "args": [
+   {
+    "level": "plant",
+    "plant_code": "1004"
+   },
+   "2010-01-01"
+  ],
+  "seconds": 0.0,
+  "result": {
+   "tool": "get_capacity",
+   "ok": true,
+   "answer": {
+    "entity": "Singrauli",
+    "capacity_mw": 2000,
+    "unit": "MW",
+    "as_of": "2010-01-01",
+    "parts": 7
+   },
+   "table": [
+    {
+     "part": "Singrauli Unit-1",
+     "plant": "Singrauli",
+     "mw": 200,
+     "commissioned": "1982-06-01"
+    },
+    {
+     "part": "Singrauli Unit-2",
+     "plant": "Singrauli",
+     "mw": 200,
+     "commissioned": "1983-02-01"
+    },
+    {
+     "part": "Singrauli Unit-3",
+     "plant": "Singrauli",
+     "mw": 200,
+     "commissioned": "1983-07-01"
+    },
+    {
+     "part": "Singrauli Unit-4",
+     "plant": "Singrauli",
+     "mw": 200,
+     "commissioned": "1984-01-01"
+    },
+    {
+     "part": "Singrauli Unit-5",
+     "plant": "Singrauli",
+     "mw": 200,
+     "commissioned": "1984-06-01"
+    },
+    {
+     "part": "Singrauli Unit-6",
+     "plant": "Singrauli",
+     "mw": 500,
+     "commissioned": "1987-07-01"
+    },
+    {
+     "part": "Singrauli Unit-7",
+     "plant": "Singrauli",
+     "mw": 500,
+     "commissioned": "1988-05-01"
+    }
+   ],
+   "as_of": null,
+   "is_live": false,
+   "sources": [
+    "Master_Part_Installed_Capacity"
+   ],
+   "notes": [
+    "Non-commercial (trial) capacity is not included."
+   ],
+   "error": null
+  }
+ }
+]

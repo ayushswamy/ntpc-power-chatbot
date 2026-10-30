@@ -1,0 +1,280 @@
+# =============================================================================
+# metrics.yaml - every metric the chatbot can answer, where it is stored,
+# its unit, and how to aggregate it over dates and over plants.
+# The tool layer (app/tools) reads the structured fields below - keep their names.
+#
+# kind:
+#   additive  - summed over days and plants (MU, tonnes, counts)
+#   ratio     - a percentage/rate: NEVER a plain average. Over several days/plants
+#               it is a weighted average: SUM(value * weight) / SUM(weight)
+#   snapshot  - a closing value (stock, capacity): take the value of the last day
+#
+# daily fields (Performance_DayCum_{Station|Stage|Unit}):
+#   param           ParamCode
+#   levels          which tables have it: station / stage / unit
+#   weight          (ratio) ParamCode used as weight when combining days/plants
+#   formula         {terms: {param: +1/-1, ...}, den, scale}: (sum of signed terms) / den * scale
+#                   used where the param itself is missing (e.g. PLF per unit), and for custom
+#                   periods / groups when aggregate_by_formula: true (availability, decision 10)
+#   missing_note    what to say when there is no value (e.g. heat rate not loaded)
+#   cumulative      true = MonthCY / YearCY may be used for month/FY-to-date
+#   zero_is_missing true = a 0 means "not filled", not a real zero (heat rate, APC: decision 5)
+#   zero_check      ParamCode (gross_gen_mu): a 0 is kept as a real zero UNLESS that param is > 0
+#                   for the same plant and date - then it is shown as 'not reported' (decisions 8, 9)
+#   warn_above      a value above this is shown with a data-quality warning (never changed)
+#   must_not_exceed another metric; if the value is higher, a data-quality warning is added
+# enabled: false   the chatbot says the metric is not available yet
+# =============================================================================
+
+rules:
+  month_to_date: "Use MonthCY of the last date (only when cumulative: true). Otherwise combine DayCY."
+  fy_to_date: "Use YearCY of the last date (FY starts April 1; only when cumulative: true)."
+  custom_range_additive: "SUM(DayCY) over the range."
+  custom_range_ratio: "SUM(DayCY * weight) / SUM(weight) over the range (for PLF this equals SUM(gen) / SUM(capacity))."
+  ntpc_total: "Same rules over plants. State which company groups and how many plants are included."
+  live_power_vs_energy: |
+    'Current / now / live generation' = POWER in MW from the latest real-time block.
+    'Today's generation (so far)' = ENERGY in MU from today's completed 15-min blocks.
+    Daily/historical 'generation' = ENERGY in MU.
+  rounding: "MU: 2 decimals. %: 2 decimals. MW: whole numbers. Tonnes: whole numbers."
+
+metrics:
+
+  # ------------------------------------------------------------ generation
+  gross_generation:
+    name: "Gross generation"
+    synonyms: [generation, gen, gross gen, total generation, energy generated, output, units generated, power generated]
+    unit: MU
+    kind: additive
+    daily: {param: gross_gen_mu, levels: [station, stage, unit], cumulative: true}
+    live: {metric: gross_mw, unit: MW, today_so_far: true}
+    also_in: ["Report_Generation.DayGen_CY (unit level)"]
+
+  commercial_generation:
+    name: "Commercial generation"
+    synonyms: [commercial generation, comml gen]
+    unit: MU
+    kind: additive
+    daily: {param: com_gen_mu, levels: [station, stage, unit], cumulative: true}
+
+  non_commercial_generation:
+    name: "Non-commercial (infirm) generation"
+    synonyms: [infirm generation, non comml gen]
+    unit: MU
+    kind: additive
+    daily: {param: noncom_gen_mu, levels: [station, stage, unit], cumulative: true}
+
+  actual_generation:
+    name: "Actual generation (AG, ex-bus)"
+    synonyms: [AG, ex-bus generation, actual gen, sent out]
+    unit: MU
+    kind: additive
+    daily: {param: ag_mu, levels: [station, stage], cumulative: true, zero_check: gross_gen_mu}
+    live: {metric: ag_mw, unit: MW, today_so_far: false}
+    notes: "Today-so-far from AG blocks was off by up to 9% vs official ag_mu (2026-09-28 check) - not offered. AG = 0 while gross generation > 0 = not reported (decision 8, e.g. Jhajjar)."
+
+  # ------------------------------------------------------------ performance ratios
+  plf:
+    name: "Plant Load Factor (PLF)"
+    synonyms: [PLF, plant load factor, capacity utilisation, CUF]
+    unit: "%"
+    kind: ratio
+    daily: {param: plf, levels: [station, stage], weight: gross_cap_mu, cumulative: true, zero_check: gross_gen_mu,
+            warn_above: 100, formula: {terms: {gross_gen_mu: 1}, den: gross_cap_mu, scale: 100}}
+    notes: "Verified: Singrauli 2026-09-24 = 37.08 / 48 * 100 = 77.25%. Unit PLF uses the formula. Never capped at 100 (decision 9)."
+
+  availability:
+    name: "Availability factor (AvF on bar)"
+    synonyms: [availability, AvF, avb, plant availability, availability factor]
+    unit: "%"
+    kind: ratio
+    daily: {param: avb, levels: [station, stage], weight: gross_cap_mu, cumulative: true, aggregate_by_formula: true,
+            formula: {terms: {gross_cap_mu: 1, outg_loss: -1}, den: gross_cap_mu, scale: 100}}
+    notes: "Decision 10: stored value for day/MTD/YTD; custom periods and groups = (capacity - outage loss) / capacity. Formula matched 144/144 plants (day, month, year) on 2026-09-29."
+
+  availability_incl_rsd:
+    name: "Availability including reserve shutdown"
+    synonyms: [rsd availability, avf incl rsd]
+    unit: "%"
+    kind: ratio
+    daily: {param: rsd_avb, levels: [station, stage], weight: gross_cap_mu, cumulative: true, aggregate_by_formula: true,
+            formula: {terms: {gross_cap_mu: 1, outg_loss: -1, rsd_mu: 1}, den: gross_cap_mu, scale: 100}}
+
+  load_factor:
+    name: "Load factor (LF)"
+    synonyms: [LF, load factor]
+    unit: "%"
+    kind: ratio
+    daily: {param: lf, levels: [station, stage], weight: gross_cap_mu, cumulative: true}
+    notes: "NEEDS CONFIRMATION: exact definition (Singrauli LF 85.83 vs PLF 77.25)."
+
+  apc:
+    name: "Auxiliary power consumption (APC)"
+    synonyms: [APC, aux consumption, auxiliary power]
+    unit: "%"
+    kind: ratio
+    daily: {param: apc, levels: [station, stage], weight: gross_gen_mu, cumulative: true, zero_is_missing: true}
+    missing_note: "APC is not filled in the plant database (DB_PlantLive) for this plant and period; the official SAP figures are not loaded there yet."
+
+  heat_rate:
+    name: "Heat rate"
+    synonyms: [heat rate, station heat rate, SHR, GHR]
+    unit: "kcal/kWh"
+    kind: ratio
+    daily: {param: heatrate, levels: [station, stage, unit], weight: gross_gen_mu, cumulative: true, zero_is_missing: true}
+    missing_note: "Heat rate is not filled in the plant database (DB_PlantLive) for this plant and period; the official SAP figures are not loaded there yet."
+
+  specific_oil:
+    name: "Specific oil consumption"
+    synonyms: [sp oil, specific oil, SOC]
+    unit: "ml/kWh"
+    kind: ratio
+    daily: {param: sp_oil, levels: [station, stage], weight: gross_gen_mu, cumulative: true}
+
+  # ------------------------------------------------------------ scheduling
+  declared_capacity:
+    name: "Declared capacity (DC)"
+    synonyms: [DC, declared capacity]
+    unit: MU
+    kind: additive
+    daily: {param: dc_mu, levels: [station, stage], cumulative: true}
+
+  declared_capacity_percent:
+    name: "DC % (of normative DC)"
+    synonyms: [DC %, dc percentage]
+    unit: "%"
+    kind: ratio
+    daily: {param: dc_per, levels: [station, stage], weight: dc_normative_mu, cumulative: true}
+
+  scheduled_generation:
+    name: "Scheduled generation (SG)"
+    synonyms: [SG, schedule, scheduled generation]
+    unit: MU
+    kind: additive
+    daily: {param: sg_mu, levels: [station, stage], cumulative: true, must_not_exceed: declared_capacity}
+    notes: "Decision 3: sg_mu = standard SG. Components (sg_agc*, sg_sced*, sg_rras*, sg_urs*) are never added in. SG > DC is shown with a warning."
+
+  scheduled_generation_percent:
+    name: "SG % (of normative DC)"
+    synonyms: [SG %, sg percentage, schedule percentage]
+    unit: "%"
+    kind: ratio
+    daily: {param: sg_per, levels: [station, stage], weight: dc_normative_mu, cumulative: true, warn_above: 100}
+
+  urs:
+    name: "Un-requisitioned surplus (URS)"
+    synonyms: [URS, unrequisitioned surplus]
+    unit: MU
+    kind: additive
+    daily: {param: urs, levels: [station, stage], cumulative: true}
+
+  # ------------------------------------------------------------ outages / losses
+  outage_loss:
+    name: "Outage generation loss"
+    synonyms: [outage loss, generation loss due to outage]
+    unit: MU
+    kind: additive
+    daily: {param: outg_loss, levels: [station, stage, unit], cumulative: true}
+
+  forced_outage_loss:
+    name: "Forced outage loss (equipment)"
+    synonyms: [forced outage, forced outage loss, FO loss]
+    unit: MU
+    kind: additive
+    daily: {param: outg_frcd, levels: [station, stage, unit], cumulative: true}
+
+  planned_outage_loss:
+    name: "Planned outage loss"
+    synonyms: [planned outage, overhaul loss, PO loss]
+    unit: MU
+    kind: additive
+    daily: {param: outg_plan, levels: [station, stage, unit], cumulative: true}
+
+  partial_loss:
+    name: "Partial loading loss"
+    synonyms: [partial loss, partial loading, derating loss]
+    unit: MU
+    kind: additive
+    daily: {param: partl, levels: [station, stage, unit], cumulative: true}
+
+  total_loss:
+    name: "Total generation loss (outage + partial)"
+    synonyms: [total loss, total outage loss]
+    unit: MU
+    kind: additive
+    enabled: false
+    disabled_reason: "Total loss figures are being verified with the data owners; ask for outage loss or partial loss separately."
+    daily: {param: total_outage_loss, levels: [station, stage, unit], cumulative: true}
+
+  total_loss_percent:
+    name: "Total loss %"
+    synonyms: [total outage %, loss percentage]
+    unit: "%"
+    kind: ratio
+    enabled: false
+    disabled_reason: "Total loss figures are being verified with the data owners; ask for outage loss or partial loss separately."
+    daily: {param: total_outage_per, levels: [station, stage, unit], weight: gross_cap_mu, cumulative: true}
+
+  btl_count:
+    name: "Boiler tube leakages (number)"
+    synonyms: [BTL, tube leakage, boiler tube leak]
+    unit: nos
+    kind: additive
+    daily: {param: total_outage_nos_btl, levels: [station, stage, unit], cumulative: true}
+
+  # ------------------------------------------------------------ coal (station level only)
+  coal_receipt:
+    name: "Coal receipt"
+    synonyms: [coal received, coal receipt, coal arrival]
+    unit: tonnes
+    unit_note: "Unit assumed tonnes (label in source says MMT) - to be confirmed."
+    kind: additive
+    daily: {param: coal_receipt, levels: [station], cumulative: false}
+
+  coal_consumption:
+    name: "Coal consumption"
+    synonyms: [coal consumed, coal burnt, coal usage]
+    unit: tonnes
+    unit_note: "Unit assumed tonnes - to be confirmed."
+    kind: additive
+    daily: {param: coal_consumption, levels: [station], cumulative: false}
+    notes: "MonthCY is 0 in the data - always sum DayCY."
+
+  coal_stock:
+    name: "Coal stock"
+    synonyms: [coal stock, coal inventory, coal available]
+    unit: tonnes
+    unit_note: "Unit assumed tonnes - to be confirmed."
+    kind: snapshot
+    daily: {param: coal_stock, levels: [station], cumulative: false, zero_check: gross_gen_mu}
+
+  coal_stock_days:
+    name: "Coal stock (days)"
+    synonyms: [days of coal, coal days, stock days]
+    unit: days
+    kind: snapshot
+    daily: {param: coal_stock_days, levels: [station], cumulative: false, zero_check: gross_gen_mu}
+    notes: "Days cannot be added across plants. 0 while the plant generated = not reported (decision 8)."
+
+  specific_coal_consumption:
+    name: "Specific coal consumption"
+    synonyms: [sp coal, specific coal]
+    unit: "kg/kWh"
+    kind: ratio
+    daily: {param: sp_coal_cons, levels: [station], weight: gross_gen_mu, cumulative: false, zero_is_missing: true}
+
+  # ------------------------------------------------------------ capacity
+  installed_capacity:
+    name: "Installed capacity"
+    synonyms: [capacity, installed capacity, MW capacity, size]
+    unit: MW
+    kind: snapshot
+    source: "get_capacity tool: Master_Plants / Master_Stages / Master_Units, or Master_Part_Installed_Capacity as on a date"
+
+  # ------------------------------------------------------------ live only
+  frequency:
+    name: "Grid frequency"
+    synonyms: [frequency, grid frequency, Hz]
+    unit: Hz
+    kind: snapshot
+    live: {metric: frequency, unit: Hz}

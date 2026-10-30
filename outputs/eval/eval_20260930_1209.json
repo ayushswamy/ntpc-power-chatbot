@@ -1,0 +1,1467 @@
+[
+ {
+  "id": "D01",
+  "question": "What was the PLF of Singrauli yesterday?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Singrauli",
+     "metric": "plf",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "The PLF of Singrauli was 64.71% on 29 Sep 2026. Taken as Singrauli (coal, 2,000 MW); for Singrauli Solar PV or Singrauli Small Hydro, name it explicitly.",
+  "composer": "llm (attempt 1, 30.3s)",
+  "timings": {
+   "plan": 169.7,
+   "tools": 0.06,
+   "compose": 30.3,
+   "total": 200.1
+  },
+  "seconds": 200.1
+ },
+ {
+  "id": "D06",
+  "question": "Availability of Sipat stage 1 last month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "stage": 1,
+    "metric": "availability",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "period": "last month",
+    "plant": "Sipat",
+    "stage": 1,
+    "metric": "availability"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "period": "last month",
+     "plant": "Sipat",
+     "stage": 1,
+     "metric": "availability"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "stage",
+    "plant_code": "1019",
+    "stage": "STAGE1",
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Availability of Sipat stage 1 was 100.0% from 01 Aug 2026 to 31 Aug 2026. The value is an official month-to-date value.",
+  "composer": "llm (attempt 1, 17.8s)",
+  "timings": {
+   "plan": 23.7,
+   "tools": 0.04,
+   "compose": 17.8,
+   "total": 41.6
+  },
+  "seconds": 41.6
+ },
+ {
+  "id": "D07",
+  "question": "Heat rate of Kudgi in August 2026",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Kudgi",
+    "metric": "heat_rate",
+    "period": "2026-08"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Kudgi",
+    "metric": "heat_rate",
+    "period": "2026-08"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Kudgi",
+     "metric": "heat_rate",
+     "period": "2026-08"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1046",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Heat rate is not filled in the plant database (DB_PlantLive) for this plant and period; the official SAP figures are not loaded there yet.",
+  "composer": "template",
+  "timings": {
+   "plan": 24.9,
+   "tools": 0.06,
+   "compose": 0.0,
+   "total": 25.0
+  },
+  "seconds": 25.0
+ },
+ {
+  "id": "D11",
+  "question": "What was NTPC's PLF in the last 30 days?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "group": "ntpc",
+    "metric": "plf",
+    "period": "last 30 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "group": "ntpc",
+    "metric": "plf",
+    "period": "last 30 days"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "group": "ntpc",
+     "metric": "plf",
+     "period": "last 30 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "NTPC's PLF was 59.01% for the period 31 Aug 2026 to 29 Sep 2026. The value is derived from combined daily values.",
+  "composer": "llm (attempt 1, 19.6s)",
+  "timings": {
+   "plan": 22.6,
+   "tools": 1.43,
+   "compose": 19.6,
+   "total": 43.7
+  },
+  "seconds": 43.7
+ },
+ {
+  "id": "D15",
+  "question": "Actual generation of Jhajjar last week",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Jhajjar",
+    "metric": "actual_generation",
+    "period": "last 7 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Jhajjar",
+    "metric": "actual_generation",
+    "period": "last 7 days"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Jhajjar",
+     "metric": "actual_generation",
+     "period": "last 7 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "2040",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Actual generation (AG, ex-bus) is recorded as 0 for Jhajjar in 23 Sep 2026 to 29 Sep 2026 although the plant generated, so it is treated as not reported by this source.",
+  "composer": "template",
+  "timings": {
+   "plan": 22.7,
+   "tools": 0.02,
+   "compose": 0.0,
+   "total": 22.8
+  },
+  "seconds": 22.8
+ },
+ {
+  "id": "C03",
+  "question": "Was Vindhyachal's availability better in August or July 2026?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Vindhyachal",
+    "metric": "availability",
+    "period1": "2026-08",
+    "period2": "2026-07"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "period2": "2026-07",
+    "plant": "Vindhyachal",
+    "metric": "availability",
+    "period1": "2026-08"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "period2": "2026-07",
+     "plant": "Vindhyachal",
+     "metric": "availability",
+     "period1": "2026-08"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1018",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Availability factor (AvF on bar) of Vindhyachal: 82.89% for August 2026 vs 93.77% for July 2026. Difference: -10.88% (-11.6%).",
+  "composer": "template",
+  "timings": {
+   "plan": 32.8,
+   "tools": 0.05,
+   "compose": 0.0,
+   "total": 32.9
+  },
+  "seconds": 32.9
+ },
+ {
+  "id": "R01",
+  "question": "Top 5 plants by PLF this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "this month",
+    "top_n": 5,
+    "order": "desc",
+    "level": "plant"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "this month",
+    "top_n": 5,
+    "order": "desc",
+    "level": "plant"
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "metric": "plf",
+     "period": "this month",
+     "top_n": 5,
+     "order": "desc",
+     "level": "plant"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Plant Load Factor (PLF) ranking for 01 Sep 2026 to 29 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries)): 1. Kopili HEP (100.49%), 2. Turial HEP (96.93%), 3. Kameng HEP (95.12%), 4. Sipat (89.02%), 5. Bhilai (87.67%). Note: Daily figures are up to 29 Sep 2026. Ranked 144 plants in NTPC Group (NTPC + JVs/subsidiaries) that have data. Data-quality flag: some values are above 100% as recorded in the source data.",
+  "composer": "template",
+  "timings": {
+   "plan": 26.9,
+   "tools": 0.08,
+   "compose": 0.0,
+   "total": 27.0
+  },
+  "seconds": 27.0
+ },
+ {
+  "id": "R02",
+  "question": "Which coal plant had the lowest PLF yesterday?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "yesterday",
+    "top_n": 1,
+    "order": "asc",
+    "level": "plant",
+    "fuel": "coal"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "period": "yesterday",
+    "top_n": 1,
+    "order": "asc",
+    "level": "plant",
+    "fuel": "coal",
+    "metric": "plf"
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "period": "yesterday",
+     "top_n": 1,
+     "order": "asc",
+     "level": "plant",
+     "fuel": "coal",
+     "metric": "plf"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {
+     "fuel": [
+      "C"
+     ]
+    }
+   }
+  },
+  "answer": "Plant Load Factor (PLF) ranking for 29 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries), coal plants): 1. BIFPCL Maitree (Bangladesh) (0.0%). Note: Ranked 40 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data. 2 plant(s) show 0 with no generation (shut down for the whole period).",
+  "composer": "template",
+  "timings": {
+   "plan": 29.5,
+   "tools": 0.15,
+   "compose": 0.0,
+   "total": 29.7
+  },
+  "seconds": 29.7
+ },
+ {
+  "id": "R04",
+  "question": "Best heat rate stations this FY",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "heat_rate",
+    "period": "this fy",
+    "top_n": 10,
+    "order": "asc",
+    "level": "plant"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "metric": "heat_rate",
+    "period": "this fy",
+    "top_n": 10,
+    "order": "asc",
+    "level": "plant"
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "metric": "heat_rate",
+     "period": "this fy",
+     "top_n": 10,
+     "order": "asc",
+     "level": "plant"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "No Heat rate data is available for 01 Apr 2026 to 29 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries)). Note: Daily figures are up to 29 Sep 2026. Ranked 0 plants in NTPC Group (NTPC + JVs/subsidiaries) that have data.",
+  "composer": "template",
+  "timings": {
+   "plan": 27.1,
+   "tools": 0.13,
+   "compose": 0.0,
+   "total": 27.3
+  },
+  "seconds": 27.3
+ },
+ {
+  "id": "O05",
+  "question": "How many unit trips did NTPC have in the last 7 days?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trips",
+   "args": {
+    "group": "ntpc",
+    "period": "last 7 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trips",
+   "args": {
+    "group": "ntpc",
+    "period": "last 7 days"
+   },
+   "planned": {
+    "tool": "get_trips",
+    "args": {
+     "group": "ntpc",
+     "period": "last 7 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "25 trip(s) at NTPC Group (NTPC + JVs/subsidiaries) for 23 Sep 2026 to 29 Sep 2026; 8 not yet revived. By type: Forced outage 17, Planned outage 3, Reserve shutdown (RSD) 5. Latest: Barh Unit 3 at 2026-09-29 10:35 (Forced outage: BTL-ECO, not yet revived); Barauni Unit 8 at 2026-09-29 03:06 (Forced outage: Flame failure, revived 2026-09-29 03:36); Mouda Unit 3 at 2026-09-28 14:00 (Forced outage: FDV-43 drain line lkg, revived 2026-09-29 14:04); Anta Unit 1 at 2026-09-28 12:30 (Forced outage: WHRB SH tube leakage, revived 2026-09-28 18:05).",
+  "composer": "template",
+  "timings": {
+   "plan": 19.3,
+   "tools": 0.05,
+   "compose": 0.0,
+   "total": 19.4
+  },
+  "seconds": 19.4
+ },
+ {
+  "id": "O06",
+  "question": "How many forced trips were there at Farakka last month?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trips",
+   "args": {
+    "plant": "Farakka",
+    "period": "last month",
+    "trip_type": "forced"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trips",
+   "args": {
+    "trip_type": "forced",
+    "plant": "Farakka",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_trips",
+    "args": {
+     "trip_type": "forced",
+     "plant": "Farakka",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1024",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "5 forced outage trip(s) at Farakka for 01 Aug 2026 to 31 Aug 2026; 0 not yet revived. Latest: Farakka Unit 5 at 2026-08-27 15:51 (Forced outage: Drum Level Low, revived 2026-08-28 15:55); Farakka Unit 6 at 2026-08-19 09:46 (Forced outage: Flame failure, revived 2026-08-22 04:57); Farakka Unit 3 at 2026-08-17 08:15 (Forced outage: Generator protection( due to EHTC fail), revived 2026-08-17 08:15); Farakka Unit 3 at 2026-08-11 17:26 (Forced outage: Loss of all fuel, revived 2026-08-11 17:29).",
+  "composer": "template",
+  "timings": {
+   "plan": 21.9,
+   "tools": 0.02,
+   "compose": 0.0,
+   "total": 22.0
+  },
+  "seconds": 22.0
+ },
+ {
+  "id": "D17",
+  "question": "SG percentage of Sipat this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "metric": "scheduled_generation_percent",
+    "period": "this month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "metric": "scheduled_generation_percent",
+    "period": "this month",
+    "plant": "Sipat"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "metric": "scheduled_generation_percent",
+     "period": "this month",
+     "plant": "Sipat"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1019",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "277.4% of Sipat, 01 Sep 2026 to 29 Sep 2026 Data-quality flag: this value is above 100% as recorded in the source data.",
+  "composer": "llm (attempt 1, 20.0s)",
+  "timings": {
+   "plan": 21.9,
+   "tools": 0.02,
+   "compose": 20.0,
+   "total": 42.0
+  },
+  "seconds": 42.0
+ },
+ {
+  "id": "D18",
+  "question": "Generation of Kawas yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Kawas",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Kawas",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Kawas",
+     "metric": "gross_generation",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1020",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "7.98 MU, Kawas, 29 Sep 2026 Taken as Kawas (gas, 656 MW); for Kawas, name it explicitly.",
+  "composer": "llm (attempt 1, 15.8s)",
+  "timings": {
+   "plan": 21.1,
+   "tools": 0.03,
+   "compose": 15.8,
+   "total": 36.9
+  },
+  "seconds": 37.0
+ },
+ {
+  "id": "F01",
+  "question": "Coal stock at Singrauli",
+  "passed": false,
+  "checks": {
+   "tool": true,
+   "args": false,
+   "source": true
+  },
+  "reasons": [
+   "period (datetime.date(2026, 9, 30), datetime.date(2026, 9, 30)) != (datetime.date(2026, 9, 29), datetime.date(2026, 9, 29))"
+  ],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "coal_stock",
+    "period": "today"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "plant": "Singrauli",
+     "metric": "coal_stock",
+     "period": "today"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Taken as Singrauli (coal, 2,000 MW), the coal plant. Daily performance data is available from 01 Apr 2023 to 29 Sep 2026; there is no data for 30 Sep 2026.",
+  "composer": "template",
+  "timings": {
+   "plan": 21.9,
+   "tools": 0.0,
+   "compose": 0.0,
+   "total": 21.9
+  },
+  "seconds": 22.0
+ },
+ {
+  "id": "F02",
+  "question": "Which plants have the lowest coal stock days?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "group": "ntpc",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "group": "ntpc",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "group": "ntpc",
+     "metric": "coal_stock_days",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock (days) ranking for 29 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries), coal plants): 1. BIFPCL Maitree (Bangladesh) (0 days), 2. Sinnar (0 days), 3. Talcher Kaniha (3 days), 4. North Karanpura (3 days), 5. Solapur (3 days). Note: Ranked 29 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data. 11 plant(s) recorded 0 while generating; treated as not reported and left out. 2 plant(s) show 0 with no generation (shut down for the whole period).",
+  "composer": "template",
+  "timings": {
+   "plan": 23.3,
+   "tools": 0.09,
+   "compose": 0.0,
+   "total": 23.5
+  },
+  "seconds": 23.5
+ },
+ {
+  "id": "F05",
+  "question": "Coal stock at Dadri",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Dadri",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "period": "yesterday",
+    "plant": "Dadri",
+    "metric": "coal_stock"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "period": "yesterday",
+     "plant": "Dadri",
+     "metric": "coal_stock"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1011",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "139386 tonnes of coal stock at Dadri-Coal as of 29 Sep 2026. Unit assumed tonnes - to be confirmed.",
+  "composer": "llm (attempt 1, 15.1s)",
+  "timings": {
+   "plan": 21.2,
+   "tools": 0.02,
+   "compose": 15.1,
+   "total": 36.4
+  },
+  "seconds": 36.4
+ },
+ {
+  "id": "X02",
+  "question": "Scheduled generation of Rihand yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Rihand",
+    "metric": "scheduled_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Rihand",
+    "metric": "scheduled_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Rihand",
+     "metric": "scheduled_generation",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1005",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "147.44 MU of Scheduled generation (SG) at Rihand for 29 Sep 2026 Data-quality warning: Scheduled generation (SG) (147.44 MU) is higher than Declared capacity (DC) (55.79 MU) for this period, which is not expected; the source values are being checked.",
+  "composer": "llm (attempt 1, 28.1s)",
+  "timings": {
+   "plan": 21.4,
+   "tools": 0.03,
+   "compose": 28.1,
+   "total": 49.6
+  },
+  "seconds": 49.6
+ },
+ {
+  "id": "G06",
+  "question": "Generation of Dadri yesterday",
+  "passed": true,
+  "checks": {
+   "clarification": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Dadri",
+     "metric": "gross_generation",
+     "period": "yesterday"
+    }
+   },
+   "source": "none",
+   "entity": null
+  },
+  "answer": "Which Dadri do you mean: Dadri-Coal (coal, 1,840 MW), Dadri-Gas (gas, 830 MW) or Dadri Solar PV (solar, 5 MW)?",
+  "composer": null,
+  "timings": {
+   "plan": 20.8,
+   "total": 20.8
+  },
+  "seconds": 20.8
+ },
+ {
+  "id": "S02",
+  "question": "Which outage reason caused the most generation loss in NTPC last month?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "source": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "sql_query",
+   "args": {
+    "question": "Which outage reason caused the most generation loss in NTPC last month?"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "sql_query",
+   "args": {
+    "question": "Which outage reason caused the most generation loss in NTPC last month?"
+   },
+   "planned": {
+    "tool": "sql_query",
+    "args": {
+     "question": "Which outage reason caused the most generation loss in NTPC last month?"
+    }
+   },
+   "source": "daily",
+   "entity": null
+  },
+  "answer": "I could not build a safe query for this question. Please rephrase it or ask about generation, PLF, availability, outages, trips, coal or capacity.",
+  "composer": "template",
+  "timings": {
+   "plan": 21.1,
+   "tools": 213.67,
+   "compose": 0.0,
+   "total": 234.8
+  },
+  "seconds": 234.8
+ },
+ {
+  "id": "CV2-1",
+  "question": "PLF of Sipat last month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Sipat",
+     "metric": "plf",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1019",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "89.21% PLF for Sipat from 01 Aug 2026 to 31 Aug 2026.",
+  "composer": "llm (attempt 1, 13.6s)",
+  "timings": {
+   "plan": 22.7,
+   "tools": 0.07,
+   "compose": 13.6,
+   "total": 36.3
+  },
+  "seconds": 36.3
+ },
+ {
+  "id": "CV2-2",
+  "question": "And Korba?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Korba",
+     "metric": "plf",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1017",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "81.73% PLF at Korba for 01 Aug 2026 to 31 Aug 2026. The data is an official month-to-date value.",
+  "composer": "llm (attempt 1, 16.9s)",
+  "timings": {
+   "plan": 24.7,
+   "tools": 0.03,
+   "compose": 16.9,
+   "total": 41.7
+  },
+  "seconds": 41.7
+ },
+ {
+  "id": "CV2-3",
+  "question": "What about availability?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "availability",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "period": "last month",
+    "plant": "Korba",
+    "metric": "availability"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "period": "last month",
+     "plant": "Korba",
+     "metric": "availability"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1017",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "91.65% Availability factor (AvF on bar) for Korba from 01 Aug 2026 to 31 Aug 2026.",
+  "composer": "llm (attempt 1, 15.0s)",
+  "timings": {
+   "plan": 26.5,
+   "tools": 0.01,
+   "compose": 15.0,
+   "total": 41.6
+  },
+  "seconds": 41.6
+ },
+ {
+  "id": "CV5-1",
+  "question": "Coal stock at Barh",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "plant": "Barh",
+     "metric": "coal_stock",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock at Barh is 261262 tonnes as of 29 Sep 2026. Unit assumed tonnes - to be confirmed.",
+  "composer": "llm (attempt 1, 14.0s)",
+  "timings": {
+   "plan": 21.2,
+   "tools": 0.03,
+   "compose": 14.0,
+   "total": 35.2
+  },
+  "seconds": 35.3
+ },
+ {
+  "id": "CV5-2",
+  "question": "How many days is that?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "metric": "coal_stock_days",
+    "period": "yesterday",
+    "plant": "Barh"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "metric": "coal_stock_days",
+     "period": "yesterday",
+     "plant": "Barh"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Barh has a coal stock of 6 days as of 29 Sep 2026. The data represents the closing value on that specific date.",
+  "composer": "llm (attempt 1, 13.5s)",
+  "timings": {
+   "plan": 26.6,
+   "tools": 0.03,
+   "compose": 13.5,
+   "total": 40.1
+  },
+  "seconds": 40.1
+ },
+ {
+  "id": "CV5-3",
+  "question": "Trend for this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "this month",
+    "granularity": "day"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trend",
+   "args": {
+    "granularity": "day",
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "this month"
+   },
+   "planned": {
+    "tool": "get_trend",
+    "args": {
+     "granularity": "day",
+     "plant": "Barh",
+     "metric": "coal_stock_days",
+     "period": "this month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock (days) of Barh by day (29 points) - see the chart. From 13 days (2026-09-01) to 6 days (2026-09-29); highest 13 days (2026-09-01), lowest 6 days (2026-09-25). Note: Daily figures are up to 29 Sep 2026.",
+  "composer": "template",
+  "timings": {
+   "plan": 30.2,
+   "tools": 0.03,
+   "compose": 0.0,
+   "total": 30.3
+  },
+  "seconds": 30.3
+ },
+ {
+  "id": "CV6-1",
+  "question": "Generation of Dadri yesterday",
+  "passed": true,
+  "checks": {
+   "clarification": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Dadri",
+     "metric": "gross_generation",
+     "period": "yesterday"
+    }
+   },
+   "source": "none",
+   "entity": null
+  },
+  "answer": "Which Dadri do you mean: Dadri-Coal (coal, 1,840 MW), Dadri-Gas (gas, 830 MW) or Dadri Solar PV (solar, 5 MW)?",
+  "composer": null,
+  "timings": {
+   "plan": 21.0,
+   "total": 21.0
+  },
+  "seconds": 21.0
+ },
+ {
+  "id": "CV6-2",
+  "question": "The coal one",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri Coal",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "DADRI-COAL",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": null,
+    "args": null
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1011",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "36.4 MU, Dadri-Coal, 29 Sep 2026 No additional notes provided.",
+  "composer": "llm (attempt 1, 11.5s)",
+  "timings": {
+   "tools": 0.02,
+   "compose": 11.5,
+   "total": 11.6
+  },
+  "seconds": 11.6
+ }
+]

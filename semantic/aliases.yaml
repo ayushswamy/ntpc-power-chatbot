@@ -1,0 +1,116 @@
+# =============================================================================
+# aliases.yaml - extra names for plants, and names that need a clarifying question.
+#
+# The entity resolver ALSO matches automatically (rapidfuzz) against the official
+# names in the master tables: Master_Plants.StationName / StationShortName /
+# StationOPPMS and Master_Stages.StageName / StageNameRealView / StageNameDescription.
+# So only add names here that users say but the masters don't contain.
+#
+# To add an alias: put it under the plant code, save, restart the chatbot.
+# "verify" = alias from general knowledge, please confirm.
+# =============================================================================
+
+plants:            # PlantCode: [aliases]
+  "1004": [singrauli, sstps, "singrauli stps"]
+  "1005": [rihand, rhstps, "rihand stps"]
+  "1006": [unchahar, "feroze gandhi unchahar", fgutps, "fgutps unchahar"]   # verify: Feroze Gandhi
+  "1007": [tanda, tntps]
+  "1011": ["dadri coal", "dadri thermal", "ncr dadri", nctps, "dadri tps"]
+  "1012": [auraiya, "auraiya gas", augps]
+  "1013": [anta, "anta gas", angps]
+  "1014": ["dadri gas", dagps, "dadri gps"]
+  "1015": [faridabad, "faridabad gas", fdgps]
+  "1017": [korba, kstps, "korba stps"]
+  "1018": [vindhyachal, vindhyachal stps, vstps, vindhyanchal, vdhyachal]
+  "1019": [sipat, spstps]
+  "1020": [kawas, kwgps, "kawas gas"]
+  "1021": [gandhar, jhanor, "jhanor gandhar", jggps]
+  "1024": [farakka, fstps, fstpp]
+  "1025": [kahalgaon, khstps, khstpp]
+  "1026": ["talcher kaniha", kaniha, tstps, "talcher super", "talcher stps"]
+  "1028": [barh, "barh stps"]
+  "1029": ["north karanpura", nkstpp, karanpura]
+  "1033": [ramagundam, rstps, rgundam]
+  "1034": [kayamkulam, "rajiv gandhi ccpp", kygpp, "kayamkulam gas"]
+  "1035": [simhadri, smtps]
+  "1037": [koldam, kdhps, "koldam hydro"]
+  "1042": [bongaigaon, bgtpp]
+  "1043": [mouda, mstps]
+  "1045": [solapur, "solapur stps"]
+  "1046": [kudgi]
+  "1047": [lara]
+  "1049": [gadarwara]
+  "1053": [darlipali]
+  "1054": [khargone]
+  "1057": [telangana, "telangana stpp", "telangana stps"]
+  "1072": [barauni]
+  "1086": [nstps, npgc, "nabinagar super", "nabinagar stps"]
+  "1087": [kanti, mtps, muzaffarpur, "kanti tps"]      # verify: Muzaffarpur
+  "2010": [ratnagiri, rgppl, dabhol]                       # verify: Dabhol
+  "2030": [bhilai, nspcl, "bhilai nspcl"]
+  "2040": [jhajjar, aravali, apcpl, "indira gandhi stpp"]  # verify: Aravali/APCPL
+  "2050": [vallur, ntecl]
+  "2170": [patratu, pvunl]                                 # verify: PVUNL
+  "2180": [brbcl, "nabinagar brbcl", "bhartiya rail bijlee"]
+  "2240": [meja, munpl]                                    # verify: MUNPL
+  "2420": [jhabua]
+  "2593": [sinnar]
+  "3004": [tehri]
+  "3017": [khurja, "khurja stpp"]
+
+# A name that matches several plants (decision 2 + management answer 30 Sep 2026):
+#   - a fuel in the question decides ("Dadri gas", "coal stock at Dadri")
+#   - otherwise a plain name means the main CONVENTIONAL station (coal / gas / hydro), for every plant:
+#     "Singrauli" = Singrauli coal; solar / small hydro / wind plants must be named explicitly
+#   - two conventional plants (Dadri coal + gas) or only renewable plants (Bhadla) -> ask the user
+ambiguous:
+  dadri: ["1011", "1014", "2060"]          # Dadri Coal, Dadri Gas, Dadri Solar
+  talcher: ["1026", "1027", "2090"]        # Talcher Kaniha, Talcher Thermal (inactive), Talcher Kaniha Solar
+  nabinagar: ["1086", "2180"]              # NSTPS (NPGC), BRBCL
+  bhilai: ["2030", "2130", "2591"]         # Bhilai NSPCL, Bhilai-Captive, Bhilai Floating Solar
+  ramagundam: ["1033", "2080", "2310", "2599"]   # thermal, solar, floating solar, solar-II
+  auraiya: ["1012", "2260", "2410"]
+  singrauli: ["1004", "2160", "2230"]      # thermal, solar, small hydro
+  kawas: ["1020", "2360"]
+  gandhar: ["1021", "2390"]
+  anta: ["1013", "2483"]
+  unchahar: ["1006", "2110"]
+  faridabad: ["1015", "2100"]
+  simhadri: ["1035", "2290"]
+  kayamkulam: ["1034", "2350", "2370"]
+  solapur: ["1045", "2470"]
+  khurja: ["3017", "3019"]
+  bhadla: ["2200", "2592"]
+  khavda: ["2530", "2594", "2550", "2601"]
+  nokh: ["2489", "2540", "2580"]
+  jetsar: ["2300", "2330"]
+  bilhaur: ["2270", "2280"]
+  devikot: ["2450", "2451"]
+  shajapur: ["2486", "2487"]
+  dayapar: ["2480", "2596"]
+  kolyat: ["2380", "2430"]
+
+# Words that mean a GROUP of plants rather than one plant.
+groups:
+  ntpc:            {aliases: ["ntpc", "ntpc total", "all plants", "overall", "company", "whole ntpc"], filter: "NEEDS CONFIRMATION: CompanyGrp IN ('NTPC','JV') (NTPC Group) or CompanyGrp = 'NTPC' (standalone)?"}
+  ntpc_standalone: {aliases: ["ntpc standalone", "ntpc own", "ntpc only"], filter: "CompanyGrp = 'NTPC'"}
+  jv:              {aliases: ["jv", "jvs", "joint ventures", "subsidiaries"], filter: "CompanyGrp = 'JV'"}
+  coal:            {aliases: ["coal plants", "thermal", "coal stations", "coal based"], filter: "FuelType = 'C'"}
+  gas:             {aliases: ["gas plants", "gas stations", "ccpp"], filter: "FuelType = 'G'"}
+  hydro:           {aliases: ["hydro", "hydel", "hep"], filter: "FuelType = 'H'"}
+  solar:           {aliases: ["solar", "spv", "solar plants"], filter: "FuelType = 'S'"}
+  wind:            {aliases: ["wind", "wind plants"], filter: "FuelType = 'W'"}
+  renewable:       {aliases: ["renewable", "re", "green energy", "non fossil"], filter: "FuelType IN ('S','W','H','PSP')  NEEDS CONFIRMATION (is large hydro RE?)"}
+  pithead:         {aliases: ["pithead", "ph plants"], filter: "PHNPH = 'PH'"}
+  non_pithead:     {aliases: ["non pithead", "nph plants"], filter: "PHNPH = 'NPH'"}
+  region:          {aliases: ["northern region", "nr", "western region", "wr", "eastern region", "er", "southern region", "sr"],
+                    filter: "RegionNTPC LIKE 'NR%' / 'WR%' / 'ER%' / 'SR%'"}
+
+# Data_Trips.PLN_CD codes that are neither StationShortName nor StationOPPMS (checked 2026-09-28)
+trip_codes:
+  NorthKP: "1029"     # North Karanpura
+
+# Unit phrases -> Unit code in the tables
+units:
+  pattern: "unit 5 | u5 | u#5 | unit-5 | unit no 5  ->  UNIT05"
+  gas_stations: "Gas stations use GT/ST names - see Master_GasUnitMapping (DisplayUnitName)."

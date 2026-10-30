@@ -1,0 +1,26 @@
+Phase 0 DB check - 2026-09-25 14:44:12
+Server: 10.4.8.44   Database: DB_PlantLive   Driver: ODBC Driver 17 for SQL Server
+(login name and password are not shown)
+
+Connected OK. database=DB_PlantLive  SQL Server 14.0.3540.1 (Enterprise Edition: Core-based Licensing (64-bit))
+Server clock: 2026-09-25 14:44:11.746820   This PC clock: 2026-09-25 14:44:13.010290
+
+Role membership (1 = yes):
+  sysadmin           0
+  db_owner           0
+  db_datawriter      0
+  db_ddladmin        0
+  db_securityadmin   0
+  db_datareader      1
+  db_denydatawriter  0
+
+SERVER permissions: CONNECT SQL, VIEW ANY DATABASE
+DATABASE permissions: CONNECT, SELECT, VIEW ANY COLUMN ENCRYPTION KEY DEFINITION, VIEW ANY COLUMN MASTER KEY DEFINITION
+SCHEMA dbo permissions: SELECT
+
+Object permissions: 54 objects visible
+  SELECT               on 54 objects
+
+Read test: Master_Blocks has 96 rows (expected 96)
+
+VERDICT: PASS - the login is read-only (SELECT/VIEW permissions only).

@@ -1,0 +1,2 @@
+﻿name,compatibility_level,is_read_committed_snapshot_on,snapshot_isolation_state_desc,recovery_model_desc
+DB_PlantLive,140,False,OFF,SIMPLE

@@ -1,0 +1,1294 @@
+[
+ {
+  "id": "L04",
+  "question": "What is the live load of Vindhyachal unit 13?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_live",
+   "args": {
+    "plant": "Vindhyachal",
+    "unit": 13,
+    "metric": "gross_generation"
+   },
+   "source": "live"
+  },
+  "actual": {
+   "tool": "get_live",
+   "args": {
+    "unit": 13,
+    "metric": "gross_generation",
+    "plant": "Vindhyachal"
+   },
+   "planned": {
+    "tool": "get_live",
+    "args": {
+     "unit": 13,
+     "metric": "gross_generation",
+     "plant": "Vindhyachal"
+    }
+   },
+   "source": "live",
+   "entity": {
+    "level": "unit",
+    "plant_code": "1018",
+    "stage": "STAGE5",
+    "unit": "UNIT13",
+    "scope": {}
+   }
+  },
+  "answer": "Live, as of 15:39: 280 MW of Vindhyachal unit 13. The value represents current gross generation, and the unit has a capacity of 500 MW.",
+  "composer": "llm (attempt 1, 17.1s)",
+  "timings": {
+   "plan": 24.7,
+   "tools": 0.05,
+   "compose": 17.1,
+   "total": 41.9
+  },
+  "seconds": 41.9
+ },
+ {
+  "id": "M01",
+  "question": "Compare today's generation of Talcher Kaniha with yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Talcher Kaniha",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "source": "mixed"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Talcher Kaniha",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Talcher Kaniha",
+     "metric": "gross_generation",
+     "period1": "today",
+     "period2": "yesterday"
+    }
+   },
+   "source": "mixed",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1026",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Talcher Kaniha: 33.43 MU for today so far (live, up to 15:30) vs 51.83 MU for yesterday (27 Sep 2026). Difference: -18.4 MU (-35.5%). Note: Estimated from the 62 completed 15-minute blocks of today (up to 15:30); official daily figures are published the next day. Today's value covers only part of the day, so it is not directly comparable with a full day.",
+  "composer": "template",
+  "timings": {
+   "plan": 27.0,
+   "tools": 0.25,
+   "compose": 0.0,
+   "total": 27.2
+  },
+  "seconds": 27.2
+ },
+ {
+  "id": "M03",
+  "question": "Is Farakka generating more today than on the same day last year?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "2025-09-28"
+   },
+   "source": "mixed"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "2025-09-28"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Farakka",
+     "metric": "gross_generation",
+     "period1": "today",
+     "period2": "2025-09-28"
+    }
+   },
+   "source": "mixed",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1024",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Farakka: 20.66 MU for today so far (live, up to 15:30) vs 32.04 MU for 28 Sep 2025. Difference: -11.38 MU (-35.52%). Note: Estimated from the 62 completed 15-minute blocks of today (up to 15:30); official daily figures are published the next day. Today's value covers only part of the day, so it is not directly comparable with a full day.",
+  "composer": "template",
+  "timings": {
+   "plan": 28.5,
+   "tools": 0.13,
+   "compose": 0.0,
+   "total": 28.6
+  },
+  "seconds": 28.6
+ },
+ {
+  "id": "D07",
+  "question": "Heat rate of Kudgi in August 2026",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Kudgi",
+    "metric": "heat_rate",
+    "period": "2026-08"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "metric": "heat_rate",
+    "period": "2026-08",
+    "plant": "Kudgi"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "metric": "heat_rate",
+     "period": "2026-08",
+     "plant": "Kudgi"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1046",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "No Heat rate data found for Kudgi in 01 Aug 2026 to 31 Aug 2026.",
+  "composer": "template",
+  "timings": {
+   "plan": 24.4,
+   "tools": 0.1,
+   "compose": 0.0,
+   "total": 24.6
+  },
+  "seconds": 24.6
+ },
+ {
+  "id": "D15",
+  "question": "Actual generation of Jhajjar last week",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Jhajjar",
+    "metric": "actual_generation",
+    "period": "last 7 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Jhajjar",
+    "metric": "actual_generation",
+    "period": "last 7 days"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Jhajjar",
+     "metric": "actual_generation",
+     "period": "last 7 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "2040",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "No Actual generation (AG, ex-bus) data found for Jhajjar in 21 Sep 2026 to 27 Sep 2026.",
+  "composer": "template",
+  "timings": {
+   "plan": 21.9,
+   "tools": 0.04,
+   "compose": 0.0,
+   "total": 21.9
+  },
+  "seconds": 22.0
+ },
+ {
+  "id": "C02",
+  "question": "NTPC generation this FY vs last FY",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "group": "ntpc",
+    "metric": "gross_generation",
+    "period1": "this fy",
+    "period2": "last fy"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "metric": "gross_generation",
+    "period1": "this fy",
+    "period2": "last fy",
+    "group": "ntpc"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "metric": "gross_generation",
+     "period1": "this fy",
+     "period2": "last fy",
+     "group": "ntpc"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of NTPC Group (NTPC + JVs/subsidiaries): 231,646.49 MU for 01 Apr 2026 to 27 Sep 2026 vs 431,508.02 MU for FY 2025-26. Difference: -199,861.53 MU (-46.32%). Note: Daily figures are up to 27 Sep 2026. 136 of 144 plants in NTPC Group (NTPC + JVs/subsidiaries) have Gross generation data for this period. The periods have different lengths (180 vs 365 days), so the totals are not directly comparable.",
+  "composer": "template",
+  "timings": {
+   "plan": 25.7,
+   "tools": 0.26,
+   "compose": 0.0,
+   "total": 26.0
+  },
+  "seconds": 26.0
+ },
+ {
+  "id": "C04",
+  "question": "Yesterday vs day before yesterday generation of Ramagundam",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Ramagundam",
+    "metric": "gross_generation",
+    "period1": "yesterday",
+    "period2": "2026-09-26"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Ramagundam",
+    "metric": "gross_generation",
+    "period1": "yesterday",
+    "period2": "2026-09-26"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Ramagundam",
+     "metric": "gross_generation",
+     "period1": "yesterday",
+     "period2": "2026-09-26"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1033",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Ramagundam: 28.91 MU for yesterday (27 Sep 2026) vs 25.47 MU for 26 Sep 2026. Difference: 3.44 MU (+13.51%). Note: Assumed Ramagundam (coal, 2,600 MW), not Ramagundam-II Solar PV or Ramagundam-FSPV or Ramagundam Solar PV.",
+  "composer": "template",
+  "timings": {
+   "plan": 29.3,
+   "tools": 0.03,
+   "compose": 0.0,
+   "total": 29.4
+  },
+  "seconds": 29.4
+ },
+ {
+  "id": "T02",
+  "question": "Daily generation of Barh for the last 30 days",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Barh",
+    "metric": "gross_generation",
+    "period": "last 30 days",
+    "granularity": "day"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trend",
+   "args": {
+    "period": "last 30 days",
+    "granularity": "day",
+    "plant": "Barh",
+    "metric": "gross_generation"
+   },
+   "planned": {
+    "tool": "get_trend",
+    "args": {
+     "period": "last 30 days",
+     "granularity": "day",
+     "plant": "Barh",
+     "metric": "gross_generation"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Barh by day (30 points) - see the chart. From 56.19 MU (2026-08-29) to 65.04 MU (2026-09-27); highest 77.9 MU (2026-09-11), lowest 43.54 MU (2026-09-02).",
+  "composer": "template",
+  "timings": {
+   "plan": 25.8,
+   "tools": 0.02,
+   "compose": 0.0,
+   "total": 25.9
+  },
+  "seconds": 25.9
+ },
+ {
+  "id": "R04",
+  "question": "Best heat rate stations this FY",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "heat_rate",
+    "period": "this fy",
+    "top_n": 10,
+    "order": "asc",
+    "level": "plant"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "metric": "heat_rate",
+    "period": "this fy",
+    "top_n": 10,
+    "order": "asc",
+    "level": "plant"
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "metric": "heat_rate",
+     "period": "this fy",
+     "top_n": 10,
+     "order": "asc",
+     "level": "plant"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "No Heat rate data is available for 01 Apr 2026 to 27 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries)). Note: Daily figures are up to 27 Sep 2026. Ranked 0 plants in NTPC Group (NTPC + JVs/subsidiaries) that have data.",
+  "composer": "template",
+  "timings": {
+   "plan": 26.7,
+   "tools": 0.21,
+   "compose": 0.0,
+   "total": 27.0
+  },
+  "seconds": 27.0
+ },
+ {
+  "id": "O03",
+  "question": "Why was Tanda unit 6 out on 24 September?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_outages",
+   "args": {
+    "plant": "Tanda",
+    "unit": 6,
+    "period": "2026-09-24"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_outages",
+   "args": {
+    "plant": "Tanda",
+    "unit": 6,
+    "period": "2026-09-24"
+   },
+   "planned": {
+    "tool": "get_outages",
+    "args": {
+     "plant": "Tanda",
+     "unit": 6,
+     "period": "2026-09-24"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "unit",
+    "plant_code": "1007",
+    "stage": "STAGE2",
+    "unit": "UNIT06",
+    "scope": {}
+   }
+  },
+  "answer": "Outages at Tanda Unit 6 for 24 Sep 2026: 1 unit(s) affected, 1 new outage(s) started, generation loss 6.51 MU; 0 unit(s) still out at the end of the period. Tanda Unit 6 on 2026-09-24: out 11:01-20:53 (9.87 h), Turbine & Auxilaries - Water / Steam Leakages, loss 6.512 MU. Note: The table has one row per unit per day out; 'new' = the outage started that day, otherwise the unit was already out from an earlier day. 'back_at 24:00' means still out at midnight.",
+  "composer": "template",
+  "timings": {
+   "plan": 24.7,
+   "tools": 0.02,
+   "compose": 0.0,
+   "total": 24.7
+  },
+  "seconds": 24.7
+ },
+ {
+  "id": "O04",
+  "question": "Trips at Kahalgaon this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trips",
+   "args": {
+    "plant": "Kahalgaon",
+    "period": "this month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trips",
+   "args": {
+    "period": "this month",
+    "plant": "Kahalgaon"
+   },
+   "planned": {
+    "tool": "get_trips",
+    "args": {
+     "period": "this month",
+     "plant": "Kahalgaon"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1025",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "7 trip(s) at Kahalgaon for 01 Sep 2026 to 28 Sep 2026; 2 not yet revived. Latest: Kahalgaon Unit 1 at 2026-09-25 00:36 (LLD (TE) High, not yet revived); Kahalgaon Unit 6 at 2026-09-25 00:08 (AOH for 30 days, not yet revived); Kahalgaon Unit 3 at 2026-09-22 05:28 (BTL-WW, revived 2026-09-24 19:41); Kahalgaon Unit 3 at 2026-09-10 20:22 (Drum level high, revived 2026-09-11 20:54). Note: Trip type codes (F, G, S, P, C) are shown as recorded; their meanings are being confirmed.",
+  "composer": "template",
+  "timings": {
+   "plan": 18.9,
+   "tools": 0.03,
+   "compose": 0.0,
+   "total": 19.0
+  },
+  "seconds": 19.0
+ },
+ {
+  "id": "F02",
+  "question": "Which plants have the lowest coal stock days?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "group": "ntpc",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "group": "ntpc",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "group": "ntpc",
+     "metric": "coal_stock_days",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock (days) ranking for 27 Sep 2026 (NTPC Group (NTPC + JVs/subsidiaries), coal plants): 1. Talcher Kaniha (3 days), 2. North Karanpura (3 days), 3. Solapur (3 days), 4. Singrauli (4 days), 5. Vindhyachal (4 days). Note: Ranked 27 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants that have data.",
+  "composer": "template",
+  "timings": {
+   "plan": 22.1,
+   "tools": 0.05,
+   "compose": 0.0,
+   "total": 22.2
+  },
+  "seconds": 22.2
+ },
+ {
+  "id": "S02",
+  "question": "Which outage reason caused the most generation loss in NTPC last month?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "source": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "sql_query",
+   "args": {
+    "question": "Which outage reason caused the most generation loss in NTPC last month?"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "sql_query",
+   "args": {
+    "question": "Which outage reason caused the most generation loss in NTPC last month?"
+   },
+   "planned": {
+    "tool": "sql_query",
+    "args": {
+     "question": "Which outage reason caused the most generation loss in NTPC last month?"
+    }
+   },
+   "source": "daily",
+   "entity": null
+  },
+  "answer": "NO DEMAND / REGULATION caused the most generation loss of 2,647,521.82 MU last month. The data includes all outage reasons and their respective generation loss values for the period.",
+  "composer": "llm (attempt 1, 25.5s)",
+  "timings": {
+   "plan": 20.9,
+   "tools": 40.07,
+   "compose": 25.5,
+   "total": 86.6
+  },
+  "seconds": 86.6
+ },
+ {
+  "id": "CV1-1",
+  "question": "What is today's generation of Rihand so far?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_today_so_far",
+   "args": {
+    "plant": "Rihand"
+   },
+   "source": "live"
+  },
+  "actual": {
+   "tool": "get_today_so_far",
+   "args": {
+    "plant": "Rihand"
+   },
+   "planned": {
+    "tool": "get_today_so_far",
+    "args": {
+     "plant": "Rihand"
+    }
+   },
+   "source": "live",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1005",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "32.9 MU of Rihand so far, live, as of 15:45. Estimated from the 63 completed 15-minute blocks of today.",
+  "composer": "llm (attempt 1, 15.0s)",
+  "timings": {
+   "plan": 14.9,
+   "tools": 0.11,
+   "compose": 15.0,
+   "total": 30.0
+  },
+  "seconds": 30.0
+ },
+ {
+  "id": "CV1-2",
+  "question": "Compare with yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Rihand",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "source": "mixed"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Rihand",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Rihand",
+     "metric": "gross_generation",
+     "period1": "today",
+     "period2": "yesterday"
+    }
+   },
+   "source": "mixed",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1005",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Rihand: 32.9 MU for today so far (live, up to 15:45) vs 49.74 MU for yesterday (27 Sep 2026). Difference: -16.84 MU (-33.86%). Note: Estimated from the 63 completed 15-minute blocks of today (up to 15:45); official daily figures are published the next day. Today's value covers only part of the day, so it is not directly comparable with a full day.",
+  "composer": "template",
+  "timings": {
+   "plan": 29.3,
+   "tools": 0.1,
+   "compose": 0.0,
+   "total": 29.5
+  },
+  "seconds": 29.5
+ },
+ {
+  "id": "CV1-3",
+  "question": "Show the last 30 days",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Rihand",
+    "metric": "gross_generation",
+    "period": "last 30 days",
+    "granularity": "day"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Rihand",
+    "metric": "gross_generation",
+    "period": "last 30 days",
+    "granularity": "day"
+   },
+   "planned": {
+    "tool": "get_trend",
+    "args": {
+     "plant": "Rihand",
+     "metric": "gross_generation",
+     "period": "last 30 days",
+     "granularity": "day"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1005",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Gross generation of Rihand by day (30 points) - see the chart. From 62.78 MU (2026-08-29) to 49.74 MU (2026-09-27); highest 62.78 MU (2026-08-29), lowest 32.72 MU (2026-09-05).",
+  "composer": "template",
+  "timings": {
+   "plan": 32.8,
+   "tools": 0.02,
+   "compose": 0.0,
+   "total": 32.8
+  },
+  "seconds": 32.9
+ },
+ {
+  "id": "CV3-1",
+  "question": "Current generation of Farakka",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_live",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation"
+   },
+   "source": "live"
+  },
+  "actual": {
+   "tool": "get_live",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation"
+   },
+   "planned": {
+    "tool": "get_live",
+    "args": {
+     "plant": "Farakka",
+     "metric": "gross_generation"
+    }
+   },
+   "source": "live",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1024",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "1570 MW, Farakka, live, as of 15:47. All units are running.",
+  "composer": "llm (attempt 1, 13.0s)",
+  "timings": {
+   "plan": 16.8,
+   "tools": 0.04,
+   "compose": 13.0,
+   "total": 29.9
+  },
+  "seconds": 29.9
+ },
+ {
+  "id": "CV3-2",
+  "question": "Which of its units are running?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_live",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation"
+   },
+   "source": "live"
+  },
+  "actual": {
+   "tool": "get_live",
+   "args": {
+    "plant": "Farakka",
+    "metric": "gross_generation"
+   },
+   "planned": {
+    "tool": "get_live",
+    "args": {
+     "plant": "Farakka",
+     "metric": "gross_generation"
+    }
+   },
+   "source": "live",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1024",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Live, as of 15:47: Farakka Units 1, 2, 3, 4, 5, and 6 are running. Current gross generation is 1570 MW.",
+  "composer": "llm (attempt 1, 18.8s)",
+  "timings": {
+   "plan": 19.4,
+   "tools": 0.0,
+   "compose": 18.8,
+   "total": 38.2
+  },
+  "seconds": 38.2
+ },
+ {
+  "id": "CV3-3",
+  "question": "Any trips there this week?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trips",
+   "args": {
+    "plant": "Farakka",
+    "period": "last 7 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trips",
+   "args": {
+    "plant": "Farakka",
+    "period": "last 7 days"
+   },
+   "planned": {
+    "tool": "get_trips",
+    "args": {
+     "plant": "Farakka",
+     "period": "last 7 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1024",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "1 trip(s) at Farakka for 21 Sep 2026 to 27 Sep 2026; 0 not yet revived. Latest: Farakka Unit 3 at 2026-09-25 02:20 (Furnace pressure hi hi, revived 2026-09-25 05:20). Note: Trip type codes (F, G, S, P, C) are shown as recorded; their meanings are being confirmed.",
+  "composer": "template",
+  "timings": {
+   "plan": 22.5,
+   "tools": 0.01,
+   "compose": 0.0,
+   "total": 22.5
+  },
+  "seconds": 22.5
+ },
+ {
+  "id": "CV5-1",
+  "question": "Coal stock at Barh",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "plant": "Barh",
+     "metric": "coal_stock",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock at Barh is 267,679 tonnes as of 27 Sep 2026. Note: Unit assumed tonnes - to be confirmed.",
+  "composer": "llm (attempt 1, 15.1s)",
+  "timings": {
+   "plan": 21.5,
+   "tools": 0.02,
+   "compose": 15.1,
+   "total": 36.6
+  },
+  "seconds": 36.6
+ },
+ {
+  "id": "CV5-2",
+  "question": "How many days is that?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_coal",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_coal",
+    "args": {
+     "plant": "Barh",
+     "metric": "coal_stock_days",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "The coal stock is 6 days as of 27 Sep 2026. The data represents the closing value on that specific date.",
+  "composer": "llm (attempt 1, 12.8s)",
+  "timings": {
+   "plan": 25.2,
+   "tools": 0.02,
+   "compose": 12.8,
+   "total": 38.0
+  },
+  "seconds": 38.0
+ },
+ {
+  "id": "CV5-3",
+  "question": "Trend for this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "this month",
+    "granularity": "day"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trend",
+   "args": {
+    "granularity": "day",
+    "plant": "Barh",
+    "metric": "coal_stock_days",
+    "period": "this month"
+   },
+   "planned": {
+    "tool": "get_trend",
+    "args": {
+     "granularity": "day",
+     "plant": "Barh",
+     "metric": "coal_stock_days",
+     "period": "this month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1028",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Coal stock (days) of Barh by day (27 points) - see the chart. From 13 days (2026-09-01) to 6 days (2026-09-27); highest 13 days (2026-09-01), lowest 6 days (2026-09-25). Note: Daily figures are up to 27 Sep 2026.",
+  "composer": "template",
+  "timings": {
+   "plan": 29.6,
+   "tools": 0.03,
+   "compose": 0.0,
+   "total": 29.7
+  },
+  "seconds": 29.7
+ },
+ {
+  "id": "CV6-1",
+  "question": "Generation of Dadri yesterday",
+  "passed": true,
+  "checks": {
+   "clarification": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Dadri",
+     "metric": "gross_generation",
+     "period": "yesterday"
+    }
+   },
+   "source": "none",
+   "entity": null
+  },
+  "answer": "Which Dadri do you mean: Dadri-Coal (coal, 1,840 MW), Dadri-Gas (gas, 830 MW) or Dadri Solar PV (solar, 5 MW)?",
+  "composer": null,
+  "timings": {
+   "plan": 20.3,
+   "total": 20.4
+  },
+  "seconds": 20.4
+ },
+ {
+  "id": "CV6-2",
+  "question": "The coal one",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Dadri Coal",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "DADRI-COAL",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": null,
+    "args": null
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1011",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "29.25 MU, Dadri-Coal, 27 Sep 2026 The data represents a day value for the plant.",
+  "composer": "llm (attempt 1, 13.1s)",
+  "timings": {
+   "tools": 0.02,
+   "compose": 13.1,
+   "total": 13.2
+  },
+  "seconds": 13.2
+ }
+]

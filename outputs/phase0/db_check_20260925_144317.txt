@@ -1,0 +1,5 @@
+Phase 0 DB check - 2026-09-25 14:43:17
+Server: 10.4.8.44   Database: DB_PlantLive   Driver: ODBC Driver 17 for SQL Server
+(login name and password are not shown)
+
+CONNECTION FAILED: Missing settings in .env: DB_PASSWORD

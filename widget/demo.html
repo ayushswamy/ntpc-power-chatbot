@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat widget demo</title>
+<style>
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #eef1f5; color: #1c2733; }
+  header { background: #22313f; color: #fff; padding: 14px 24px; font-size: 18px; }
+  main { max-width: 960px; margin: 24px auto; padding: 0 16px; display: grid; gap: 16px; }
+  .card { background: #fff; border: 1px solid #d8dee6; border-radius: 8px; padding: 16px 20px; }
+  .warn { background: #fff4e0; border-color: #f0c36d; }
+  code { background: #f2f4f7; padding: 2px 5px; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { border-bottom: 1px solid #e5e9ee; padding: 6px 8px; text-align: left; }
+</style>
+</head>
+<body>
+<header>Operations report (demo page for the chat widget)</header>
+<main>
+  <div class="card">
+    <h2 style="margin-top:0">How to use this page</h2>
+    <p>This page stands in for the ASP.NET application. The chat button is at the bottom right.</p>
+    <p>Open it as <code>http://127.0.0.1:8000/widget/demo.html?key=YOUR_API_KEY</code>, with the <code>API_KEY</code> value from <code>.env</code>.</p>
+    <p id="keystatus"></p>
+  </div>
+  <div class="card warn">
+    <strong>Development only:</strong> this page passes the API key to the browser. In the real application the key stays on the
+    ASP.NET server (see <code>docs/EMBEDDING.md</code>), and the widget is added with one line:
+    <code>&lt;script src="…/widget/ntpc-chat.js" data-endpoint="/chatbot"&gt;&lt;/script&gt;</code>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Sample content</h3>
+    <table>
+      <tr><th>Section</th><th>Description</th></tr>
+      <tr><td>Daily coal status</td><td>Placeholder text, to show the widget on top of normal page content.</td></tr>
+      <tr><td>Generation report</td><td>Placeholder text.</td></tr>
+    </table>
+  </div>
+</main>
+<script>
+  // Load the widget the same way a real page would, adding the test key from ?key=...
+  var key = new URLSearchParams(location.search).get("key") || "";
+  document.getElementById("keystatus").textContent = key
+    ? "Test key found in the address - the widget will use it."
+    : "No ?key= in the address - the chatbot will answer 'Missing or invalid API key'.";
+  var s = document.createElement("script");
+  s.src = "ntpc-chat.js";
+  if (key) s.dataset.apiKey = key;
+  document.body.appendChild(s);
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+﻿ParamCode,Description,ParamDisplay,ParamCategory,ForStation,ForStage,ForUnit,Sequence,IsDisplayOperationPerformance
+afc,AFC,AFC,Others,True,True,False,7.0,False
+ag_mu,Actual Generation in MU,AG,AG,True,True,False,110.0,True
+ag_per,AG Percentage,AG %,AG,True,True,False,110.0,True
+apc,Auxiliary Power Consumption,APC (%),Others,True,True,False,123.0,True
+avb,Availibility,AvF On Bar (%),Others,True,True,False,105.0,True
+coal_consumption,Total Coas Consumption,Coal Consumption (MMT),Coal,True,True,False,3.0,False
+coal_consumption_dom,Total Coal Consumption of Domestic Coal,Coal Consumption (MMT) Dom,Coal,True,True,False,135.0,True
+coal_consumption_imp,Total Coal Consumption of Imported Coal,Coal Consumption (MMT) Imp,Coal,True,True,False,136.0,True
+coal_receipt,Total Coal Receipt,Coal Receipt (MMT),Coal,True,True,False,3.0,False
+coal_receipt_dom,Total Coal Receipt of Domestic Coal,Coal Receipt (MMT) Dom,Coal,True,True,False,133.0,True
+coal_receipt_imp,Total Coal Receipt of Imported Coal,Coal Receipt (MMT) Imp,Coal,True,True,False,134.0,True
+coal_receipt_mgr,Total Coal Receipt from MGR,Coal Receipt (MMT) MGR,Coal,True,False,False,3.0,False
+coal_receipt_rly,Total Coal Receipt from Railway,Coal Receipt (MMT) Rly,Coal,True,False,False,3.0,False
+coal_stock,Total Coal Stock,Coal Stock (MMT),Coal,True,False,False,137.0,True
+coal_stock_days,Total Coal Stock in Days,Coal Stock Days,Coal,True,False,False,3.0,False
+coal_stock_dom,Total Coal Stock of Domestic Coal,Coal Stock (MMT) Dom,Coal,True,False,False,3.0,False
+coal_stock_imp,Total Coal Stock of Imported Coal,Coal Stock (MMT) Imp,Coal,True,False,False,3.0,False
+com_cap_mu,Commercial Capacity (Installed Capacity) in MU,Installed Capacity (MU),Capacity,True,True,True,101.0,True
+com_cap_mw,Commercial Capacity (Installed Capacity) in MW,Installed Capacity (MW),Capacity,True,True,True,2.0,False
+com_gen_mu,Commercial Generation in MU,Gross Gen Comml (MU),Generation,True,True,True,102.0,True
+com_gen_mw,Commercial Generation in MW,Gross Gen Comml (MW),Generation,True,True,True,5.0,False
+comm_cap_mu_ppa,Commercial Capacity in MU as per PPA,Commercial Capacity PPA (MU),Capacity,True,True,True,2.0,False
+dc_mu,Declared Capacity in MU,DC,DC,True,True,False,108.0,True
+dc_mu_ppa,Declared Capacity in MU PPA,DC,DC,True,True,False,4.0,False
+dc_mu_stoa,Declared Capacity in MU STOA,DC,DC,True,True,False,4.0,False
+dc_normative_mu,Normative Declared Capacity,Normative DC,DC,True,True,False,4.0,False
+dc_per,DC Percentage,DC %,DC,True,True,False,108.0,True
+FO+PL (Eq+Othrs),FO+PL (Eq+Othrs),FO+PL (Eq+Othrs),Total Outage Loss,True,True,True,116.0,True
+FO+PL (Eq+Othrs)_per,FO+PL (Eq+Othrs) %,FO+PL (Eq+Othrs) %,Total Outage Loss,True,True,True,117.0,True
+genloss_mu,Generation Loss,Generation Loss (MU),Generation,True,True,True,5.0,False
+gross_cap_mu,Total Capacity in MU,Gross Capacity (MU),Capacity,True,True,True,2.0,False
+gross_cap_mw,Total Capacity in MW,Gross Capacity (MW),Capacity,True,True,True,2.0,False
+gross_gen_mu,Total Generation in MU,Gross Gen Incl Non Comml (MU),Generation,True,True,True,103.0,True
+gross_gen_mw,Total Generation in MW,Gross Gen Incl Non Comml (MW),Generation,True,True,True,5.0,False
+heatrate,Heat Rate,Heat Rate (Kcal/kWh),Heat Rate,True,True,True,122.0,True
+lf,Load Factor,LF (%),Others,True,True,False,107.0,True
+merchant_cap_mu,Merchant Capacity in MU,Merchant Capcity (MU),Capacity,True,True,True,2.0,False
+no_outg,"Total Number of outage excluding plan,grid,fuel,cw,env,others and comm regulation in a day stagewise",Outage No,Total Outage Loss,True,True,False,11.0,False
+noncom_cap_mu,Non Commercial Capacity in MU,NonCommercial Capacity (MU),Capacity,True,True,True,2.0,False
+noncom_cap_mw,Non Commercial Capacity in MW,NonCommercial Capacity (MW),Capacity,True,True,True,2.0,False
+noncom_gen_mu,Non Commercial Generation in MU,Gross Gen Non Comml (MU),Generation,True,True,True,5.0,False
+noncom_gen_mw,Non Commercial Generation in MW,Gross Gen Non Comml (MW),Generation,True,True,True,5.0,False
+norm_apc,Normative APC,Normative APC,Others,True,True,False,134.0,True
+outg_blr,Outage Loss in MU due to Boiler,Boiler Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_blr_no,Outage Nos due to Boiler,Boiler Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_cni,Outage Loss in MU due to C&I,C&I Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_cni_no,Outage Nos due to C&I,C&I Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_cwshort,Outage Loss in MU due to CW Shortage,CW Shortage Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_cwshort_no,Outage Nos due to CW Shortage,CW Shortage Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_env,Outage Loss in MU due to Environment,Environment Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_env_no,Outage Nos due to Environment,Environment Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_excessgen,Outage Loss in MU due to Excess Generation,Excess Generation Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_excessgen_no,Outage Nos due to Excess Generation,Excess Generation Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_frcd,"Forced Outage Loss in MU due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",FO Eqpt,Outage Loss,True,True,True,112.0,True
+outg_frcd_no,"Forced Outage Nos in MU due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",FO Eqpt (Nos),Outage Loss,True,True,True,8.0,False
+outg_frcd_per,"Forced Outage Loss in % due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",FO Eqpt %,Outage Loss,True,True,True,113.0,True
+outg_fuel,Outage Loss in MU due to Fuel,Fuel Outage,Outage Loss,True,True,True,8.0,False
+outg_fuel_no,Outage Nos due to Fuel,Fuel Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_fuel_per,Outage Loss in % due to Fuel,Fuel Loss (%) Outage,Outage Loss,True,True,True,129.0,True
+outg_gasturbine,Outage Loss in MU due to Gas Turbine,Gas Turbine Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_gasturbine_no,Outage Nos due to Gas Turbine,Gas Turbine Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_gen,Outage Loss in MU due to Generator,Generator Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_gen_no,Outage Nos due to Generator,Generator Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_grid,"Grid Outage Loss in MU due to GridLine, No Demand",Grid Outage,Outage Loss,True,True,True,8.0,False
+outg_grid_no,"Grid Outage Nos in MU due to GridLine, No Demand",Grid Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_grid_per,"Grid Outage Loss in % due to GridLine, No Demand",Grid Loss (%) Outage,Outage Loss,True,True,True,126.0,True
+outg_hydro,Outage Loss in MU due to Hydro,Hydro Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_hydro_no,Outage Nos due to Hydro,Hydro Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_incomplete,Outage Loss in MU due to Incomplete Commissioning,Incomplete Commissioning Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_incomplete_no,Outage Nos in MU due to Incomplete Commissioning,Incomplete Commissioning Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_loss,Outage Loss in MU,Outage Loss,Outage Loss,True,True,True,8.0,False
+outg_loss_per,Outage Loss in %,Outage%,Outage Loss,True,True,True,8.0,False
+outg_no,Outage Nos.,Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_nodmd,Outage Loss in MU due to No Demand,No Demand Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_nodmd_no,Outage Nos due to No Demand,No Demand Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_offsite,Outage Loss in MU due to Offsite,Offsite Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_offsite_no,Outage Nos due to Offsite,Offsite Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_oprnind,Outage Loss in MU due to Operation Induced,Operation Induced Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_oprnind_no,Outage Nos due to Operation Induced,Operation Induced Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_other,Outage Loss in MU due to Others,Others Outage,Outage Loss,True,True,True,8.0,False
+outg_other_no,Outage Nos due to Others,Others Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_others,"Others Outage Loss except Forced, Grid, Fuel, and Planned",FO Others,Outage Loss,True,True,True,113.0,True
+outg_others_no,"Others Outage Nos except Forced, Grid, Fuel, and Planned",FO Others (Nos),Outage Loss,True,True,True,8.0,False
+outg_others_per,"Others Outage % except Forced, Grid, Fuel, and Planned",FO Others %,Outage Loss,True,True,True,114.0,True
+outg_plan,Outage Loss in MU due to Planned,PO,Outage Loss,True,True,True,8.0,False
+outg_plan_no,Outage Nos due to Planned,PO (Nos),Outage Loss,True,True,True,8.0,False
+outg_plan_per,Outage Loss in % due to Planned,PO %,Outage Loss,True,True,True,111.0,True
+outg_tur,Outage Loss in MU due to Turbine,Turbine Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_tur_no,Outage Nos due to Turbine,Turbine Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+outg_xline,Outage Loss in MU due to Gridline,Grid Loss Outage,Outage Loss,True,True,True,8.0,False
+outg_xline_no,Outage Nos due to Gridline,Grid Loss Outage (Nos),Outage Loss,True,True,True,8.0,False
+partl,Partial Loss in MU,Partial Loss,Partial Outage Loss,True,True,True,9.0,False
+partl_blr,Partial Loss in MU due to Boiler,Boiler Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_blr_no,Partial Nos due to Boiler,Boiler Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_cni,Partial Loss in MU due to C&I,C&I Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_cni_no,Partial Nos due to C&I,C&I Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_cwshort,Partial Loss in MU due to CW Shortage,CW Shortage Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_cwshort_no,Partial Nos due to CW Shortage,CW Shortage Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_env,Partial Loss in MU due to Environment,Environment Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_env_no,Partial Nos due to Environment,Environment Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_excessgen,Partial Loss in MU due to Excess Generation,Excess Generation Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_excessgen_no,Partial Nos due to Excess Generation,Excess Generation Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_frcd,"Partial Outage Loss in MU due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",PL Eqpt,Partial Outage Loss,True,True,True,114.0,True
+partl_frcd_no,"Partial Outage No in MU due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",PL Eqpt (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_frcd_per,"Partial Forced Outage Loss in % due to Boiler, Turbine, Generator, Offisite, C&O, Operation Induced",PL Eqpt %,Partial Outage Loss,True,True,True,115.0,True
+partl_fuel,Partial Loss in MU due to Fuel,Fuel Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_fuel_no,Partial Nos due to Fuel,Fuel Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_fuel_per,Partial Outage Loss in % due to Fuel,Fuel Loss (%) Partial,Partial Outage Loss,True,True,True,130.0,True
+partl_gasturbine,Partial Loss in MU due to Gas Turbine,Gas Turbine Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_gasturbine_no,Partial Nos due to Gas Turbine,Gas Turbine Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_gen,Partial Loss in MU due to Generator,Generator Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_gen_no,Partial Nos due to Generator,Generator Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_grid,"Partial Outage Loss in MU due to GridLine, No Demand",Grid Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_grid_no,"Partial Outage No in MU due to GridLine, No Demand",Grid Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_grid_per,"Partial Grid Outage Loss in % due to GridLine, No Demand",Grid Loss (%) Partial,Partial Outage Loss,True,True,True,127.0,True
+partl_hydro,Partial Loss in MU due to Hydro,Hydro Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_hydro_no,Partial Nos due to Hydro,Hydro Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_incomplete,Partial Loss in MU due to Incomplete Commissioning,Incomplete Commissioning Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_incomplete_no,Partial Nos due to Incomplete Commissioning,Incomplete Commissioning Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_loss_per,Partial Loss in %,Partial Loss%,Partial Outage Loss,True,True,True,9.0,False
+partl_no,Partial Nos.,Partial Loss(Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_nodmd,Partial Loss in MU due to No Demand,No Demand Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_nodmd_no,Partial Nos due to No Demand,No Demand Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_offsite,Partial Loss in MU due to Offsite,Offsite Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_offsite_no,Partial Nos due to Offsite,Offsite Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_oprnind,Partial Loss in MU due to Operation Induced,Operation Induced Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_oprnind_no,Partial Nos due to Operation Induced,Operation Induced Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_other,Partial Loss in MU due to Others,Others Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_other_no,Partial Nos due to Others,Others Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_others,"Partial Outage Loss except Forced, Grid, Fuel, and Planned",PL Others,Partial Outage Loss,True,True,True,115.0,True
+partl_others_no,"Partial Outage No except Forced, Grid, Fuel, and Planned",PL Others (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_others_per,"Partial Others Outage % except Forced, Grid, Fuel, and Planned",PL Others %,Partial Outage Loss,True,True,True,116.0,True
+partl_plan,Partial Loss in MU due to Planned,Planned Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_plan_no,Partial Nos due to Planned,Planned Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_plan_per,Partial Outage Loss in % due to Planned,Planned Loss Partial%,Partial Outage Loss,True,True,True,9.0,False
+partl_tur,Partial Loss in MU due to Turbine,Turbine Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_tur_no,Partial Nos due to Turbine,Turbine Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+partl_xline,Partial Loss in MU due to Gridline,Grid Loss Partial,Partial Outage Loss,True,True,True,9.0,False
+partl_xline_no,Partial Nos due to Gridline,Grid Loss Partial (Nos),Partial Outage Loss,True,True,True,9.0,False
+plf,Plant Load Factor,PLF (%),Others,True,True,False,104.0,True
+rsd_avb,Availibility includes RSD,AvF Incl RSD (%),Others,True,True,False,106.0,True
+rsd_mu,RSD MU,RSD MU,Outage Loss,True,True,True,11.0,False
+rsd_nos,RSD (Nos),RSD (Nos),Total Outage Loss,True,True,True,120.0,True
+rsd_per,RSD(%),RSD(%),Total Outage Loss,True,True,True,121.0,True
+sg_agcdn_mu,Scheduled Generation in MU - AGC Down,SG,SG,True,True,False,10.0,False
+sg_agcup_mu,Scheduled Generation in MU - AGC Up,SG,SG,True,True,False,10.0,False
+sg_mu,Scheduled Generation in MU,SG,SG,True,True,False,109.0,True
+sg_per,SG Percentage,SG %,SG,True,True,False,109.0,True
+sg_ptx_mu,Scheduled Generation in MU - PTX,SG,SG,True,True,False,10.0,False
+sg_rrasdn_mu,Scheduled Generation in MU - RRAS Down,SG,SG,True,True,False,10.0,False
+sg_rrasup_mu,Scheduled Generation in MU - RRAS Up,SG,SG,True,True,False,10.0,False
+sg_sceddn_mu,Scheduled Generation in MU - SCED Down,SG,SG,True,True,False,10.0,False
+sg_scedup_mu,Scheduled Generation in MU - SCED Up,SG,SG,True,True,False,10.0,False
+sg_urs_mu,Scheduled Generation in MU - URS,SG,SG,True,True,False,10.0,False
+sp_coal_cons,Specific Coal Consumption,Sp Coal (kg/kWh),Coal,True,False,False,124.0,True
+sp_fuel_oil_consumption,Fuel Oil Consumption,Fuel Oil Consumption,Others,True,True,False,7.0,False
+sp_oil,SP Oil,Sp Oil (ml/kWh),Others,True,True,False,125.0,True
+total_outage_btl,Total Outage BTL,BTL MU,Total Outage Loss,True,True,True,11.0,False
+total_outage_btl_per,Total Outage BTL%,BTL%,Total Outage Loss,True,True,True,11.0,False
+total_outage_frcd,Total Forced Outage (Outage and Partial),Total Forced Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_frcd_nos,Total Forced Outage Nos (Outage and Partial),Total Forced Outage Nos,Total Outage Loss,True,True,True,11.0,False
+total_outage_frcd_per,Total Forced Outage % (Outage and Partial),Total Forced Outage %,Total Outage Loss,True,True,True,11.0,False
+total_outage_fuel,Total Fuel Outage (Outage and Partial),Total Fuel Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_fuel_nos,Total Fuel Outage Nos (Outage and Partial),Total Fuel Outage Nos,Total Outage Loss,True,True,True,11.0,False
+total_outage_fuel_per,Total Fuel Outage Per (Outage and Partial),Fuel Loss (%) Total,Total Outage Loss,True,True,True,131.0,True
+total_outage_grid,Total Grid Outage (Outage and Partial),Total Grid Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_grid_nos,Total Grid Outage Nos (Outage and Partial),Total Grid Outage Nos,Total Outage Loss,True,True,True,11.0,False
+total_outage_grid_per,Total Grid Outage Percent (Outage and Partial),Grid Loss Total (%),Total Outage Loss,True,True,True,128.0,True
+total_outage_loss,Total Outage Loss(Outage and Partial),Total Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_loss_btl,Total Outage Loss of Boiler and Turbine(Outage and Partial),BTL Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_nos,Total Outage Nos(Outage and Partial),Outage (Nos),Total Outage Loss,True,True,True,117.0,True
+total_outage_nos_btl,Total Outage Nos of Boiler and Turbine(Outage and Partial),BTL (Nos),Total Outage Loss,True,True,True,118.0,True
+total_outage_nos_per,Total Outage Per of Boiler and Turbine(Outage and Partial),BTL (%),Total Outage Loss,True,True,True,119.0,True
+total_outage_others,Total Others Outage (Outage and Partial),Total Others Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_others_nos,Total Others Outage Nos (Outage and Partial),Total Others Outage Nos,Total Outage Loss,True,True,True,11.0,False
+total_outage_others_per,Total Others Outage Per (Outage and Partial),Total Others Outage %,Total Outage Loss,True,True,True,11.0,False
+total_outage_per,Total Outage Per(Outage and Partial),Total Outage %,Total Outage Loss,True,True,True,11.0,False
+total_outage_planned,Total Planned Outage (Outage and Partial),Total Planned Outage Loss,Total Outage Loss,True,True,True,11.0,False
+total_outage_planned_nos,Total Planned Outage Nos (Outage and Partial),Total Planned Outage Nos,Total Outage Loss,True,True,True,11.0,False
+total_outage_planned_per,Total Planned Outage Per (Outage and Partial),Total Planned Outage %,Total Outage Loss,True,True,True,11.0,False
+total_partial_btl,Total Partial BTL,BTL MU,Total Outage Loss,True,True,True,11.0,False
+total_partial_btl_per,Total Partial BTL%,BTL%,Total Outage Loss,True,True,True,11.0,False
+urs,URS,URS,Others,True,True,False,132.0,True
+urs_per,URS Percentage,URS %,Others,True,True,False,133.0,True

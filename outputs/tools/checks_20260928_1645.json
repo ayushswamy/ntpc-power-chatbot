@@ -1,0 +1,558 @@
+{
+ "a_today_so_far_method": {
+  "day": "2026-09-27",
+  "plants": [
+   {
+    "plant": "Singrauli",
+    "blocks_TOTALGEN_mu": 30.09,
+    "official_gross_gen_mu": 30.08,
+    "blocks_AG_mu": 27.09,
+    "official_ag_mu": 27.07
+   },
+   {
+    "plant": "Rihand",
+    "blocks_TOTALGEN_mu": 50.11,
+    "official_gross_gen_mu": 49.74,
+    "blocks_AG_mu": 46.15,
+    "official_ag_mu": 45.75
+   },
+   {
+    "plant": "Korba",
+    "blocks_TOTALGEN_mu": 43.25,
+    "official_gross_gen_mu": 43.21,
+    "blocks_AG_mu": 39.99,
+    "official_ag_mu": 40.24
+   },
+   {
+    "plant": "Kahalgaon",
+    "blocks_TOTALGEN_mu": 30.74,
+    "official_gross_gen_mu": 30.7,
+    "blocks_AG_mu": 28.01,
+    "official_ag_mu": 27.82
+   },
+   {
+    "plant": "Ramagundam",
+    "blocks_TOTALGEN_mu": 28.87,
+    "official_gross_gen_mu": 28.91,
+    "blocks_AG_mu": 28.46,
+    "official_ag_mu": 26.17
+   },
+   {
+    "plant": "Mouda",
+    "blocks_TOTALGEN_mu": 41.99,
+    "official_gross_gen_mu": 41.82,
+    "blocks_AG_mu": 38.48,
+    "official_ag_mu": 38.89
+   },
+   {
+    "plant": "Dadri-Gas",
+    "blocks_TOTALGEN_mu": 0.02,
+    "official_gross_gen_mu": 0.06,
+    "blocks_AG_mu": 0.02,
+    "official_ag_mu": null
+   },
+   {
+    "plant": "Kawas",
+    "blocks_TOTALGEN_mu": 0.0,
+    "official_gross_gen_mu": 0.01,
+    "blocks_AG_mu": 0.0,
+    "official_ag_mu": null
+   },
+   {
+    "plant": "Jhajjar",
+    "blocks_TOTALGEN_mu": 23.27,
+    "official_gross_gen_mu": 23.12,
+    "blocks_AG_mu": 21.4,
+    "official_ag_mu": null
+   },
+   {
+    "plant": "Singrauli Solar PV",
+    "blocks_TOTALGEN_mu": 0.05,
+    "official_gross_gen_mu": 0.05,
+    "blocks_AG_mu": 0.05,
+    "official_ag_mu": null
+   }
+  ],
+  "stage_blocks_counted": {
+   "TOTALGEN": 1536,
+   "AG": 1536
+  },
+  "stage_blocks_skipped": {
+   "TOTALGEN": 0,
+   "AG": 0
+  }
+ },
+ "b_unit_column_numbering": [
+  {
+   "plant": "Korba",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Korba",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT07"
+   ],
+   "master_units_of_stage": [
+    "UNIT07"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT03",
+    "UNIT04"
+   ],
+   "master_units_of_stage": [
+    "UNIT03",
+    "UNIT04"
+   ]
+  },
+  {
+   "plant": "Rihand",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT03",
+    "UNIT04"
+   ],
+   "master_units_of_stage": [
+    "UNIT03",
+    "UNIT04"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT05"
+   ],
+   "master_units_of_stage": [
+    "UNIT05"
+   ]
+  },
+  {
+   "plant": "Unchahar",
+   "stage": "STAGE4",
+   "U_columns_filled": [
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE1",
+   "U_columns_filled": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ],
+   "master_units_of_stage": [
+    "UNIT01",
+    "UNIT02",
+    "UNIT03",
+    "UNIT04",
+    "UNIT05",
+    "UNIT06"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE2",
+   "U_columns_filled": [
+    "UNIT07",
+    "UNIT08"
+   ],
+   "master_units_of_stage": [
+    "UNIT07",
+    "UNIT08"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE3",
+   "U_columns_filled": [
+    "UNIT09",
+    "UNIT10"
+   ],
+   "master_units_of_stage": [
+    "UNIT09",
+    "UNIT10"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE4",
+   "U_columns_filled": [
+    "UNIT11",
+    "UNIT12"
+   ],
+   "master_units_of_stage": [
+    "UNIT11",
+    "UNIT12"
+   ]
+  },
+  {
+   "plant": "Vindhyachal",
+   "stage": "STAGE5",
+   "U_columns_filled": [
+    "UNIT13"
+   ],
+   "master_units_of_stage": [
+    "UNIT13"
+   ]
+  }
+ ],
+ "c_trip_plant_codes": {
+  "mapped": [
+   [
+    "AnGPS",
+    "Anta",
+    15
+   ],
+   [
+    "AuGPS",
+    "Auraiya",
+    23
+   ],
+   [
+    "BARAUNI",
+    "Barauni",
+    20
+   ],
+   [
+    "BARH",
+    "Barh",
+    73
+   ],
+   [
+    "BONGAIGAON",
+    "Bongaigaon",
+    9
+   ],
+   [
+    "BRBCL",
+    "BRBCL",
+    21
+   ],
+   [
+    "BhNSPCL",
+    "Bhilai",
+    3
+   ],
+   [
+    "DARLIPALI",
+    "Darlipali",
+    14
+   ],
+   [
+    "DaGPS",
+    "Dadri-Gas",
+    16
+   ],
+   [
+    "FSTPS",
+    "Farakka",
+    53
+   ],
+   [
+    "FdGPS",
+    "Faridabad",
+    16
+   ],
+   [
+    "FgUTPS",
+    "Unchahar",
+    35
+   ],
+   [
+    "GADARWARA",
+    "Gadarwara",
+    9
+   ],
+   [
+    "JHABUA",
+    "Jhabua",
+    22
+   ],
+   [
+    "JHAJJAR",
+    "Jhajjar",
+    18
+   ],
+   [
+    "JgGPS",
+    "Jhanor-Gandhar",
+    11
+   ],
+   [
+    "KHARGONE",
+    "Khargone",
+    9
+   ],
+   [
+    "KSTPS",
+    "Korba",
+    28
+   ],
+   [
+    "KUDGI",
+    "Kudgi",
+    13
+   ],
+   [
+    "KdHPS",
+    "Koldam",
+    19
+   ],
+   [
+    "KhSTPS",
+    "Kahalgaon",
+    55
+   ],
+   [
+    "Khurja",
+    "Khurja",
+    35
+   ],
+   [
+    "KwGPS",
+    "Kawas",
+    24
+   ],
+   [
+    "LARA",
+    "Lara",
+    8
+   ],
+   [
+    "MEJA",
+    "Meja",
+    15
+   ],
+   [
+    "MSTPS",
+    "Mouda",
+    24
+   ],
+   [
+    "MTPS",
+    "Kanti",
+    8
+   ],
+   [
+    "NPGC",
+    "NSTPS",
+    23
+   ],
+   [
+    "NcTPS",
+    "Dadri-Coal",
+    64
+   ],
+   [
+    "NorthKP",
+    "North Karanpura",
+    27
+   ],
+   [
+    "Patratu",
+    "Patratu",
+    21
+   ],
+   [
+    "RGPPL",
+    "Ratnagiri",
+    26
+   ],
+   [
+    "RSTPS",
+    "Ramagundam",
+    85
+   ],
+   [
+    "RhSTPS",
+    "Rihand",
+    30
+   ],
+   [
+    "SOLAPUR",
+    "Solapur",
+    7
+   ],
+   [
+    "SSTPS",
+    "Singrauli",
+    31
+   ],
+   [
+    "SmTPS",
+    "Simhadri",
+    32
+   ],
+   [
+    "SpSTPS",
+    "Sipat",
+    19
+   ],
+   [
+    "TELANGANA",
+    "Telangana",
+    18
+   ],
+   [
+    "TSTPS",
+    "Talcher Kaniha",
+    38
+   ],
+   [
+    "TnTPS",
+    "Tanda",
+    13
+   ],
+   [
+    "VALLUR",
+    "Vallur",
+    29
+   ],
+   [
+    "VSTPS",
+    "Vindhyachal",
+    61
+   ]
+  ],
+  "not_mapped": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "trip_types": [
+   {
+    "TRIP_TYPE": "G",
+    "n": 222
+   },
+   {
+    "TRIP_TYPE": "F",
+    "n": 723
+   },
+   {
+    "TRIP_TYPE": "C",
+    "n": 7
+   },
+   {
+    "TRIP_TYPE": "P",
+    "n": 99
+   },
+   {
+    "TRIP_TYPE": "S",
+    "n": 69
+   },
+   {
+    "TRIP_TYPE": "---Select---",
+    "n": 1
+   }
+  ]
+ },
+ "d_outage_rows_per_day": [
+  {
+   "OutageDate": "2026-09-25",
+   "n_rows": 54,
+   "plants": 21
+  },
+  {
+   "OutageDate": "2026-09-26",
+   "n_rows": 50,
+   "plants": 20
+  },
+  {
+   "OutageDate": "2026-09-27",
+   "n_rows": 51,
+   "plants": 20
+  }
+ ],
+ "e_plf_formula": [
+  {
+   "plant": "Singrauli",
+   "plf_param": 62.67,
+   "gen_over_cap_x100": 62.67
+  },
+  {
+   "plant": "Rihand",
+   "plf_param": 69.08,
+   "gen_over_cap_x100": 69.08
+  },
+  {
+   "plant": "Kahalgaon",
+   "plf_param": 54.67,
+   "gen_over_cap_x100": 54.67
+  },
+  {
+   "plant": "Ramagundam",
+   "plf_param": 46.33,
+   "gen_over_cap_x100": 46.33
+  },
+  {
+   "plant": "Jhajjar",
+   "plf_param": 64.22,
+   "gen_over_cap_x100": 64.22
+  }
+ ]
+}

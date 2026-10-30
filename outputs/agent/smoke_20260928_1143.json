@@ -1,0 +1,728 @@
+[
+ {
+  "question": "Hello",
+  "text": "Hello! I can answer questions about NTPC power data - live generation (\"current generation of Singrauli\"), today so far, daily and monthly generation, PLF, availability, outages, trips, coal stock and capacity.",
+  "table": null,
+  "chart": null,
+  "sources": [],
+  "as_of": null,
+  "is_live": false,
+  "clarification": false,
+  "source": "none",
+  "tool": "reply",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "total": 0.0
+  },
+  "sql_debug": [],
+  "debug": {
+   "args": {
+    "text": "Hello! I can answer questions about NTPC power data - live generation (\"current generation of Singrauli\"), today so far, daily and monthly generation, PLF, availability, outages, trips, coal stock and capacity."
+   },
+   "plan": null,
+   "examples": null,
+   "composer": null
+  }
+ },
+ {
+  "question": "What is the current generation of Singrauli?",
+  "text": "The current generation of Singrauli is 1100 MW as of 2026-09-28 11:30. The data includes live generation from multiple units, with some units operating at full capacity. Note that the total capacity is 2000 MW, and the data covers units 1 to 7. The table shows the top units with their generation and status.",
+  "table": {
+   "columns": [
+    "unit",
+    "mw",
+    "capacity_mw",
+    "time",
+    "status"
+   ],
+   "rows": [
+    [
+     "Singrauli Unit 1",
+     0,
+     200,
+     "2026-09-28 11:28",
+     "live"
+    ],
+    [
+     "Singrauli Unit 2",
+     123,
+     200,
+     "2026-09-28 11:30",
+     "live"
+    ],
+    [
+     "Singrauli Unit 3",
+     128,
+     200,
+     "2026-09-28 11:30",
+     "live"
+    ],
+    [
+     "Singrauli Unit 4",
+     127,
+     200,
+     "2026-09-28 11:30",
+     "live"
+    ],
+    [
+     "Singrauli Unit 5",
+     122,
+     200,
+     "2026-09-28 11:30",
+     "live"
+    ],
+    [
+     "Singrauli Unit 6",
+     302,
+     500,
+     "2026-09-28 11:29",
+     "live"
+    ],
+    [
+     "Singrauli Unit 7",
+     299,
+     500,
+     "2026-09-28 11:30",
+     "live"
+    ]
+   ]
+  },
+  "chart": null,
+  "sources": [
+   "XML_RealView"
+  ],
+  "as_of": "2026-09-28 11:30",
+  "is_live": true,
+  "composer": "llm (attempt 1, 46.3s)",
+  "source": "live",
+  "tool": "get_live",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 161.5,
+   "tools": 0.06,
+   "compose": 46.3,
+   "total": 207.9
+  },
+  "sql_debug": [
+   "SELECT TOP 1000 PlantCode, PlantCodeScada, StationName, StationShortName, StationOPPMS, GrossCapMW, CommCapMW, Stages, Units, CompanyGrp, CompanySbGrp, CompanySbSbGrp, RegionNTPC, FuelType, EnergyType, PHNPH, IsActive, IsDeleted FROM dbo.Master_Plants",
+   "SELECT TOP 1000 PlantCode, Stage, StageName, StageNameRealView, StageNameDescription, Units, CapacityMW, PCode, IsActive, IsDeleted FROM dbo.Master_Stages",
+   "SELECT TOP 2000 PlantCode, Stage, Unit, CapacityMW, CommissioningDate, DecommissioningDate, CommercialStatus, IsActive, IsDeleted FROM dbo.Master_Units",
+   "SELECT TOP 1000 out_cd, out_subcd, out_main_desc, out_sub_desc FROM dbo.Master_OutageCodes",
+   "SELECT TOP 2000 PlantCode, PartSequence, PartName, PartInstalledCapacityMW, PartCommDate, DecommissionedDate, CapacityStatus, IsActive FROM dbo.Master_Part_Installed_Capacity",
+   "SELECT TOP 1 ReportDate, BLK FROM dbo.XML_RealView WHERE ReportDate BETWEEN ? AND ? ORDER BY ReportDate DESC, BLK DESC",
+   "SELECT TOP 1000 ReportDate, PlantCode, Stage, NAME, TYPE, BLK, TIME, AG, AGTAGTIME, FREQ, TOTALGEN, STNCAP, UpdatedOn, U1, TAGTIME1, UCAP1, U2, TAGTIME2, UCAP2, U3, TAGTIME3, UCAP3, U4, TAGTIME4, UCAP4, U5, TAGTIME5, UCAP5, U6, TAGTIME6, UCAP6, U7, TAGTIME7, UCAP7, U8, TAGTIME8, UCAP8, U9, TAGTIME9, UCAP9, U10, TAGTIME10, UCAP10, U11, TAGTIME11, UCAP11, U12, TAGTIME12, UCAP12, U13, TAGTIME13, UCAP13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK = ?"
+  ],
+  "debug": {
+   "args": {
+    "metric": "gross_generation",
+    "plant": "Singrauli"
+   },
+   "plan": {
+    "seconds": 154.4,
+    "prompt_tokens": 4210,
+    "cached_tokens": 0,
+    "completion_tokens": 29
+   },
+   "examples": [
+    "CV3-1",
+    "L01",
+    "L14"
+   ],
+   "composer": "llm (attempt 1, 46.3s)"
+  }
+ },
+ {
+  "question": "How much has it generated today so far?",
+  "text": "Singrauli has generated 14.78 MU today so far, as of 2026-09-28 11:30. The data is live and estimated from 46 completed 15-minute blocks up to 11:30. The value includes contributions from Singrauli (coal, 2,000 MW), Singrauli Solar PV (solar, 15 MW), and Singrauli Small Hydro (hydro, 8 MW). Official daily figures are published the next day.",
+  "table": null,
+  "chart": null,
+  "sources": [
+   "XML_RealView"
+  ],
+  "as_of": "2026-09-28 11:30",
+  "is_live": true,
+  "composer": "llm (attempt 1, 43.8s)",
+  "source": "live",
+  "tool": "get_today_so_far",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 24.7,
+   "tools": 0.11,
+   "compose": 43.8,
+   "total": 68.6
+  },
+  "sql_debug": [
+   "SELECT TOP 1 ReportDate, BLK FROM dbo.XML_RealView WHERE ReportDate BETWEEN ? AND ? ORDER BY ReportDate DESC, BLK DESC",
+   "SELECT TOP 1000 ReportDate, PlantCode, Stage, NAME, TYPE, BLK, TIME, AG, AGTAGTIME, FREQ, TOTALGEN, STNCAP, UpdatedOn, U1, TAGTIME1, UCAP1, U2, TAGTIME2, UCAP2, U3, TAGTIME3, UCAP3, U4, TAGTIME4, UCAP4, U5, TAGTIME5, UCAP5, U6, TAGTIME6, UCAP6, U7, TAGTIME7, UCAP7, U8, TAGTIME8, UCAP8, U9, TAGTIME9, UCAP9, U10, TAGTIME10, UCAP10, U11, TAGTIME11, UCAP11, U12, TAGTIME12, UCAP12, U13, TAGTIME13, UCAP13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK = ?",
+   "SELECT TOP 5000 PlantCode, Stage, BLK, TOTALGEN, AGTAGTIME, TAGTIME1, TAGTIME2, TAGTIME3, TAGTIME4, TAGTIME5, TAGTIME6, TAGTIME7, TAGTIME8, TAGTIME9, TAGTIME10, TAGTIME11, TAGTIME12, TAGTIME13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK BETWEEN ? AND ? AND PlantCode IN (?)",
+   "SELECT TOP 5000 PlantCode, Stage, BLK, TOTALGEN, AGTAGTIME, TAGTIME1, TAGTIME2, TAGTIME3, TAGTIME4, TAGTIME5, TAGTIME6, TAGTIME7, TAGTIME8, TAGTIME9, TAGTIME10, TAGTIME11, TAGTIME12, TAGTIME13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK BETWEEN ? AND ? AND PlantCode IN (?)"
+  ],
+  "debug": {
+   "args": {
+    "plant": "Singrauli",
+    "metric": "gross_generation"
+   },
+   "plan": {
+    "seconds": 24.6,
+    "prompt_tokens": 4326,
+    "cached_tokens": 4051,
+    "completion_tokens": 31
+   },
+   "examples": [
+    "L02",
+    "D03",
+    "M03"
+   ],
+   "composer": "llm (attempt 1, 43.8s)"
+  }
+ },
+ {
+  "question": "Compare with yesterday",
+  "text": "Singrauli's Gross generation today so far (live, up to 11:30) is 14.78 MU, compared to 30.08 MU yesterday (27 Sep 2026), a decrease of -15.3 MU or -50.86%. The live data is as of 2026-09-28 11:30. Today's value covers only part of the day and is estimated from 46 completed 15-minute blocks, so it is not directly comparable with a full day. Official daily figures are published the next day.",
+  "table": null,
+  "chart": {
+   "type": "bar",
+   "title": "Gross generation - Singrauli (MU)",
+   "x": [
+    "today so far (live, up to 11:30)",
+    "yesterday (27 Sep 2026)"
+   ],
+   "series": [
+    {
+     "name": "Gross generation",
+     "data": [
+      14.78,
+      30.08
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "Performance_DayCum_Station",
+   "XML_RealView"
+  ],
+  "as_of": "2026-09-28 11:30",
+  "is_live": true,
+  "composer": "llm (attempt 1, 48.9s)",
+  "source": "mixed",
+  "tool": "compare_periods",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 34.7,
+   "tools": 0.14,
+   "compose": 48.9,
+   "total": 83.8
+  },
+  "sql_debug": [
+   "SELECT TOP 1 ReportDate, BLK FROM dbo.XML_RealView WHERE ReportDate BETWEEN ? AND ? ORDER BY ReportDate DESC, BLK DESC",
+   "SELECT TOP 1000 ReportDate, PlantCode, Stage, NAME, TYPE, BLK, TIME, AG, AGTAGTIME, FREQ, TOTALGEN, STNCAP, UpdatedOn, U1, TAGTIME1, UCAP1, U2, TAGTIME2, UCAP2, U3, TAGTIME3, UCAP3, U4, TAGTIME4, UCAP4, U5, TAGTIME5, UCAP5, U6, TAGTIME6, UCAP6, U7, TAGTIME7, UCAP7, U8, TAGTIME8, UCAP8, U9, TAGTIME9, UCAP9, U10, TAGTIME10, UCAP10, U11, TAGTIME11, UCAP11, U12, TAGTIME12, UCAP12, U13, TAGTIME13, UCAP13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK = ?",
+   "SELECT TOP 5000 PlantCode, Stage, BLK, TOTALGEN, AGTAGTIME, TAGTIME1, TAGTIME2, TAGTIME3, TAGTIME4, TAGTIME5, TAGTIME6, TAGTIME7, TAGTIME8, TAGTIME9, TAGTIME10, TAGTIME11, TAGTIME12, TAGTIME13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK BETWEEN ? AND ? AND PlantCode IN (?)",
+   "SELECT TOP 5000 PlantCode, Stage, BLK, TOTALGEN, AGTAGTIME, TAGTIME1, TAGTIME2, TAGTIME3, TAGTIME4, TAGTIME5, TAGTIME6, TAGTIME7, TAGTIME8, TAGTIME9, TAGTIME10, TAGTIME11, TAGTIME12, TAGTIME13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK BETWEEN ? AND ? AND PlantCode IN (?)",
+   "SELECT TOP 1 ReportDate FROM dbo.Performance_DayCum_Status WHERE Status = 'Completed' ORDER BY ReportDate DESC",
+   "SELECT TOP 5000 k.PlantCode, SUM(CASE WHEN k.v IS NOT NULL THEN k.v END) AS sum_v, MAX(CASE WHEN k.v IS NOT NULL THEN k.v END) AS max_v, COUNT(CASE WHEN k.v IS NOT NULL THEN 1 END) AS n_v, COUNT(*) AS n_rows, MIN(k.ReportDate) AS first_date, MAX(k.ReportDate) AS last_date FROM (SELECT PlantCode, ReportDate, MAX(CASE WHEN ParamCode = ? THEN DayCY END) AS v FROM dbo.Performance_DayCum_Station WHERE ReportDate BETWEEN ? AND ? AND ParamCode IN (?) AND PlantCode IN (CAST(? AS varchar(50))) GROUP BY PlantCode, ReportDate) k GROUP BY k.PlantCode ORDER BY k.PlantCode"
+  ],
+  "debug": {
+   "args": {
+    "plant": "Singrauli",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "plan": {
+    "seconds": 34.6,
+    "prompt_tokens": 4402,
+    "cached_tokens": 4068,
+    "completion_tokens": 44
+   },
+   "examples": [
+    "CV1-2",
+    "M04",
+    "M01"
+   ],
+   "composer": "llm (attempt 1, 48.9s)"
+  }
+ },
+ {
+  "question": "What was the PLF of Rihand last month?",
+  "text": "The PLF of Rihand was 87.79% for the period 01 Aug 2026 to 31 Aug 2026. This is the official month-to-date value. The data covers the entire plant and there are no missing data or additional notes.",
+  "table": null,
+  "chart": null,
+  "sources": [
+   "Performance_DayCum_Station"
+  ],
+  "as_of": null,
+  "is_live": false,
+  "composer": "llm (attempt 1, 22.9s)",
+  "source": "daily",
+  "tool": "get_value",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 27.9,
+   "tools": 0.04,
+   "compose": 22.9,
+   "total": 50.9
+  },
+  "sql_debug": [
+   "SELECT TOP 5000 k.PlantCode, SUM(CASE WHEN k.v IS NOT NULL THEN k.v END) AS sum_v, MAX(CASE WHEN k.v IS NOT NULL THEN k.v END) AS max_v, COUNT(CASE WHEN k.v IS NOT NULL THEN 1 END) AS n_v, SUM(CASE WHEN k.v IS NOT NULL THEN k.v * k.w END) AS sum_vw, SUM(CASE WHEN k.v IS NOT NULL THEN k.w END) AS sum_w, COUNT(*) AS n_rows, MIN(k.ReportDate) AS first_date, MAX(k.ReportDate) AS last_date FROM (SELECT PlantCode, ReportDate, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS v, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS w FROM dbo.Performance_DayCum_Station WHERE ReportDate BETWEEN ? AND ? AND ParamCode IN (?, ?) AND PlantCode IN (CAST(? AS varchar(50))) GROUP BY PlantCode, ReportDate) k GROUP BY k.PlantCode ORDER BY k.PlantCode"
+  ],
+  "debug": {
+   "args": {
+    "plant": "Rihand",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "plan": {
+    "seconds": 27.8,
+    "prompt_tokens": 4377,
+    "cached_tokens": 4064,
+    "completion_tokens": 36
+   },
+   "examples": [
+    "D04",
+    "CV2-1",
+    "D01"
+   ],
+   "composer": "llm (attempt 1, 22.9s)"
+  }
+ },
+ {
+  "question": "And Korba?",
+  "text": "The Plant Load Factor (PLF) for Korba is 81.73% as of 01 Aug 2026 to 31 Aug 2026. The data is an official month-to-date value. The data covers one plant out of a total of one plant. No additional notes.",
+  "table": null,
+  "chart": null,
+  "sources": [
+   "Performance_DayCum_Station"
+  ],
+  "as_of": null,
+  "is_live": false,
+  "composer": "llm (attempt 1, 23.9s)",
+  "source": "daily",
+  "tool": "get_value",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 28.3,
+   "tools": 0.02,
+   "compose": 23.9,
+   "total": 52.3
+  },
+  "sql_debug": [
+   "SELECT TOP 5000 k.PlantCode, SUM(CASE WHEN k.v IS NOT NULL THEN k.v END) AS sum_v, MAX(CASE WHEN k.v IS NOT NULL THEN k.v END) AS max_v, COUNT(CASE WHEN k.v IS NOT NULL THEN 1 END) AS n_v, SUM(CASE WHEN k.v IS NOT NULL THEN k.v * k.w END) AS sum_vw, SUM(CASE WHEN k.v IS NOT NULL THEN k.w END) AS sum_w, COUNT(*) AS n_rows, MIN(k.ReportDate) AS first_date, MAX(k.ReportDate) AS last_date FROM (SELECT PlantCode, ReportDate, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS v, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS w FROM dbo.Performance_DayCum_Station WHERE ReportDate BETWEEN ? AND ? AND ParamCode IN (?, ?) AND PlantCode IN (CAST(? AS varchar(50))) GROUP BY PlantCode, ReportDate) k GROUP BY k.PlantCode ORDER BY k.PlantCode"
+  ],
+  "debug": {
+   "args": {
+    "plant": "Korba",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "plan": {
+    "seconds": 28.2,
+    "prompt_tokens": 4367,
+    "cached_tokens": 4055,
+    "completion_tokens": 36
+   },
+   "examples": [
+    "CV2-2",
+    "G04",
+    "CV6-2"
+   ],
+   "composer": "llm (attempt 1, 23.9s)"
+  }
+ },
+ {
+  "question": "Top 5 coal plants by PLF this month",
+  "text": "The top 5 coal plants by Plant Load Factor (PLF) this month are Sipat (88.94%), Bhilai (87.7%), Barauni (86.3%), Lara (85.92%), and Telangana (83.77%) from 01 Sep 2026 to 27 Sep 2026. The data covers 40 plants in NTPC Group (NTPC + JVs/subsidiaries), coal plants with daily data available from 01 Apr 2023 to 27 Sep 2026. The answer is based on the top 5 ranked plants in the NTPC Group. The table shows the top 5 plants with their respective PLF values.",
+  "table": {
+   "columns": [
+    "rank",
+    "name",
+    "plant_code",
+    "value",
+    "unit"
+   ],
+   "rows": [
+    [
+     1,
+     "Sipat",
+     "1019",
+     88.94,
+     "%"
+    ],
+    [
+     2,
+     "Bhilai",
+     "2030",
+     87.7,
+     "%"
+    ],
+    [
+     3,
+     "Barauni",
+     "1072",
+     86.3,
+     "%"
+    ],
+    [
+     4,
+     "Lara",
+     "1047",
+     85.92,
+     "%"
+    ],
+    [
+     5,
+     "Telangana",
+     "1057",
+     83.77,
+     "%"
+    ]
+   ]
+  },
+  "chart": {
+   "type": "bar",
+   "title": "Plant Load Factor (PLF) (%) - 01 Sep 2026 to 27 Sep 2026",
+   "x": [
+    "Sipat",
+    "Bhilai",
+    "Barauni",
+    "Lara",
+    "Telangana"
+   ],
+   "series": [
+    {
+     "name": "Plant Load Factor (PLF)",
+     "data": [
+      88.94,
+      87.7,
+      86.3,
+      85.92,
+      83.77
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "Performance_DayCum_Station"
+  ],
+  "as_of": null,
+  "is_live": false,
+  "composer": "llm (attempt 1, 62.3s)",
+  "source": "daily",
+  "tool": "rank",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 36.2,
+   "tools": 0.12,
+   "compose": 62.3,
+   "total": 98.7
+  },
+  "sql_debug": [
+   "SELECT TOP 5000 k.PlantCode, SUM(CASE WHEN k.v IS NOT NULL THEN k.v END) AS sum_v, MAX(CASE WHEN k.v IS NOT NULL THEN k.v END) AS max_v, COUNT(CASE WHEN k.v IS NOT NULL THEN 1 END) AS n_v, SUM(CASE WHEN k.v IS NOT NULL THEN k.v * k.w END) AS sum_vw, SUM(CASE WHEN k.v IS NOT NULL THEN k.w END) AS sum_w, COUNT(*) AS n_rows, MIN(k.ReportDate) AS first_date, MAX(k.ReportDate) AS last_date FROM (SELECT PlantCode, ReportDate, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS v, MAX(CASE WHEN ParamCode = ? THEN MonthCY END) AS w FROM dbo.Performance_DayCum_Station WHERE ReportDate BETWEEN ? AND ? AND ParamCode IN (?, ?) AND PlantCode IN (CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50)), CAST(? AS varchar(50))) GROUP BY PlantCode, ReportDate) k GROUP BY k.PlantCode ORDER BY k.PlantCode"
+  ],
+  "debug": {
+   "args": {
+    "order": "desc",
+    "level": "plant",
+    "fuel": "coal",
+    "metric": "plf",
+    "period": "this month",
+    "top_n": 5
+   },
+   "plan": {
+    "seconds": 36.2,
+    "prompt_tokens": 4381,
+    "cached_tokens": 4055,
+    "completion_tokens": 52
+   },
+   "examples": [
+    "CV4-1",
+    "R01",
+    "F04"
+   ],
+   "composer": "llm (attempt 1, 62.3s)"
+  }
+ },
+ {
+  "question": "Current total generation of NTPC",
+  "text": "The current total generation of NTPC Group (NTPC + JVs/subsidiaries) is 35,323 MW as of 2026-09-28 11:39. This data is live and covers 62 of 144 plants, with a coverage of 76.8%. The values used range from 11:15 to 11:39. The top three generation sources are Coal (34,041 MW), Solar (1,244 MW), and Wind (38 MW).",
+  "table": {
+   "columns": [
+    "name",
+    "mw",
+    "capacity_live_mw",
+    "capacity_mw",
+    "stages_live",
+    "stages"
+   ],
+   "rows": [
+    [
+     "Coal",
+     34041,
+     63280,
+     67364,
+     52,
+     59
+    ],
+    [
+     "Solar",
+     1244,
+     2219,
+     11653,
+     18,
+     69
+    ],
+    [
+     "Wind",
+     38,
+     196,
+     1016,
+     2,
+     10
+    ],
+    [
+     "Gas",
+     0,
+     3658,
+     6511,
+     6,
+     11
+    ],
+    [
+     "Hydro",
+     0,
+     808,
+     3757,
+     2,
+     13
+    ],
+    [
+     "Other",
+     0,
+     0,
+     1000,
+     0,
+     1
+    ]
+   ]
+  },
+  "chart": {
+   "type": "bar",
+   "title": "Current gross generation (MW)",
+   "x": [
+    "Coal",
+    "Solar",
+    "Wind",
+    "Gas",
+    "Hydro",
+    "Other"
+   ],
+   "series": [
+    {
+     "name": "MW",
+     "data": [
+      34041,
+      1244,
+      38,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "XML_RealView"
+  ],
+  "as_of": "2026-09-28 11:39",
+  "is_live": true,
+  "composer": "llm (attempt 1, 60.0s)",
+  "source": "live",
+  "tool": "get_live",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 23.6,
+   "tools": 0.05,
+   "compose": 60.0,
+   "total": 83.7
+  },
+  "sql_debug": [
+   "SELECT TOP 1 ReportDate, BLK FROM dbo.XML_RealView WHERE ReportDate BETWEEN ? AND ? ORDER BY ReportDate DESC, BLK DESC",
+   "SELECT TOP 1000 ReportDate, PlantCode, Stage, NAME, TYPE, BLK, TIME, AG, AGTAGTIME, FREQ, TOTALGEN, STNCAP, UpdatedOn, U1, TAGTIME1, UCAP1, U2, TAGTIME2, UCAP2, U3, TAGTIME3, UCAP3, U4, TAGTIME4, UCAP4, U5, TAGTIME5, UCAP5, U6, TAGTIME6, UCAP6, U7, TAGTIME7, UCAP7, U8, TAGTIME8, UCAP8, U9, TAGTIME9, UCAP9, U10, TAGTIME10, UCAP10, U11, TAGTIME11, UCAP11, U12, TAGTIME12, UCAP12, U13, TAGTIME13, UCAP13 FROM dbo.XML_RealView WHERE ReportDate = ? AND BLK = ?"
+  ],
+  "debug": {
+   "args": {
+    "group": "ntpc",
+    "metric": "gross_generation"
+   },
+   "plan": {
+    "seconds": 23.5,
+    "prompt_tokens": 4351,
+    "cached_tokens": 4055,
+    "completion_tokens": 28
+   },
+   "examples": [
+    "L03",
+    "D03",
+    "CV3-1"
+   ],
+   "composer": "llm (attempt 1, 60.0s)"
+  }
+ },
+ {
+  "question": "Generation of Dadri yesterday",
+  "text": "Which Dadri do you mean: Dadri-Coal (coal, 1,840 MW), Dadri-Gas (gas, 830 MW) or Dadri Solar PV (solar, 5 MW)?",
+  "table": null,
+  "chart": null,
+  "sources": [],
+  "as_of": null,
+  "is_live": false,
+  "clarification": true,
+  "source": "none",
+  "tool": "get_value",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 27.9,
+   "total": 27.9
+  },
+  "sql_debug": [],
+  "debug": {
+   "args": {
+    "plant": "Dadri",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "plan": {
+    "seconds": 27.8,
+    "prompt_tokens": 4369,
+    "cached_tokens": 4070,
+    "completion_tokens": 36
+   },
+   "examples": [
+    "CV6-1",
+    "G06",
+    "X02"
+   ],
+   "composer": null
+  }
+ },
+ {
+  "question": "The coal one",
+  "text": "The generation of Dadri-Coal was 29.25 MU on 27 Sep 2026. The data covers the entire day and is based on the day value method. The data is not live and there are no additional notes.",
+  "table": null,
+  "chart": null,
+  "sources": [
+   "Performance_DayCum_Station"
+  ],
+  "as_of": null,
+  "is_live": false,
+  "composer": "llm (attempt 1, 23.9s)",
+  "source": "daily",
+  "tool": "get_value",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "tools": 0.04,
+   "compose": 23.9,
+   "total": 24.0
+  },
+  "sql_debug": [
+   "SELECT TOP 5000 k.PlantCode, SUM(CASE WHEN k.v IS NOT NULL THEN k.v END) AS sum_v, MAX(CASE WHEN k.v IS NOT NULL THEN k.v END) AS max_v, COUNT(CASE WHEN k.v IS NOT NULL THEN 1 END) AS n_v, COUNT(*) AS n_rows, MIN(k.ReportDate) AS first_date, MAX(k.ReportDate) AS last_date FROM (SELECT PlantCode, ReportDate, MAX(CASE WHEN ParamCode = ? THEN DayCY END) AS v FROM dbo.Performance_DayCum_Station WHERE ReportDate BETWEEN ? AND ? AND ParamCode IN (?) AND PlantCode IN (CAST(? AS varchar(50))) GROUP BY PlantCode, ReportDate) k GROUP BY k.PlantCode ORDER BY k.PlantCode"
+  ],
+  "debug": {
+   "args": {
+    "plant": "DADRI-COAL",
+    "metric": "gross_generation",
+    "period": "yesterday"
+   },
+   "plan": null,
+   "examples": null,
+   "composer": "llm (attempt 1, 23.9s)"
+  }
+ },
+ {
+  "question": "What is PLF?",
+  "text": "{\"name\": \"explain_term\", \"arguments\": {\"term\": \"PLF\"}}",
+  "table": null,
+  "chart": null,
+  "sources": [],
+  "as_of": null,
+  "is_live": false,
+  "clarification": false,
+  "source": "none",
+  "tool": "reply",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 17.8,
+   "total": 17.9
+  },
+  "sql_debug": [],
+  "debug": {
+   "args": {
+    "text": "{\"name\": \"explain_term\", \"arguments\": {\"term\": \"PLF\"}}"
+   },
+   "plan": {
+    "seconds": 17.8,
+    "prompt_tokens": 4313,
+    "cached_tokens": 4055,
+    "completion_tokens": 18
+   },
+   "examples": [
+    "G01",
+    "D01",
+    "X03"
+   ],
+   "composer": null
+  }
+ },
+ {
+  "question": "How many supercritical stages does NTPC have?",
+  "text": "NTPC has 18 supercritical stages with a capacity of 28,880.0 MW. This answer is based on a query-generated data point and should be verified for accuracy. The table provided shows 18 stages as the first row, but the answer field indicates only 1 row. The data is not live.",
+  "table": {
+   "columns": [
+    "stages",
+    "capacity_mw"
+   ],
+   "rows": [
+    [
+     18,
+     28880.0
+    ]
+   ]
+  },
+  "chart": null,
+  "sources": [
+   "Master_Stages"
+  ],
+  "as_of": null,
+  "is_live": false,
+  "composer": "llm (attempt 1, 24.1s)",
+  "source": "daily",
+  "tool": "sql_query",
+  "session_id": "4123ef80b856487c906f9110dd8fe3bf",
+  "timings": {
+   "plan": 22.4,
+   "tools": 130.58,
+   "compose": 24.1,
+   "total": 177.1
+  },
+  "sql_debug": [
+   "SELECT TOP 1 COUNT(*) AS stages, SUM(CapacityMW) AS capacity_mw FROM dbo.Master_Stages WHERE Plant_Type = 'Supercritical' AND IsActive = 1 AND IsDeleted = 0",
+   "text2sql attempt: SELECT TOP 1 COUNT(*) AS stages, SUM(CapacityMW) AS capacity_mw FROM dbo.Master_Stages WHERE Plant_Type = 'Supercritical' AND IsActive = 1 AND IsDeleted = 0"
+  ],
+  "debug": {
+   "args": {
+    "question": "How many supercritical stages does NTPC have?"
+   },
+   "plan": {
+    "seconds": 22.3,
+    "prompt_tokens": 4305,
+    "cached_tokens": 4081,
+    "completion_tokens": 30
+   },
+   "examples": [
+    "S03",
+    "L10",
+    "CV5-2"
+   ],
+   "composer": "llm (attempt 1, 24.1s)"
+  }
+ }
+]

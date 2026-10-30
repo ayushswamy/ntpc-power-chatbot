@@ -1,0 +1,32 @@
+Decision checks - latest complete day 2026-09-29
+
+== A. Heat rate / APC sources ==
+  plants_generating: 138
+  performance_heatrate_nonzero_day: 0
+  performance_heatrate_nonzero_year: 0
+  performance_apc_nonzero_day: 0
+  performance_apc_nonzero_year: 1
+  xml_cum_rows: 144
+  xml_cum_heat_rate_nonzero: 0
+  xml_cum_apc_act_nonzero: 0
+  xml_cum_apc_cryr_nonzero: 0
+  xml_day_apc_act_nonzero: 0
+
+== B. Report_OutageBreakup.GenLoss unit ==
+  month 2026-08-01..2026-08-31
+  breakup, sum over the month : [{'OutageType': 'outage', 'gen_loss': 1786393.1435439999, 'n_rows': 17932, 'days': 31}, {'OutageType': 'partial', 'gen_loss': 2029465.601487001, 'n_rows': 21651, 'days': 31}]
+  breakup, last day only      : [{'OutageType': 'outage', 'gen_loss': 66007.97920400008, 'n_rows': 628}, {'OutageType': 'partial', 'gen_loss': 72729.18789000012, 'n_rows': 743}]
+  performance MU (all plants) : {'outg_loss': {'DayCY': 271.33, 'MonthCY': 7003.18, 'YearCY': 30331.79}, 'partl': {'DayCY': 169.14, 'MonthCY': 6642.71, 'YearCY': 33532.37}, 'total_outage_loss': {'DayCY': 169.14, 'MonthCY': 6642.71, 'YearCY': 33532.37}}
+
+== C. Availability formula ==
+  {'avb': {'DayCY': {'match': 144, 'differ': 0}, 'MonthCY': {'match': 144, 'differ': 0}, 'YearCY': {'match': 144, 'differ': 0}}, 'rsd_avb': {'DayCY': {'match': 144, 'differ': 0}, 'MonthCY': {'match': 144, 'differ': 0}, 'YearCY': {'match': 144, 'differ': 0}}}
+
+== D. Zero values while the plant generated ==
+  ag_mu = 0 while generating: 105 plants  ['Auraiya (gen 7.37 MU)', 'Anta (gen 4.31 MU)', 'Dadri-Gas (gen 7.3 MU)', 'Faridabad (gen 5.37 MU)', 'Jhanor-Gandhar (gen 5.34 MU)', 'Ratnagiri (gen 17.73 MU)', 'Bhilai (gen 10.47 MU)', 'Jhajjar (gen 29.02 MU)', 'Vallur (gen 31.42 MU)', 'Dadri Solar PV (gen 0.02 MU)']
+  plf = 0 while generating: 0 plants  []
+  coal_stock = 0 while generating: 111 plants  ['Auraiya (gen 7.37 MU)', 'Anta (gen 4.31 MU)', 'Dadri-Gas (gen 7.3 MU)', 'Faridabad (gen 5.37 MU)', 'Kawas (gen 7.98 MU)', 'Jhanor-Gandhar (gen 5.34 MU)', 'Koldam (gen 8.91 MU)', 'Ratnagiri (gen 17.73 MU)', 'Bhilai (gen 10.47 MU)', 'Jhajjar (gen 29.02 MU)']
+  coal_stock_days = 0 while generating: 111 plants  ['Auraiya (gen 7.37 MU)', 'Anta (gen 4.31 MU)', 'Dadri-Gas (gen 7.3 MU)', 'Faridabad (gen 5.37 MU)', 'Kawas (gen 7.98 MU)', 'Jhanor-Gandhar (gen 5.34 MU)', 'Koldam (gen 8.91 MU)', 'Ratnagiri (gen 17.73 MU)', 'Bhilai (gen 10.47 MU)', 'Jhajjar (gen 29.02 MU)']
+  BIFPCL on 2026-09-29: {'ag_mu': {'DayCY': 0.0}, 'coal_stock': {'DayCY': 0.0}, 'coal_stock_days': {'DayCY': 0.0}, 'gross_gen_mu': {'DayCY': 0.0}, 'plf': {'DayCY': 0.0}}
+
+== E. SG vs DC ==
+  plants with SG and DC: 33; SG > DC: 28  ['Singrauli (SG 56.11 > DC 28.8)', 'Rihand (SG 147.44 > DC 55.79)', 'Unchahar (SG 36.75 > DC 28.81)', 'Tanda (SG 44.25 > DC 23.76)', 'Dadri-Coal (SG 70.57 > DC 40.95)', 'Korba (SG 103.79 > DC 50.59)', 'Vindhyachal (SG 126.96 > DC 68.59)', 'Sipat (SG 199.5 > DC 66.93)', 'Farakka (SG 57.38 > DC 32.4)', 'Kahalgaon (SG 61.73 > DC 34.8)']

@@ -1,0 +1,460 @@
+[
+ {
+  "id": "M01",
+  "question": "Compare today's generation of Talcher Kaniha with yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Talcher Kaniha",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "source": "mixed"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Talcher Kaniha",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Talcher Kaniha",
+     "metric": "gross_generation",
+     "period1": "today",
+     "period2": "yesterday"
+    }
+   },
+   "source": "mixed",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1026",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Talcher Kaniha generated 28.35 MU today so far (live, up to 13:00), compared to 51.83 MU yesterday (27 Sep 2026), a decrease of 23.48 MU or -45.3%. Today's value covers only part of the day, so it is not directly comparable with a full day.",
+  "composer": "llm (attempt 1, 50.4s)",
+  "timings": {
+   "plan": 40.4,
+   "tools": 0.33,
+   "compose": 50.4,
+   "total": 91.2
+  },
+  "seconds": 91.2
+ },
+ {
+  "id": "M02",
+  "question": "NTPC generation today vs yesterday",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "group": "ntpc",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "source": "mixed"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "group": "ntpc",
+    "metric": "gross_generation",
+    "period1": "today",
+    "period2": "yesterday"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "group": "ntpc",
+     "metric": "gross_generation",
+     "period1": "today",
+     "period2": "yesterday"
+    }
+   },
+   "source": "mixed",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Live, as of 13:00: NTPC Group (NTPC + JVs/subsidiaries) generated 558.92 MU today so far, compared to 1129.8 MU yesterday (27 Sep 2026). Today's value covers only part of the day and is not directly comparable with a full day.",
+  "composer": "llm (attempt 1, 45.3s)",
+  "timings": {
+   "plan": 35.9,
+   "tools": 0.66,
+   "compose": 45.3,
+   "total": 81.9
+  },
+  "seconds": 81.9
+ },
+ {
+  "id": "C01",
+  "question": "Compare Singrauli PLF this month with last month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period1": "this month",
+    "period2": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "compare_periods",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period1": "this month",
+    "period2": "last month"
+   },
+   "planned": {
+    "tool": "compare_periods",
+    "args": {
+     "plant": "Singrauli",
+     "metric": "plf",
+     "period1": "this month",
+     "period2": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "Singrauli PLF was 67.17% from 01 Sep 2026 to 27 Sep 2026, compared to 69.65% in August 2026. The PLF decreased by 2.48 percentage points, a 3.56% drop.",
+  "composer": "llm (attempt 1, 41.5s)",
+  "timings": {
+   "plan": 36.4,
+   "tools": 0.05,
+   "compose": 41.5,
+   "total": 78.0
+  },
+  "seconds": 78.0
+ },
+ {
+  "id": "T01",
+  "question": "Show the monthly PLF trend of Singrauli this financial year",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "this fy",
+    "granularity": "month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_trend",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "this fy",
+    "granularity": "month"
+   },
+   "planned": {
+    "tool": "get_trend",
+    "args": {
+     "plant": "Singrauli",
+     "metric": "plf",
+     "period": "this fy",
+     "granularity": "month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "77.17% Singrauli, Apr 2026 to Sep 2026 Monthly PLF trend: Apr 2026 (77.17%), May 2026 (88.25%), Jun 2026 (86.55%), Jul 2026 (84.71%), Aug 2026 (69.65%), Sep 2026 (67.17%). The highest was May 2026 (88.25%) and the lowest was Sep 2026 (67.17%).",
+  "composer": "llm (attempt 1, 75.1s)",
+  "timings": {
+   "plan": 36.9,
+   "tools": 0.11,
+   "compose": 75.1,
+   "total": 112.1
+  },
+  "seconds": 112.1
+ },
+ {
+  "id": "R01",
+  "question": "Top 5 plants by PLF this month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "this month",
+    "top_n": 5,
+    "order": "desc",
+    "level": "plant"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "this month",
+    "top_n": 5,
+    "order": "desc",
+    "level": "plant"
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "metric": "plf",
+     "period": "this month",
+     "top_n": 5,
+     "order": "desc",
+     "level": "plant"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "100.55% Kopili HEP, 01 Sep 2026 to 27 Sep 2026. Ranked 144 plants in NTPC Group (NTP0C + JVs/subsidiaries) that have data.",
+  "composer": "llm (attempt 1, 29.7s)",
+  "timings": {
+   "plan": 26.8,
+   "tools": 0.21,
+   "compose": 29.7,
+   "total": 56.7
+  },
+  "seconds": 56.7
+ },
+ {
+  "id": "R02",
+  "question": "Which coal plant had the lowest PLF yesterday?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "rank",
+   "args": {
+    "metric": "plf",
+    "period": "yesterday",
+    "top_n": 1,
+    "order": "asc",
+    "level": "plant",
+    "fuel": "coal"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "rank",
+   "args": {
+    "order": "asc",
+    "level": "plant",
+    "fuel": "coal",
+    "metric": "plf",
+    "period": "yesterday",
+    "top_n": 1
+   },
+   "planned": {
+    "tool": "rank",
+    "args": {
+     "order": "asc",
+     "level": "plant",
+     "fuel": "coal",
+     "metric": "plf",
+     "period": "yesterday",
+     "top_n": 1
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "group",
+    "plant_code": null,
+    "stage": null,
+    "unit": null,
+    "scope": {
+     "fuel": [
+      "C"
+     ]
+    }
+   }
+  },
+  "answer": "The coal plant with the lowest PLF yesterday was BIFPCL Maitree (Bangladesh) with 0.0%. The plant is ranked 1st in the NTPC Group (NTPC + JVs/subsidiaries), coal plants with data.",
+  "composer": "llm (attempt 1, 23.0s)",
+  "timings": {
+   "plan": 29.7,
+   "tools": 0.05,
+   "compose": 23.0,
+   "total": 52.7
+  },
+  "seconds": 52.7
+ },
+ {
+  "id": "O01",
+  "question": "Outages at Singrauli in the last 7 days",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_outages",
+   "args": {
+    "plant": "Singrauli",
+    "period": "last 7 days"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_outages",
+   "args": {
+    "plant": "Singrauli",
+    "period": "last 7 days"
+   },
+   "planned": {
+    "tool": "get_outages",
+    "args": {
+     "plant": "Singrauli",
+     "period": "last 7 days"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "33.6 MU lost at Singrauli from 21 Sep 2026 to 27 Sep 2026. All loss is due to Planned Outage. Singrauli Unit 1 was out for the entire period, causing 4.8 MU loss each day.",
+  "composer": "llm (attempt 1, 46.2s)",
+  "timings": {
+   "plan": 19.8,
+   "tools": 0.04,
+   "compose": 46.2,
+   "total": 66.1
+  },
+  "seconds": 66.2
+ },
+ {
+  "id": "K02",
+  "question": "Capacity of Vindhyachal",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_capacity",
+   "args": {
+    "plant": "Vindhyachal"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_capacity",
+   "args": {
+    "plant": "Vindhyachal"
+   },
+   "planned": {
+    "tool": "get_capacity",
+    "args": {
+     "plant": "Vindhyachal"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1018",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "The capacity of Vindhyachal is 4760 MW. The plant has 13 units, with 6 units of 210 MW each and 2 units of 500 MW each.",
+  "composer": "llm (attempt 1, 29.3s)",
+  "timings": {
+   "plan": 15.4,
+   "tools": 0.0,
+   "compose": 29.3,
+   "total": 44.7
+  },
+  "seconds": 44.7
+ }
+]

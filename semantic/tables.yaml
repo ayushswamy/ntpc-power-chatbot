@@ -1,0 +1,356 @@
+# =============================================================================
+# tables.yaml - what each DB_PlantLive table means and how to query it safely.
+#
+# Built in Phase 1 from discovery/ + outputs/phase1/ (exports of 2026-09-25).
+# Used by: the tool layer (Phase 2), the text-to-SQL fallback (allowed tables,
+# required filters), and Qdrant schema descriptions (Phase 3).
+#
+# Items marked "NEEDS CONFIRMATION" are my best reading of the data; please verify.
+# =============================================================================
+
+conventions:
+  financial_year: "April 1 to March 31. YearCY / CumYear = financial-year-to-date (verified: Singrauli YearCY PLF matches Apr 1 - Sep 24)."
+  energy_unit: "MU = million units = GWh. 1 MU = 1000 MWh."
+  missing_date: "1900-01-01 means missing. Treat as NULL."
+  future_dates: "Ignore rows dated after today (Data_Generation has plan values up to 2030)."
+  daily_tables_end: "Daily tables are filled up to YESTERDAY (Performance_DayCum_Status shows when each day was completed; a day can be recomputed later)."
+  plant_keys: |
+    Plant hierarchy: Master_Plants (PlantCode) -> Master_Stages (PlantCode, Stage) -> Master_Units (PlantCode, Stage, Unit).
+    PlantCode is a 4-digit code stored as text in most tables but as INT in XML_RealView and Master_PITags.
+    Stage values look like 'STAGE1'; Unit values look like 'UNIT01' ... 'UNIT13'.
+    Other codes for the same plant: PlantCodeScada (used by some PI rows), Master_Stages.PCode (used by Data_Generation),
+    StationShortName (used by Data_Trips.PLN_CD, e.g. 'TnTPS' = Tanda).
+  company_groups: |
+    Master_Plants.CompanyGrp: NTPC | JV.  CompanySbGrp: NTPC | JV-S | JV-NS | BIFPCL.
+    Report_Generation.CY_Group: NTPC | JV-S | JV-NS.
+    NEEDS CONFIRMATION: JV-S = subsidiaries (e.g. NGEL, NEEPCO, THDC), JV-NS = non-subsidiary JVs (e.g. Meja, Jhajjar).
+  fuel_types: "Master_Plants.FuelType: C=Coal, G=Gas, H=Hydro, S=Solar, W=Wind, PSP=Pumped storage. XML_RealView.TYPE uses T for coal (thermal)."
+
+# Large tables: every query MUST filter on the date column (an index starts with it) and have TOP.
+large_tables: [Performance_DayCum_Station, Performance_DayCum_Stage, Performance_DayCum_Unit,
+               Data_Generation, Data_Outage, Data_Partial, XML_RealView]
+
+tables:
+
+  # ---------------------------------------------------------------- masters
+  Master_Plants:
+    purpose: "One row per plant/station (145). Names, capacity, fuel, region, company group."
+    grain: "PlantCode"
+    key_columns: {PlantCode: "4-digit plant code (text)", StationName: "full name, e.g. SINGRAULI", StationShortName: "short name, e.g. SSTPS",
+                  PlantCodeScada: "alternate code used by some PI tag rows", OldPlantCode: "older code"}
+    value_columns: {GrossCapMW: "installed capacity MW", CommCapMW: "commercial capacity MW", GrossCapMU: "capacity per day in MU (MW*24/1000)",
+                    Stages: "number of stages", Units: "number of units"}
+    category_columns: {CompanyGrp: "NTPC | JV", CompanySbGrp: "NTPC | JV-S | JV-NS | BIFPCL", CompanySbSbGrp: "sub-company e.g. NGEL, NEEPCO, THDC, NSPCL",
+                       RegionNTPC: "NR, WR-I, WR-II, ER-I, ER-II, SR, ...", FuelType: "C/G/H/S/W/PSP", EnergyType: "Coal, Gas, Hydro, Solar, Wind, Small Hydro, PSP",
+                       PHNPH: "PH = pithead, NPH = non-pithead (coal plants)", Captive: "Yes = captive plant", IsActive: "use IsActive = 1"}
+    notes: "BADARPUR (1010) and TALCHER THERMAL (1027) are inactive (0 MW)."
+    text2sql: true
+
+  Master_Stages:
+    purpose: "One row per plant stage (164). Stage names used in RealView and reports."
+    grain: "PlantCode, Stage"
+    key_columns: {PlantCode: "plant", Stage: "STAGE1..STAGE5", StageName: "e.g. RIHAND-II", StageNameRealView: "name shown in XML_RealView.NAME",
+                  StageNameDescription: "e.g. 'Rihand Stage 2'", PCode: "code used in Data_Generation.p_code, e.g. KSNTPC0010041001"}
+    value_columns: {CapacityMW: "stage capacity MW", Units: "number of units", NormAPC: "normative auxiliary power %"}
+    category_columns: {Plant_Type: "Subcritical | Supercritical", IsActive: "use IsActive = 1 AND IsDeleted = 0"}
+    joins: ["Master_Stages.PlantCode = Master_Plants.PlantCode"]
+    text2sql: true
+
+  Master_Units:
+    purpose: "One row per generating unit (347)."
+    grain: "PlantCode, Stage, Unit"
+    key_columns: {PlantCode: "plant", Stage: "stage", Unit: "UNIT01..UNIT13", TCode: "unit code used in Report_Generation.TCode"}
+    value_columns: {CapacityMW: "unit capacity MW", CommissioningDate: "date", DecommissioningDate: "date or NULL"}
+    category_columns: {OperationalStatus: "bit", CommercialStatus: "bit (1 = commercial)", BoilerMake: "", TurbineMake: "", IsActive: "use IsActive = 1 AND IsDeleted = 0"}
+    joins: ["Master_Units.PlantCode = Master_Stages.PlantCode AND Master_Units.Stage = Master_Stages.Stage"]
+    text2sql: true
+
+  Master_Part_Installed_Capacity:
+    purpose: "Capacity history: each unit/part with commissioning and decommissioning dates (472 rows). Use for 'capacity as on a date'."
+    grain: "PlantCode, PartSequence"
+    value_columns: {PartInstalledCapacityMW: "MW", PartCommDate: "commercial operation date", DecommissionedDate: "or NULL", EffectiveFromDate: "date"}
+    category_columns: {CapacityStatus: "COMMISSIONED | DECOMMISSIONED | NON-COMMERCIAL", IsActive: "bit"}
+    text2sql: true
+
+  Master_OutageCodes:
+    purpose: "Outage reason codes (293). out_cd = main area (1 Boiler, 2 Turbine, 3 Generator/Electrical, 4 Offsite, 5 C&I, 6 Operation induced, 7 Grid, 8 Fuel, 9 No demand, 10 Planned, 11 Gas turbine, 12 Other, 13 Environment, 14 CW shortage, 15 Excess generation, 16 Incomplete system, 17 Hydro turbine)."
+    grain: "out_cd, out_subcd"
+    joins: ["Data_Outage: CAST(RSN_Code AS int) = out_cd AND CAST(SubRSN_Code AS int) = out_subcd"]
+    notes: "Description columns are nchar with trailing spaces - RTRIM them."
+    text2sql: true
+
+  Master_Blocks:
+    purpose: "The 96 fifteen-minute blocks of a day. BlockNo 1 = 00:00-00:15 ... 96 = 23:45-24:00."
+    text2sql: true
+
+  Master_SKF:
+    purpose: "Descriptions of Data_Generation skf codes (352), e.g. OP001 = Gross Generation (KU)."
+    text2sql: false
+
+  Master_PITags:
+    purpose: "PI tag configuration (440): which PI tag feeds which unit/stage value. station_code = Master_Plants.PlantCodeScada."
+    notes: "See realtime_tags.yaml. xml_tag U1..U13 / AG / FREQ; tag_level U = unit, S = stage."
+    text2sql: false
+
+  Master_GasUnitMapping:
+    purpose: "Display names of gas station units (GT/ST) - 38 rows."
+    text2sql: false
+
+  Performance_DayCum_Params:
+    purpose: "Definitions of the 184 performance parameters (ParamCode, Description, display name, category, which levels have it)."
+    notes: "Performance_DayCum_* also contain ~42 sg_* ParamCodes not listed here (scheduling sub-components). NEEDS CONFIRMATION whether they are needed."
+    text2sql: true
+
+  Performance_DayCum_Status:
+    purpose: "One row per ReportDate: Status = 'Completed' and CompletedOn = when the daily performance run finished. Check this before answering about 'yesterday'."
+    text2sql: true
+
+  # ---------------------------------------------------------------- daily performance (main historical source)
+  Performance_DayCum_Station:
+    purpose: "MAIN SOURCE for station-level daily/monthly/yearly performance: generation, PLF, availability, DC/SG, APC, heat rate, coal, outage losses."
+    grain: "ReportDate x PlantCode x ParamCode (long format: one row per parameter)"
+    date_column: ReportDate
+    available: {from: "2023-04-01", to: "yesterday (2026-09-24 at export)"}
+    large: true
+    indexes: ["ReportDate, PlantCode, ParamCode", "PlantCode, ReportDate, ParamCode (includes DayCY)"]
+    key_columns: {ReportDate: "date", PlantCode: "plant (text)", ParamCode: "see Performance_DayCum_Params / metrics.yaml"}
+    value_columns:
+      DayCY: "value for ReportDate"
+      MonthCY: "month-to-date up to ReportDate (sum for MU params, ratio for % params)"
+      YearCY: "financial-year-to-date up to ReportDate"
+      DayPY: "same calendar day of previous year"
+      MonthPY: "same month-to-date period of previous year"
+      YearPY: "same FY-to-date period of previous year"
+      Q1CY..Q4CY, Q1PY..Q4PY: "quarter values - were 0 in samples. NEEDS CONFIRMATION (do not use yet)"
+      "*_Count": "event counts, only filled for outage/partial params"
+    joins: ["PlantCode = Master_Plants.PlantCode", "ParamCode = Performance_DayCum_Params.ParamCode"]
+    notes: |
+      For month/FY-to-date use MonthCY/YearCY of the LAST date - do not sum DayCY.
+      For any other range, sum DayCY for MU params; recompute % params from their parts (see metrics.yaml).
+      Capacity params (com_cap_mw) in MonthCY/YearCY are MW x days - not meaningful as MW.
+    text2sql: true
+
+  Performance_DayCum_Stage:
+    purpose: "Same as Performance_DayCum_Station, per stage."
+    grain: "ReportDate x PlantCode x Stage x ParamCode"
+    date_column: ReportDate
+    available: {from: "2023-04-01", to: "yesterday"}
+    large: true
+    indexes: ["ReportDate, PlantCode, Stage, ParamCode", "PlantCode, Stage, ReportDate, ParamCode (includes DayCY)"]
+    text2sql: true
+
+  Performance_DayCum_Unit:
+    purpose: "Same as Performance_DayCum_Station, per unit (142 params - no PLF/availability; coal only at station)."
+    grain: "ReportDate x PlantCode x Stage x Unit x ParamCode"
+    date_column: ReportDate
+    available: {from: "2023-04-01", to: "yesterday"}
+    large: true
+    indexes: ["ReportDate, PlantCode, Stage, Unit, ParamCode"]
+    notes: "Only index starts with ReportDate - always filter ReportDate (single date or short range)."
+    text2sql: true
+
+  Report_Generation:
+    purpose: "Unit-level daily generation report with month/FY cumulative and previous-year figures."
+    grain: "ReportDate x PlantCode x Stage x Unit"
+    date_column: ReportDate
+    available: {from: "2023-04-01", to: "yesterday"}
+    indexes: ["ReportDate, PlantCode, Stage, Unit, TCode"]
+    value_columns: {CapacityMW: "unit MW", DayGen_CY: "MU for the day (blank = no generation)", CumMonth_CY: "MU month-to-date", CumYear_CY: "MU FY-to-date",
+                    DayGen_PY: "MU same day last year", CumMonth_PY: "", CumYear_PY: "", Growth_MTH: "% growth month", Growth_YR: "% growth FY"}
+    category_columns: {CY_Group: "NTPC | JV-S | JV-NS", CY_Fuel: "Coal, Gas, Solar, Hydro, Wind, Small Hydro, PSP"}
+    text2sql: true
+
+  XML_DayFig_Station:
+    purpose: "Wide daily station figures (same numbers as Performance_DayCum_Station, verified for Singrauli 2026-09-24). Has coal stock in tonnes and stock days."
+    grain: "ReportDate x stn_cd"
+    date_column: ReportDate
+    available: {from: "2024-07-13", to: "yesterday"}
+    key_columns: {stn_cd: "= PlantCode", stn_shortname: "short name"}
+    value_columns: {install_MW: "", commgen_mu_stn: "commercial generation MU", plf_stn: "%", avb_stn: "%", coal_stock_ind: "domestic coal stock (tonnes)",
+                    coal_stock_imp: "imported coal stock (t)", stn_coal_stk_days: "coal stock days", coal_rcpt: "coal receipt (t)", coal_cons_stn: "coal consumption (t)"}
+    notes: "Prefer Performance_DayCum_Station (longer history). Use this as a cross-check."
+    text2sql: true
+
+  XML_DayFig_Stage: {purpose: "Wide daily stage figures (name = Stage).", date_column: ReportDate, available: {from: "2024-07-13", to: "yesterday"}, text2sql: false}
+  XML_DayFig_Unit: {purpose: "Wide daily unit figures (name = Unit): comgen, genloss and loss by cause.", date_column: ReportDate, available: {from: "2024-07-13", to: "yesterday"}, text2sql: false}
+  XML_CumYearFig_Station: {purpose: "Wide FY-to-date station figures incl. targets (stn_gentgt_*), heat rate, APC.", date_column: ReportDate, available: {from: "2024-07-16", to: "yesterday"}, text2sql: false,
+                           notes: "Source for generation TARGETS. NEEDS CONFIRMATION of target column meanings (int = internal, cea = CEA)."}
+  XML_CumYearFig_Stage: {purpose: "Wide FY-to-date stage figures.", date_column: ReportDate, available: {from: "2024-07-16", to: "yesterday"}, text2sql: false}
+  XML_CumYearFig_Unit: {purpose: "Wide FY-to-date unit figures.", date_column: ReportDate, available: {from: "2024-07-16", to: "yesterday"}, text2sql: false}
+
+  # ---------------------------------------------------------------- long history
+  Data_Generation:
+    purpose: "Raw daily values per stage by SKF code (long history since 2001). Values in KU (= MWh)."
+    grain: "p_date x p_code x skf_code"
+    date_column: p_date
+    available: {from: "2001-04-21", to: "today (includes plan values up to 2030-04-21 - IGNORE future dates)"}
+    large: true
+    indexes: ["p_date, p_code, skf_code (table is a heap)"]
+    key_columns: {p_code: "= Master_Stages.PCode", skf_code: "= Master_SKF.skf_no (OP001 = Gross Generation ...)", UM: "KU = thousand kWh = MWh"}
+    notes: |
+      Only codes OP515/OP516 exist for today (entered in advance) and they are NOT in Master_SKF. NEEDS CONFIRMATION.
+      Use ONLY for questions before 2023-04-01 (after that use Performance_DayCum_*). Which skf codes exist historically
+      is not yet checked - NEEDS CONFIRMATION (small follow-up query).
+    text2sql: false
+
+  Data_Generation_JV:
+    purpose: "Daily JV station generation and coal figures (since 2008)."
+    grain: "p_date x JVstation_code"
+    date_column: p_date
+    available: {from: "2008-07-20", to: "yesterday"}
+    notes: "602 rows dated 1900-01-01 (ignore). JVstation_code mapping to PlantCode NEEDS CONFIRMATION."
+    text2sql: false
+
+  Data_DailyFigures:
+    purpose: "Daily gas/liquid fuel and coal figures per plant (since 2010). Latest rows are all 0 - NEEDS CONFIRMATION whether still maintained."
+    date_column: thisday
+    text2sql: false
+
+  # ---------------------------------------------------------------- outages and trips
+  Data_Outage:
+    purpose: "Unit outage events per day (since 2007): reason, trip/sync time, hours, generation loss."
+    grain: "OutageDate x PlantCode x Stage x Unit x event"
+    date_column: OutageDate
+    available: {from: "2007-04-01", to: "yesterday"}
+    large: true
+    indexes: ["CLUSTERED OutageDate, PlantCode, Unit", "PlantCode, OutageDate (includes Unit, Stage, OutageType, HRS, GenLoss)"]
+    value_columns: {TripTime: "HHMMSS text", SyncTime: "HHMMSS text (240000 = still out at midnight)", HRS: "duration HHMMSS text", GenLoss: "MU lost", OutCount: "count"}
+    key_columns: {RSN_Code: "main reason = Master_OutageCodes.out_cd (text, zero-padded '09')", SubRSN_Code: "sub reason"}
+    notes: |
+      A unit out all day appears every day with TripTime 000000 / SyncTime 240000. Count distinct events carefully.
+      Recent volume: about 50 rows per day for ~20 plants (checked 2026-09-25..27).
+    text2sql: true
+
+  Data_Partial:
+    purpose: "Partial-loading loss events (1.3 billion rows)."
+    date_column: OutageDate
+    large: true
+    indexes: ["NONE - heap without any index"]
+    notes: "DO NOT QUERY. Any filter scans 1.3 billion rows. Use Performance_DayCum_* partl_* params or Report_OutageBreakup instead."
+    text2sql: false
+
+  Report_OutageBreakup:
+    purpose: "Outage/partial loss by area and category per plant per day (FY 2024-25 onwards)."
+    date_column: ReportDate
+    available: {from: "2024-04-01", to: "yesterday"}
+    indexes: ["ReportDate, FinYear, PlantCode, OutageType, AreaCode, SubAreaCode"]
+    category_columns: {OutageType: "outage | partial", OutageCategory: "Forced Equipment Outage | Grid Outage | Others Outage | Planned Outage | Fuel Outage",
+                       AreaName: "BOILER & AUXILARIES., TURBINE & AUXILARIES, ... (17 areas)"}
+    value_columns: {GenLoss: "unit NOT confirmed - probably MWh (Aug 2026 NTPC total = 2,647,522). Never label it MU (decision 6)", OutCount: "count"}
+    sql_note: "GenLoss is NOT in MU (probably MWh) - name the column gen_loss_unit_unconfirmed, never loss_mu. For outage loss in MU use Performance_DayCum_Station outage parameters (outg_loss, outg_frcd, ...)."
+    notes: "PlantName/Company/Region columns were empty in the sample - join Master_Plants instead."
+    text2sql: false   # decision 6: GenLoss/1000 did NOT match official MU (ratio ~255, check 2026-09-30) - unit unknown
+
+  Data_Trips:
+    purpose: "Unit trip log with reason, revival time and analysis text (since 2003)."
+    grain: "one row per trip"
+    date_column: TRP_DT
+    available: {from: "2003-10-06", to: "today (updated intraday)"}
+    key_columns: {PLN_CD: "= Master_Plants.StationShortName (e.g. TnTPS) or StationOPPMS (NPGC, Patratu, Khurja) or aliases.yaml trip_codes (NorthKP)",
+                  PLN_UNIT: "unit number as text ('5' = UNIT05)"}
+    value_columns: {TRP_DT: "trip datetime", REVIVAL_DT: "revival datetime (NULL = still out)", EXPECT_DT: "expected revival", TRP_REASON: "", ANALYSIS: "free text"}
+    category_columns: {TRIP_TYPE: "F, G, S, P, C (and '---Select---'). NEEDS CONFIRMATION of meanings"}
+    notes: "73 rows dated 1900-01-01. Index on (PLN_CD, PLN_UNIT, TRP_DT) - small table, scans are fine."
+    text2sql: true
+
+  XML_CoalTrip:
+    purpose: "Currently tripped/out units with plant details (65 rows, refreshed). Possibly the 'units currently under outage' list - NEEDS CONFIRMATION."
+    text2sql: true
+
+  # ---------------------------------------------------------------- fuel
+  Data_FuelReceipt:
+    purpose: "Daily fuel receipt per plant by SAP material code (since 2007). rcpt_value unit probably tonnes."
+    date_column: txn_date
+    notes: "fuel_code is a SAP material code (e.g. M1149100657) - names NEEDS CONFIRMATION. Prefer Performance_DayCum_Station coal_* params."
+    text2sql: false
+
+  Data_FuelConsumption:
+    purpose: "Daily fuel consumption per unit by SAP material code (since 2023-04)."
+    date_column: txn_date
+    notes: "Same fuel_code issue. Prefer Performance_DayCum_Station coal_* params."
+    text2sql: false
+
+  Data_SPCoal:
+    purpose: "Yearly specific coal norms/plan per plant (sp_coal, blend ratio, GCV). One row per FY (year = Apr 1)."
+    date_column: year
+    text2sql: false
+
+  # ---------------------------------------------------------------- scheduling
+  Data_DCSG:
+    purpose: "15-minute DC/SG schedules per site. ENDS 2024-05-06 - historical only."
+    date_column: gendate
+    text2sql: false
+  DC_SG_MobileApp_dashboard:
+    purpose: "Daily NTPC-level DC, SG and SG/DC split pithead/non-pithead (since 2025-06-03, includes today)."
+    date_column: Date
+    notes: "Includes today's row - is it a forecast or intraday? NEEDS CONFIRMATION."
+    text2sql: true
+  URS_MobileApp:
+    purpose: "Daily NTPC-level URS (un-requisitioned surplus) value (since 2025-03-04)."
+    date_column: Date
+    text2sql: true
+
+  # ---------------------------------------------------------------- real-time (see realtime_tags.yaml)
+  XML_RealView:
+    purpose: "MAIN LIVE SOURCE. One row per stage per 15-minute block, for every day since 2019-12-23. The CURRENT block's row is rewritten about every minute."
+    grain: "ReportDate x PlantCode x Stage x BLK (162 stage rows per block)"
+    date_column: ReportDate
+    available: {from: "2019-12-23", to: "now (today's current block)"}
+    large: true
+    indexes: ["ReportDate, BLK, NAME (heap)"]
+    key_columns: {ReportDate: "date", BLK: "block 1-96 (see Master_Blocks)", PlantCode: "INT plant code", Stage: "STAGE1..", NAME: "= Master_Stages.StageNameRealView",
+                  TIME: "data time 'dd/MM/yyyy HH:mm:ss' (text)", UpdatedOn: "when the row was written"}
+    value_columns:
+      U1..U13: "unit gross generation MW (live)"
+      TAGTIME1..13: "timestamp of that unit's PI value (text) - use for freshness"
+      UCAP1..13: "unit capacity MW"
+      UC1..13: "C = commercial unit"
+      AG: "stage actual generation MW (ex-bus), live"
+      AGTAGTIME: "timestamp of AG"
+      AVGAG: "average AG MW since midnight - NEEDS CONFIRMATION"
+      CalculatedAG: "NEEDS CONFIRMATION (block-average AG?)"
+      TOTALGEN: "stage gross generation MW (sum of units)"
+      FREQ: "grid frequency Hz"
+      DC: "declared capacity MW for the block"
+      SG: "schedule MW for the block"
+      DAYDC: "day DC - NEEDS CONFIRMATION"
+      DAYSG: "day SG - NEEDS CONFIRMATION"
+      STNCAP: "stage capacity MW"
+      STNCOMML: "commercial capacity MW"
+      STNPLF: "NEEDS CONFIRMATION - does not match AG/STNCAP"
+    category_columns: {TYPE: "T=coal, G=gas, H=hydro, S=solar, W=wind", REGION: "NR, WR-I, ...", PI: "True = values come from PI"}
+    notes: |
+      Latest live values: WHERE ReportDate = today AND BLK = (MAX(BLK) for today).
+      VERIFIED 2026-09-28: U1..U13 = the plant's unit numbers (Rihand STAGE2 row fills U3, U4).
+      VERIFIED 2026-09-28: SUM(TOTALGEN) of a day's 96 blocks * 0.25 / 1000 matches official gross_gen_mu
+      within 0.7% (10 plants) -> used for 'today so far'. SUM(AG) was off by up to 9% -> not used.
+      AG is filled even when the AG PI tag is dead (AGTAGTIME years old, e.g. Rihand STAGE1/2) - check AGTAGTIME.
+      Solar/RE plants without PI have NULL/0 values - never report them as 'generating 0'.
+    text2sql: true
+
+  Data_RealTime_PIData:
+    purpose: "Current value of each PI tag (454 rows, overwritten every ~1-5 min). Raw feed behind XML_RealView."
+    grain: "one row per PI tag"
+    key_columns: {PlantCode: "plant code OR PlantCodeScada (mixed!)", Stage: "", Unit: "", XMLTag: "U1..U13 = unit MW, AG = stage actual gen MW, FREQ = frequency",
+                  TagLevel: "U = unit, S = stage/station"}
+    value_columns: {PITag_Value: "CLEANED value (negatives -> 0) - use this", PITag_Value_Raw: "raw value - do not use", TimeStamp: "PI timestamp = data time",
+                    UpdatedOn: "when the row was written"}
+    notes: |
+      About 1/3 of tags are dead (TimeStamp older than 1 day, some since 2009). Only use tags with TimeStamp within LIVE_FRESHNESS_MINUTES.
+      113 unit/stage values have 2-3 tags (main + backup, or old rows with empty PITag) - NEVER SUM this table.
+      Use XML_RealView for live values/totals; use this table only to check feed freshness per plant.
+    text2sql: true
+
+  Data_RealTime_Alert:
+    purpose: "Trip alerts from real-time feed. Last row 2025-09-23 - STALE, do not use."
+    text2sql: false
+
+  MorningMeeting_Remarks:
+    purpose: "Text remarks for the daily morning meeting report (since 2026-09-01)."
+    date_column: ReportDate
+    text2sql: false
+
+# Tables never to use
+ignore: [Temp_JVGen, Temp_RealViewData_Raw, Temp_RealViewData_Computed, Temp_XML_RealView, Master_Units_bkup_14112025,
+         import_log, Data_PITags, Report_JVGen, Data_FuelStock, tbl_Pithead_NonPithead_DayReport, Report_RealViewData,
+         Report_CoalTripData, StoredProcedure_Backup_Audit, Data_SGPercentage]

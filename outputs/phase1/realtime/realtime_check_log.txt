@@ -1,0 +1,30 @@
+Realtime check - 2026-09-25 15:03:53   freshness threshold: 30 min
+
+--- Snapshot A  (server time 2026-09-25 15:03:51) ---
+Data_RealTime_PIData: 454 rows (0.02s)
+  age by TimeStamp: a) < 10 min: 284, b) 10-30 min: 8, c) < 1 day (stale): 11, d) > 1 day (dead): 151
+  age by UpdatedOn: a) < 10 min: 331, d) > 1 day (dead): 123
+  newest UpdatedOn: 2026-09-25 15:03:21.820000
+XML_RealView today: row_count=9882, plants=143, blocks=61, min_blk=1, max_blk=61, update_times=130, first_update=2026-09-25 00:14:30.237000, last_update=2026-09-25 15:03:31.840000 (1.68s)
+  ReportDate=2026-09-25, row_count=9882, plants=143, blocks=61, update_times=130, first_update=2026-09-25 00:14:30.237000, last_update=2026-09-25 15:03:31.840000
+  ReportDate=2026-09-24, row_count=15552, plants=143, blocks=96, update_times=210, first_update=2026-09-24 00:14:30.903000, last_update=2026-09-24 23:59:31.423000
+  ReportDate=2026-09-23, row_count=15552, plants=143, blocks=96, update_times=220, first_update=2026-09-23 00:14:30.763000, last_update=2026-09-23 23:59:31.547000
+  ReportDate=2026-09-22, row_count=15492, plants=143, blocks=96, update_times=264, first_update=2026-09-22 00:14:30.287000, last_update=2026-09-22 23:59:31.800000
+
+Waiting 10 minutes...
+
+--- Snapshot B  (server time 2026-09-25 15:13:56) ---
+Data_RealTime_PIData: 454 rows (0.01s)
+  age by TimeStamp: a) < 10 min: 290, b) 10-30 min: 6, c) < 1 day (stale): 7, d) > 1 day (dead): 151
+  age by UpdatedOn: a) < 10 min: 331, d) > 1 day (dead): 123
+  newest UpdatedOn: 2026-09-25 15:13:49.510000
+XML_RealView today: row_count=9882, plants=143, blocks=61, min_blk=1, max_blk=61, update_times=130, first_update=2026-09-25 00:14:30.237000, last_update=2026-09-25 15:13:37.707000 (0.08s)
+  ReportDate=2026-09-25, row_count=9882, plants=143, blocks=61, update_times=130, first_update=2026-09-25 00:14:30.237000, last_update=2026-09-25 15:13:37.707000
+  ReportDate=2026-09-24, row_count=15552, plants=143, blocks=96, update_times=210, first_update=2026-09-24 00:14:30.903000, last_update=2026-09-24 23:59:31.423000
+  ReportDate=2026-09-23, row_count=15552, plants=143, blocks=96, update_times=220, first_update=2026-09-23 00:14:30.763000, last_update=2026-09-23 23:59:31.547000
+  ReportDate=2026-09-22, row_count=15492, plants=143, blocks=96, update_times=264, first_update=2026-09-22 00:14:30.287000, last_update=2026-09-22 23:59:31.800000
+
+--- Comparison A -> B ---
+PI tags: 454 total; new TimeStamp: 297; new value: 214; new UpdatedOn: 331
+XML_RealView today: rows 9882 -> 9882, last update 2026-09-25 15:03:31.840000 -> 2026-09-25 15:13:37.707000, blocks 61 -> 61
+Stale tags (TimeStamp older than 30 min): 158 -> stale_tags.csv

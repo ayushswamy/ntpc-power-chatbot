@@ -1,0 +1,9 @@
+# Local model name for development: qwen3:8b with a larger context window.
+# Ollama's default context (4096 tokens) is too small for the planner (tools list ~2,000 tokens)
+# plus the text-to-SQL schema (~2,600 tokens). This reuses the downloaded qwen3:8b weights.
+#
+# Create it once (from the project folder):
+#   ollama create qwen3-8b-ntpc -f ollama\Modelfile.qwen3-8b-ntpc
+# Then set LLM_MODEL=qwen3-8b-ntpc in .env
+FROM qwen3:8b
+PARAMETER num_ctx 8192

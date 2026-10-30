@@ -1,0 +1,8 @@
+# Production model on a GPU server running Ollama: qwen3:32b with an 8k context.
+# (Use this when the GPU arrives and Ollama is chosen instead of vLLM.)
+#
+#   ollama pull qwen3:32b
+#   ollama create qwen3-32b-ntpc -f ollama\Modelfile.qwen3-32b-ntpc
+# Then in .env:  LLM_MODEL=qwen3-32b-ntpc
+FROM qwen3:32b
+PARAMETER num_ctx 8192

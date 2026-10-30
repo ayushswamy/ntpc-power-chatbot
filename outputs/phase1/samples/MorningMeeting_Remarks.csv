@@ -1,0 +1,12 @@
+﻿RemarkID,ReportDate,MajorRemarks,AdditionalRemarks,UpdatedBy,UpdatedOn,RemarkKey,RemarkParameter
+325,2026-09-24,,"All India peak demand: ↓ 2.9 GW (1.2%)
+Thermal ↓ 2.5 GW, while RE ↑ 1.3 GW
+
+Lower demand (change in weather)",SIIS,2026-09-25 09:43:29.893000,SUMMARY_ALL_INDIA,All India Remarks
+326,2026-09-24,,"NTPC Group Gen ↓ 63.7 MU (5.1%)
+Coal ↓ (59.2 MU) and Gas ↓ (8.75 MU).
+
+Higher Grid-PL (lower demand) and FO.",SIIS,2026-09-25 09:34:56.080000,NTPC_GROUP_GEN,NTPC Group Gen
+327,2026-09-24,,Higher Grid-PL (lower demand) and FO.,SIIS,2026-09-25 09:34:56.080000,NTPC_STANDALONE_GEN,NTPC Standalone Gen
+328,2026-09-24,,Higher Grid-PL (lower demand),SIIS,2026-09-25 09:34:56.080000,TOTAL_JV_SUBSIDIARY,Total JV+Subsidiary
+329,2026-09-24,,"Higher Grid-PL (lower demand) , Higher PL in Patratu",SIIS,2026-09-25 09:34:56.080000,JV_COAL,JV Coal (incl. Capt+ Subs)

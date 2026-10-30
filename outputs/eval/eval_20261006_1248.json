@@ -1,0 +1,222 @@
+[
+ {
+  "id": "D01",
+  "question": "What was the PLF of Singrauli yesterday?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "yesterday"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Singrauli",
+    "metric": "plf",
+    "period": "yesterday"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Singrauli",
+     "metric": "plf",
+     "period": "yesterday"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1004",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "The PLF of Singrauli was 84.81% on 05 Oct 2026. Note: Taken as Singrauli (coal, 2,000 MW).",
+  "composer": "llm (attempt 1, 19.3s)",
+  "timings": {
+   "plan": 24.7,
+   "tools": 0.05,
+   "compose": 19.3,
+   "total": 44.1
+  },
+  "seconds": 44.2
+ },
+ {
+  "id": "CV2-1",
+  "question": "PLF of Sipat last month",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Sipat",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Sipat",
+     "metric": "plf",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1019",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "The Plant Load Factor (PLF) of Sipat was 89.1% during the period 01 Sep 2026 to 30 Sep 2026.",
+  "composer": "llm (attempt 1, 16.5s)",
+  "timings": {
+   "plan": 22.0,
+   "tools": 0.02,
+   "compose": 16.5,
+   "total": 38.6
+  },
+  "seconds": 38.6
+ },
+ {
+  "id": "CV2-2",
+  "question": "And Korba?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "plf",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Korba",
+     "metric": "plf",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1017",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "73.37% PLF for Korba in September 2026. The value is an official month-to-date value.",
+  "composer": "llm (attempt 1, 12.3s)",
+  "timings": {
+   "plan": 25.1,
+   "tools": 0.03,
+   "compose": 12.3,
+   "total": 37.5
+  },
+  "seconds": 37.5
+ },
+ {
+  "id": "CV2-3",
+  "question": "What about availability?",
+  "passed": true,
+  "checks": {
+   "tool": true,
+   "args": true,
+   "source": true,
+   "value": true,
+   "value_in_text": true
+  },
+  "reasons": [],
+  "expected": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "availability",
+    "period": "last month"
+   },
+   "source": "daily"
+  },
+  "actual": {
+   "tool": "get_value",
+   "args": {
+    "plant": "Korba",
+    "metric": "availability",
+    "period": "last month"
+   },
+   "planned": {
+    "tool": "get_value",
+    "args": {
+     "plant": "Korba",
+     "metric": "availability",
+     "period": "last month"
+    }
+   },
+   "source": "daily",
+   "entity": {
+    "level": "plant",
+    "plant_code": "1017",
+    "stage": null,
+    "unit": null,
+    "scope": {}
+   }
+  },
+  "answer": "78.38% Availability factor (AvF on bar) for Korba from 01 Sep 2026 to 30 Sep 2026. The value is an official month-to-date value.",
+  "composer": "llm (attempt 1, 18.0s)",
+  "timings": {
+   "plan": 26.7,
+   "tools": 0.01,
+   "compose": 18.0,
+   "total": 44.8
+  },
+  "seconds": 44.8
+ }
+]

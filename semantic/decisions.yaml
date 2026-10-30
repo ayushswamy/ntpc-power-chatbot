@@ -1,0 +1,44 @@
+# =============================================================================
+# decisions.yaml - answers from NTPC to the project's open questions, and how the
+# chatbot implements each one. Source: Solution_to_Query.xlsx (data owners) and
+# management answers given on 30 Sep 2026.
+# =============================================================================
+
+management:
+  gpu: "A GPU server will be provided later. Development continues on CPU (qwen3-8b-ntpc); production target qwen3:32b."
+  authentication: "A shared API key between the ASP.NET app and the chatbot is enough (SSO later)."
+  data_access: "Every user sees the full data - no per-user restrictions."
+  plant_names: "The Singrauli rule applies to every plant: a plain name = the main conventional station."
+  still_open: ["production server location / internet access (M1)", "number of users (M3)",
+               "who embeds the widget in which ASP.NET pages (M7)"]
+
+data_decisions:
+  1_ntpc_total: {status: LOCK, rule: "Default NTPC Group, always labelled 'NTPC Group'; standalone when asked.",
+                 implemented: "yes (NTPC_TOTAL_SCOPE=group, labels in app/db/masters.py)"}
+  2_ambiguous_names: {status: LOCK, rule: "exact/alias -> fuel in question -> contains -> fuzzy; plain name = main conventional station; genuinely ambiguous -> ask; never pick the largest.",
+                      implemented: "yes (app/agent/entities.py)"}
+  3_scheduled_generation: {status: "LOCK metric; investigate anomaly", rule: "sg_mu = SG (MU), sg_per = SG %; components never added; SG > DC shown with a warning.",
+                           implemented: "yes (metrics.yaml scheduled_generation + scheduled_generation_percent, must_not_exceed)"}
+  4_coal_unit: {status: "Leave for now", rule: "Source unit is MT; 25,011 = 25,011 MT = 0.0250 MMT.",
+                implemented: "not yet - still labelled tonnes with a note"}
+  5_heat_rate_apc: {status: "LOCK source hierarchy", rule: "Performance table first; if 0/NULL use the validated SAP/XML value and record the fallback.",
+                    implemented: "checked 2026-09-30: heat rate and APC are EMPTY in both Performance_DayCum_Station and XML_CumYearFig/XML_DayFig for all 138 generating plants -> no fallback source in DB_PlantLive; the chatbot says the SAP figures are not loaded. ASK: where does the SAP/BW heat rate / APC land?"}
+  6_outage_loss_unit: {status: "Processed MU = LOCK", rule: "Routine answers from Performance loss params (MU); Report_OutageBreakup.GenLoss never shown as MU; validate /1000 before locking.",
+                       implemented: "validation FAILED 2026-09-30: Aug 2026 GenLoss sum (outage 1,786,393; partial 2,029,466) / 1000 does not match Performance MU (7,003 / 6,643; ratio ~255 / ~305). Report_OutageBreakup removed from text-to-SQL; MU answers only from Performance params. ASK: GenLoss unit and whether rows are cumulative."}
+  7_trip_codes: {status: "F/G/P LOCK; S/C unresolved", rule: "F = Forced outage, G = Reserve shutdown (RSD), P = Planned outage; S, C unmapped.",
+                 implemented: "yes (app/tools/events.py TRIP_TYPES, trip_type filter)"}
+  8_zero_values: {status: LOCK, rule: "Cross-validate: 0 while generation > 0 = not reported; genuine zeros kept; source never overwritten.",
+                  implemented: "yes (zero_check in metrics.yaml for ag_mu, coal_stock, coal_stock_days)"}
+  9_plf_extremes: {status: LOCK, rule: "Never cap; flag unusual values; 0% with generation > 0 = unavailable, else keep 0%.",
+                   implemented: "yes (plf warn_above 100 + zero_check)"}
+  10_availability: {status: "LOCK approach; formula fields to map", rule: "Stored value for Day/MTD/YTD; custom periods/groups from additive numerator and denominator.",
+                    finding: "avb = (gross_cap_mu - outg_loss) / gross_cap_mu x 100 matched Singrauli day/month/year exactly",
+                    implemented: "yes - formula matched 144/144 plants for Day/Month/Year (avb) and rsd_avb = (cap - outg_loss + rsd_mu)/cap; used for custom periods and groups (metrics.yaml aggregate_by_formula)"}
+  extra_findings_2026_09_30:
+    sg_vs_dc: "SG > DC at 28 of 33 plants (2-3x, e.g. Sipat 199.5 vs 66.93 MU) - systematic, every SG answer carries a warning. ASK data owners."
+    ag_reporting: "AG (ag_mu) is reported only by NTPC-owned coal stations; 0 for JV coal, gas, hydro, solar, wind (105 plants) -> 'not reported'."
+    coal_stock_jv: "Coal stock is 0 (not reported) for the 11 JV coal plants: Bhilai, Jhajjar, Vallur, Bhilai-Captive, Durgapur, Rourkela, Patratu, BRBCL, Meja, Jhabua, Khurja."
+    total_outage_loss: "All-plant sum of total_outage_loss equals the sum of partl exactly (Day/Month/Year) - looks wrong; metric switched off until confirmed. ASK data owners."
+    plf_zero: "No plant had PLF = 0 while generating; BIFPCL generated 0 -> its 0% is genuine."
+  11_stale_pi_tags: {status: "Leave for now", rule: "Live only if <= 30 min old; otherwise say live unavailable and give the latest Day-1 value.",
+                     implemented: "yes (freshness rule + Day-1 fallback in app/tools/live.py)"}

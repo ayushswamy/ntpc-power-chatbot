@@ -1,0 +1,98 @@
+# =============================================================================
+# glossary.yaml - power-sector terms the chatbot explains ("what is PLF?")
+# and that help it understand questions. Indexed into Qdrant (type: glossary).
+# Definitions are general industry meanings; items marked NEEDS CONFIRMATION
+# should be checked against NTPC's internal definitions.
+# =============================================================================
+
+terms:
+  MU:
+    full: "Million Units"
+    definition: "Unit of energy. 1 MU = 1 million kWh = 1 GWh = 1000 MWh. Daily and cumulative generation is reported in MU."
+  MW:
+    full: "Megawatt"
+    definition: "Unit of power (rate of generation at a moment). Live 'current generation' is in MW. A 500 MW unit running at full load for 24 hours generates 12 MU."
+  KU:
+    full: "Kilo Units"
+    definition: "1000 kWh = 1 MWh. Used in Data_Generation."
+  PLF:
+    full: "Plant Load Factor"
+    definition: "Energy actually generated as a percentage of the maximum possible at full installed capacity over the period. PLF = gross generation (MU) / (capacity MW x hours / 1000) x 100."
+  AvF:
+    full: "Availability Factor (on bar)"
+    definition: "Percentage of the period the plant was available to generate (declared capacity basis), whether or not it was scheduled."
+  RSD:
+    full: "Reserve Shutdown"
+    definition: "Unit available but shut down because there was no schedule/demand. 'Availability incl. RSD' counts these hours as available."
+  DC:
+    full: "Declared Capacity"
+    definition: "Capacity (MW per block / MU per day) that the plant declares it can supply to the grid."
+  Normative DC:
+    definition: "The DC expected at normative availability; DC% and AG% are calculated against it."
+  SG:
+    full: "Scheduled Generation"
+    definition: "Generation the grid operator (RLDC) schedules the plant to supply, per 15-minute block."
+  AG:
+    full: "Actual Generation"
+    definition: "Actual energy sent out (ex-bus) by the station, i.e. after auxiliary consumption."
+  Gross generation:
+    definition: "Total energy generated at the generator terminals, including auxiliary consumption and non-commercial generation."
+  Commercial generation:
+    definition: "Generation from units that have been declared commercial (COD achieved)."
+  Non-commercial generation:
+    definition: "Infirm generation from units under trial/stabilisation before commercial operation."
+  URS:
+    full: "Un-Requisitioned Surplus"
+    definition: "Declared capacity that beneficiaries did not schedule."
+  APC:
+    full: "Auxiliary Power Consumption"
+    definition: "Electricity used by the plant's own equipment, as % of gross generation."
+  Heat rate:
+    definition: "Heat energy input per unit of electricity generated (kcal/kWh). Lower is more efficient."
+  Specific coal consumption:
+    definition: "Coal burnt per unit of electricity (kg/kWh)."
+  Specific oil consumption:
+    definition: "Fuel oil used per unit of electricity (ml/kWh), mainly for start-ups and flame support."
+  Forced outage:
+    definition: "Unplanned shutdown of a unit due to equipment problems (boiler, turbine, generator, C&I, offsite, operation induced)."
+  Planned outage:
+    definition: "Scheduled shutdown for overhaul or maintenance."
+  Partial loss:
+    definition: "Generation lost while a unit runs below its capacity (partial loading), e.g. due to equipment limits or coal quality."
+  BTL:
+    full: "Boiler Tube Leakage"
+    definition: "A common cause of forced outages in coal units; tracked as number of events and MU lost."
+  Trip:
+    definition: "Sudden automatic shutdown of a unit by its protection system. Revival = unit re-synchronised to the grid."
+  Block:
+    definition: "A 15-minute time slot. A day has 96 blocks; block 1 = 00:00-00:15. Scheduling and real-time data are per block."
+  Frequency:
+    definition: "Grid frequency in Hz; nominal 50 Hz in India."
+  Pithead:
+    full: "PH / NPH"
+    definition: "Pithead (PH) coal plants are located near coal mines; non-pithead (NPH) plants receive coal over long distances."
+  MGR:
+    full: "Merry-Go-Round"
+    definition: "Dedicated rail system bringing coal from nearby mines to a pithead plant (vs. Indian Railways = RLY)."
+  ISGS:
+    full: "Inter-State Generating Station"
+    definition: "Central-sector stations (like NTPC) supplying power to several states."
+  RLDC:
+    full: "Regional Load Despatch Centre"
+    definition: "Grid operator for a region (NR, WR, ER, SR, NER) that issues schedules."
+  Region:
+    definition: "NTPC operating regions in the data: NR (North), WR-I, WR-II (West), ER-I, ER-II (East), SR (South), plus 'Others'/'International'."
+  FY:
+    full: "Financial Year"
+    definition: "April 1 to March 31. 'FY 2026-27' = 2026-04-01 to 2027-03-31. 'Cumulative' / 'YTD' figures run from April 1."
+  CY / PY:
+    definition: "In the reports: CY = current year period, PY = same period of the previous year."
+  JV:
+    full: "Joint Venture / subsidiary"
+    definition: "Stations owned through subsidiaries or joint ventures (e.g. NGEL, NEEPCO, THDC, NSPCL, Meja, Jhajjar). NTPC Group totals include them. NEEDS CONFIRMATION of which to include in 'NTPC total'."
+  STPS / TPS / GPS / CCPP / HEP / SPV:
+    definition: "Super Thermal Power Station / Thermal Power Station / Gas Power Station / Combined Cycle Power Plant / Hydro Electric Project / Solar Photo-Voltaic."
+  Unit / Stage / Station:
+    definition: "Station (plant) = whole site. Stage = a phase of the site built together (e.g. Rihand Stage 2). Unit = one generator set."
+  Live data:
+    definition: "Values updated every 1-5 minutes from the plants' PI systems. The chatbot shows the time the data refers to ('as of HH:MM')."

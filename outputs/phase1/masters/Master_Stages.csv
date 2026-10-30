@@ -1,0 +1,165 @@
+﻿PlantCode,Stage,StageName,StageNameRealView,StageNameDescription,Units,CapacityMW,PCode,NormAPC,IsActive,IsDeleted,StageShortName,StageOPPMSName,StationOPPMSName,StageRLDCName,StageScadaName,ABT,PRR,VarCost,Plant_Type
+1004,STAGE1,SINGRAULI-I,SINGRAULI,Singrauli Stage 1,7,2000.0,KSNTPC0010041001,7.375,True,False,SSTPS,SINGRAULI,,SINGRAULI,SINGRAULI,A,N2,1.981,Subcritical
+1005,STAGE1,RIHAND-I,RIHAND-I,Rihand Stage 1,2,1000.0,KSNTPC0010051001,8.0,True,False,RhSTPS,RIHAND-I,,RIHAND1,RIHAND1,A,N2,1.727,Subcritical
+1005,STAGE2,RIHAND-II,RIHAND-II,Rihand Stage 2,2,1000.0,KSNTPC0010052001,5.75,True,False,RhSTPS-II,RIHAND-II,,RIHAND2,RIHAND2,A,N2,1.776,Subcritical
+1005,STAGE3,RIHAND-III,RIHAND-III,Rihand Stage 3,2,1000.0,KSNTPC0010053001,5.75,True,False,RhSTPS-III,RIHAND-III,,RIHAND3,RIHAND3,A,N2,1.782,Subcritical
+1006,STAGE1,UNCHAHAR-I,UNCHAHAR-I,Unchahar Stage 1,2,420.0,KSNTPC0010061001,10.0,True,False,FgUTPS,UNCHAHAR-I,,UNCHAHAR1,UNCHAHAR1,A,N2,3.979,Subcritical
+1006,STAGE2,UNCHAHAR-II,UNCHAHAR-II,Unchahar Stage 2,2,420.0,KSNTPC0010062001,10.8,True,False,FgUTPS-II,UNCHAHAR-II,,UNCHAHAR2,UNCHAHAR2,A,N2,4.010,Subcritical
+1006,STAGE3,UNCHAHAR-III,UNCHAHAR-III,Unchahar Stage 3,1,210.0,KSNTPC0010063001,10.0,True,False,FgUTPS-III,UNCHAHAR-III,,UNCHAHAR3,UNCHAHAR3,A,N2,3.983,Subcritical
+1006,STAGE4,UNCHAHAR-IV,UNCHAHAR-IV,Unchahar Stage 4,1,500.0,KSNTPC0010064001,6.75,True,False,FgUTPS-IV,UNCHAHAR-IV,,UNCHAHAR4,UNCHAHAR4,A,N2,3.776,Subcritical
+1007,STAGE1,TANDA-I,TANDA,Tanda Stage 1,4,440.0,KSNTPC0010071001,12.0,False,False,TnTPS,TANDA,,TANDA1,TANDA-1,A,N2,0,Subcritical
+1007,STAGE2,TANDA-II,TANDA-II,Tanda Stage 2,2,1320.0,KSNTPC0010072001,6.25,True,False,TnTPS-II,TANDA-II,,TANDA2,TANDA2,A,N2,3.13,Supercritical
+1011,STAGE1,DADRI-C-I,DADRI-C-I,Dadri Stage 1,4,840.0,KSNTPC0010111001,8.5,True,False,NcTPS,DADRI-C-I,,DADRIT,DADRIT,A,N2,4.788,Subcritical
+1011,STAGE2,DADRI-C-II,DADRI-C-II,Dadri Stage 2,2,1000.0,KSNTPC0010112001,6.25,True,False,NcTPS-II,DADRI-C-II,,DADRT2,DADRT2,A,N2,4.481,Subcritical
+1012,STAGE1,AURAIYA,AURAIYA,Auraiya,6,663.36,,,True,False,AuGPS,AURAIYA,,AURY,,A,N2,25.97/27.72,
+1013,STAGE1,ANTA,ANTA,Anta,4,419.33,,,True,False,AnGPS,ANTA,,ANTA,,A,N2,26.64/28.43,
+1014,STAGE1,DADRI-G,DADRI-G,Dadri Gas,6,829.78,,,True,False,DaGPS,DADRI-G,,DADRI,,A,N2,25.44/27.15,
+1015,STAGE1,FARIDABAD,FARIDABAD,Faridabad,3,431.586,,,True,False,FdGPS,FARIDABAD,,FdGPS,FdGPS_LF,A,N1,28.01/30.72,
+1017,STAGE1,KORBA-I&II,KORBA-I&II,Korba Stage 1,6,2100.0,KSNTPC0010171001,6.68,True,False,KSTPS,KORBA,,KSTPS I&II,KSTPS12,A,W1,1.348,Subcritical
+1017,STAGE2,KORBA-III,KORBA-III,Korba Stage 2,1,500.0,KSNTPC0010173001,5.75,True,False,KSTPS-II,KORBA-II,,KSTPS7,KSTPS7,A,W1,1.322,Subcritical
+1018,STAGE1,VDHYACHAL-I,VDHYACHAL-I,Vindhyachal Stage 1,6,1260.0,KSNTPC0010181001,9.0,True,False,VSTPS,VDHYACHAL-I,,VSTPS I,VSTPS1,A,W1,2.199,Subcritical
+1018,STAGE2,VDHYACHAL-II,VDHYACHAL-II,Vindhyachal Stage 2,2,1000.0,KSNTPC0010182001,7.55,True,False,VSTPS-II,VDHYACHAL-II,,VSTPS II,VSTPS2,A,W1,2.110,Subcritical
+1018,STAGE3,VDHYACHAL-III,VDHYACHAL-III,Vindhyachal Stage 3,2,1000.0,KSNTPC0010183001,6.75,True,False,VSTPS-III,VDHYACHAL-III,,VSTPS III,VSTPS3,A,W1,2.096,Subcritical
+1018,STAGE4,VDHYACHAL-IV,VDHYACHAL-IV,Vindhyachal Stage 4,2,1000.0,KSNTPC0010184001,6.75,True,False,VSTPS-IV,VDHYACHAL-IV,,VSTPS IV,VSTPS4,A,W1,2.074,Subcritical
+1018,STAGE5,VDHYACHAL-V,VDHYACHAL-V,Vindhyachal Stage 5,1,500.0,KSNTPC0010185001,6.95,True,False,VSTPS-V,VDHYACHAL-V,,VSTPS V,VSTPS5,A,W1,2.14,Subcritical
+1019,STAGE1,SIPAT-I,SIPAT-I,Sipat Stage 1,3,1980.0,KSNTPC0010191001,6.75,True,False,SpSTPS-I,SIPAT-I,,SIPAT I,SIPAT1,A,W1,1.244,Supercritical
+1019,STAGE2,SIPAT-II,SIPAT-II,Sipat Stage 2,2,1000.0,KSNTPC0010192001,5.75,True,False,SpSTPS-II,SIPAT-II,,SIPAT II,SIPAT2,A,W1,1.282,Subcritical
+1020,STAGE1,KAWAS,KAWAS,Kawas,6,656.2,KSNTPC0010201001,,True,False,KwGPS,KAWAS,,KAWAS,,A,W2,24/25.23,
+1021,STAGE1,GANDHAR,GANDHAR,Gandhar,4,657.39,,,True,False,JgGPS,GANDHAR,,GANDHAR,,A,W2,24.13/25.36,
+1024,STAGE1,FARAKKA-I&II,FARAKKA-I&II,Farakka Stage 1 and 3,5,1600.0,KSNTPC0010241001,6.47,True,False,FSTPS,FARAKKA,,FSTPP I & II,FSTPP_I_II,A,E1,3.445,Subcritical
+1024,STAGE2,FARAKKA-III,FARAKKA-III,Farakka Stage 2,1,500.0,KSNTPC0010243001,5.75,True,False,FSTPS-II,FARAKKA-II,,FSTPP-III,FSTPP_III,A,E1,3.360,Subcritical
+1025,STAGE1,KAHALGAON-I,KAHALGAON-I,Kahalgaon Stage 1,4,840.0,KSNTPC0010251001,9.0,True,False,KhSTPS,KAHALGAON-I,,KHSTPP-I,KHSTPP_I,A,E1,3.058,Subcritical
+1025,STAGE2,KAHALGAON-II,KAHALGAON-II,Kahalgaon Stage 2,3,1500.0,KSNTPC0010252001,5.75,True,False,KhSTPS-II,KAHALGAON-II,,KHSTPP-II,KHSTPP_II,A,E1,2.857,Subcritical
+1026,STAGE1,TALSUPR-K1,TALSUPR-K1,Talcher Super Kaniha Stage 1,2,1000.0,KSNTPC0010261001,6.55,True,False,TSTPS,TALSUPR-K1,,TSTPP-I,TSTPP_I,A,E2,1.435,Subcritical
+1026,STAGE2,TALSUPR-K2,TALSUPR-K2,Talcher Super Kaniha Stage 2,4,2000.0,KSNTPC0010262001,5.75,True,False,TSTPS-II,TALSUPR-K2,,TALST2,TALST2,A,E2,1.423,Subcritical
+1028,STAGE1,BARH-I,BARH-I,Barh Stage 1,3,1980.0,KSNTPC0010281001,5.75,True,False,BARH-I,BARH-I,,BARH-I,BARH_I,A,E1,2.862,Supercritical
+1028,STAGE2,BARH-II,BARH-II,Barh Stage 2,2,1320.0,KSNTPC0010282001,5.75,True,False,BARH-II,BARH-II,,BARH,BARH,A,E1,2.994,Supercritical
+1029,STAGE1,North Karanpura,North Karanpura,North Karanpura,3,1980.0,KSNTPC0010291001,6.25,True,False,North Karanpura,North Karanpura,,North Karanpura STPS,North_Karanpura_STPS,Y,E2,2.118,Supercritical
+1033,STAGE1,RGUNDAM-I&II,RGUNDAM-I&II,Ramagundam Stage 1,6,2100.0,KSNTPC0010331001,6.68,True,False,RSTPS,RGUNDAM-I,,RSTPSU1TO6,RSTPSU1TO6,A,S1,3.462,Subcritical
+1033,STAGE2,RGUNDAM-III,RGUNDAM-III,Ramagundam Stage 2,1,500.0,KSNTPC0010333001,5.75,True,False,RSTPS-II,RGUNDAM-II,,RSTPSU7,RSTPSU7,A,S1,3.386,Subcritical
+1034,STAGE1,KMKULAM,KMKULAM,Kayamkulam,3,359.577,,,True,False,KyGPP,KMKULAM,,KyGPS,,A,S3,5.67,
+1035,STAGE1,SIMHADRI-I,SIMHADRI-I,Simhadri Stage 1,2,1000.0,KSNTPC0010351001,6.25,True,False,SmTPS,SIMHADRI-I,,SIMHST1,SIMHST1,A,S1,3.126,Subcritical
+1035,STAGE2,SIMHADRI-II,SIMHADRI-II,Simhadri Stage 2,2,1000.0,KSNTPC0010352001,6.25,True,False,SmTPS-II,SIMHADRI-II,,SIMHST2,SIMHST2,A,S1,3.092,Subcritical
+1037,STAGE1,KOLDAM,KOLDAM,Koldam,4,800.0,KSNTPC0010371001,,True,False,KdHPS,KOLDAM,,KOLDAM,,A,N1,217,
+1042,STAGE1,BONGAIGAON,BONGAIGAON,Bongaigaon,3,750.0,KSNTPC0010421001,9.0,True,False,Bongaigaon,BONGAIGAON,,BGTPP,BGTPP,A,E1,3.942,Subcritical
+1043,STAGE1,MOUDA-I,MOUDA-I,Mouda Stage 1,2,1000.0,KSNTPC0010431001,5.75,True,False,MSTPS,MOUDA-I,,MOUDA,MOUDA1,A,W2,2.658,Subcritical
+1043,STAGE2,MOUDA-II,MOUDA-II,Mouda Stage 2,2,1320.0,KSNTPC0010432001,6.75,True,False,MSTPS-II,MOUDA-II,,MOUDA_II,MOUDA2,A,W2,2.587,Supercritical
+1045,STAGE1,SOLAPUR,SOLAPUR,Solapur,2,1320.0,KSNTPC0010451001,6.75,True,False,SOLAPUR,SOLAPUR,,SOLAPUR,SOLAPUR,A,W1,4.695,Supercritical
+1046,STAGE1,KUDGI-I,KUDGI-I,Kudgi Stage 1,3,2400.0,KSNTPC0010461001,6.75,True,False,KUDGI-I,KUDGI-I,,KUDGI,KUDGI,A,S1,4.389,Supercritical
+1047,STAGE1,LARA,LARA,Lara,2,1600.0,KSNTPC0010471001,6.75,True,False,LARA,LARA,,LARA-I,LARA,A,W1,1.381,Supercritical
+1049,STAGE1,GADARWARA,GADARWARA,Gadarwara,2,1600.0,KSNTPC0010491001,6.75,True,False,GADARWARA,GADARWARA,,GADARWARA-I,GADARWARA,A,W1,2.76,Supercritical
+1053,STAGE1,DARLIPALI,DARLIPALI,Darlipali,2,1600.0,KSNTPC0010531001,6.75,True,False,DARLIPALI,DARLIPALI,,Darlipali_NTPC,Darlipali_NTPC,A,E1,1.199,Supercritical
+1054,STAGE1,KHARGONE,KHARGONE,Khargone,2,1320.0,KSNTPC0010541001,6.75,True,False,KHARGONE,KHARGONE,,KHARGONE-I,KHARGONE,A,W1,3.312,Supercritical
+1057,STAGE1,TELANGANA-I,TELANGANA-I,Telangana Stage 1,2,1600.0,KSNTPC0010571001,6.75,True,False,TELANGANA-I,TELANGANA-I,,TelanganaSTPP,TelanganaSTPP,Y,S1,2.846,Supercritical
+1072,STAGE1,BARAUNI-I,BARAUNI-I,Barauni Stage 1,2,0.0,,12.0,False,True,BARAUNI-I,BARAUNI-I,,BARAUNI-I,,A,E1,270,Subcritical
+1072,STAGE2,BARAUNI-II,BARAUNI-II,Barauni Stage 2,2,500.0,KSNTPC0010722001,9.8,True,False,BARAUNI-II,BARAUNI-II,,BARAUNI-II,BARAUNI-II,A,E1,3.598,Subcritical
+1086,STAGE1,NSTPS,NPGC,NSTPS Stage 1,3,1980.0,KSNTPC0010861001,5.75,True,False,NSTPS,NSTPS,,NSTPS,NPGC,,,3.038,Supercritical
+1087,STAGE2,KANTI-II,KANTI-II,Kanti Stage 2,2,390.0,KSNTPC0010872001,9.0,True,False,MTPS-II,KANTI-II,,MTPS-II,MTPS_II,N,E1,3.145,Subcritical
+2010,STAGE1,RATNAGIRI,RATNAGIRI,Ratnagiri,9,1967.08,,,True,False,RGPPL,RATNAGIRI,,RGPPL,,A,W1,23.4/14.74,
+2030,STAGE1,BHILAI,BHILAI,Bhilai,2,500.0,,9.0,True,False,BhNSPCL,BHILAI,,NSPCL,NSPCL,A,W3,2.37,Subcritical
+2040,STAGE1,JHAJJAR,JHAJJAR,Jhajjar,3,1500.0,,6.25,True,False,JHAJJAR,JHAJJAR,,JHAJJAR,JHAJJAR,A,N1,4.573,Subcritical
+2050,STAGE1,VALLUR,VALLUR,Vallur,3,1500.0,,6.08,True,False,VALLUR,VALLUR,,VALLURNTECL,VALLURNTECL,A,S2,3.374,Subcritical
+2060,STAGE1,DaSOLAR,DaSOLAR,Dadri Solar,1,5.0,KSNTPC0010119115,,True,False,DaSOLAR,DaSOLAR,,DaSolar,,N,R,1294,
+2065,STAGE2,Kopili StageII,Khandiong StageII,Khandiong StageII,1,25.0,,,True,False,Kopili StageII,Kopili StageII,,Kopili StageII,,,,0,
+2066,STAGE1,Khandiong HEP,Khandiong HEP,Khandiong HEP,1,50.0,,,True,False,Khandiong HEP,Khandiong HEP,,Khandiong HEP,,,,0,
+2070,STAGE1,AndmSOLAR,AndmSOLAR,Andaman Solar,1,5.0,,,True,False,ASOLAR,AndmSOLAR,,ASOLAR,,N,R,935,
+2079,STAGE1,BIFPCL Maitree (Bangladesh),BIFPCL Maitree (Bangladesh),BIFPCL Maitree (Bangladesh),2,1320.0,,,True,False,BIFPCL Maitree (Bangladesh),BIFPCL Maitree (Bangladesh),,BIFPCL Maitree (Bangladesh),,,,0,Supercritical
+2080,STAGE1,RgdmSOLAR,RgdmSOLAR,Ramagundam Solar,1,10.0,,,True,False,RgdmSOLAR,RgdmSOLAR,,RGDSOLAR,,N,R,935,
+2090,STAGE1,Tal_K_SOLAR,Tal_K_SOLAR,Talcher Kaniha Solar,1,10.0,KSNTPC0010269115,,True,False,Tal_K_SOLAR,Tal_K_SOLAR,,TSOLAR,,N,R,935,
+2100,STAGE1,FbdSOLAR,FbdSOLAR,Faridabad Solar,1,5.0,,,True,False,FSOLAR,FbdSOLAR,,FSOLAR,,N,N1,935,
+2110,STAGE1,UnchSOLAR,UnchSOLAR,Unchahar Solar,1,10.0,,,True,False,FgSOLAR,UnchSOLAR,,FgUTPS-Solar,,N,R,935,
+2120,STAGE1,RAJGARH,RAJGARH,Rajgarh Solar,1,50.0,,,True,False,RAJGARH,RAJGARH,,RAJGARH,,N,R,785,
+2130,STAGE1,Bhilai-Captive,Bhilai-Captive,Bhilai-Captive,3,74.0,,,True,False,Bhilai-Captive,Bhilai-Captive,,Bhilai-Captive,,,,0,Subcritical
+2140,STAGE1,Durgapur,Durgapur,Durgapur,4,160.0,,,True,False,Durgapur,Durgapur,,Durgapur,,N,NULL,0,Subcritical
+2150,STAGE2,ROURKELA,ROURKELA,ROURKELA,3,370.0,,,True,False,ROURKELA,ROURKELA,,ROURKELA,,,,0,Subcritical
+2160,STAGE1,SSTPS-Solar,SSTPS-Solar,Singrauli Solar,1,15.0,,,True,False,SSOLAR,SSTPS-Solar,,SSTPS-Solar,,N,R,787,
+2170,STAGE1,Patratu,Patratu,Patratu,2,1600.0,0,6.25,True,False,Patratu,Patratu,,Patratu,PTPS_I,,,2.65,Supercritical
+2180,STAGE1,BRBCL,BRBCL,BRBCL,4,1000.0,KSNTPC0020151001,9.0,True,False,BRBCL,BRBCL,,BRBCL,BRBCL,A,E1,3.286,Subcritical
+2190,STAGE1,Anantpur,Anantpur,Anantpur Solar,5,250.0,,,True,False,Anantpur,Anantpur,,Anantpur,,N,R,596,
+2200,STAGE1,Bhadla,Bhadla,Bhadla Solar,4,335.0,,,True,False,Bhadla,Bhadla,,Bhadla,,N,R,500,
+2210,STAGE1,Rojmal Wind,Rojmal,Rojmal Wind,1,50.0,,,True,False,Rojmal Wind,Rojmal Wind,,Rojmal Wind,,,,419,
+2220,STAGE1,Mandsaur,Mandsaur,Mandsaur Solar,5,250.0,,,True,False,Mandsaur,Mandsaur,,Mandsaur,,N,R,500,
+2230,STAGE1,SSTPS-Hydro,SSTPS-Hydro,Singrauli Hydro,2,8.0,,,True,False,SSTPS-Hydro,SSTPS-Hydro,,SSTPS-Hydro,,N,R,504,
+2240,STAGE1,MEJA,MEJA,Meja,2,1320.0,,6.75,True,False,MEJA,MEJA,,MEJA,MEJA,A,N1,3.439,Supercritical
+2260,STAGE1,AuSolar,AuSolar,Auraiya Solar,1,20.0,,,True,False,AuSolar,AuSolar,,AuSolar,,N,N1,306,
+2270,STAGE1,Bilhaur-I,Bilhaur-I,Bilhaur Solar 1,1,140.0,,,True,False,Bilhaur-I,Bilhaur-I,,Bilhaur-1,,N,N1,317,
+2280,STAGE2,Bilhaur-II,Bilhaur-II,Bilhaur Solar 2,1,85.0,,,True,False,Bilhaur-II,Bilhaur-II,,Bilhaur-II,,N,N1,302,
+2290,STAGE1,SIMFLSOLAR,SIMFLSOLAR,Simhadri Floating Solar,1,25.0,,,True,False,SIM-FLSOLAR,SIMFLSOLAR,,SIMFLSOLAR,,N,S1,361,
+2300,STAGE1,Jetsar-I,Jetsar-I,Jetsar Solar 1,1,80.0,,,True,False,JETSAR-I,Jetsar-I,,JETSAR-I,,N,N1,250,
+2310,STAGE1,RGDFLSOLAR,RGDFLSOLAR,Ramagundam Floating Solar,1,100.0,,,True,False,RGD_FLSOLAR,RGDFLSOLAR,,RGDFLSOLAR,,N,S1,358,
+2320,STAGE1,FATEHGARH,FATEHGARH,Fatehgarh Solar,1,296.0,,,True,False,Fatehgarh,FATEHGARH,,FATEHGARH,,N,N1,281,
+2330,STAGE2,Jetsar-II,Jetsar-II,Jetsar Solar 2,1,80.0,,,True,False,JETSAR-II,Jetsar-II,,JETSAR-II,,N,N1,0,
+2350,STAGE2,Kkulam-FS-II,Kkulam-FS-II,Kayamkulam Floating Solar 2,1,22.0,,,True,False,Kkulam-FS-II,Kkulam-FS-II,,Kkulam-FS-II,,N,S1,294,
+2360,STAGE1,KwSolar,KwSolar,Kawas Solar,1,56.0,,,True,False,KwSolar,KwSolar,,KwSolar,,N,W1,269,
+2370,STAGE1,Kkulam-FS-I,Kkulam-FS-I,Kayamkulam Floating Solar 1,1,70.0,,,True,False,Kkulam-FS-I,Kkulam-FS-I,,Kkulam-FS-I,,N,S1,294,
+2380,STAGE1,KOLYAT-SKB1,KOLYAT-SKB1,Kolyat Solar 1,1,250.0,,,True,False,KOLYAT-SKB1,KOLYAT-SKB1,,KOLYAT-SKB1,,N,N1,281,
+2390,STAGE1,Gandhar-Solar,Gandhar-Solar,Gandhar Solar,1,20.0,KSNTPC0010219115,,True,False,Gandhar-Solar,Gandhar-Solar,,Gandhar-Solar,,N,W2,269,
+2410,STAGE1,Auraiya FSPV,Auraiya FSPV,Auraiya FSPV,1,20.0,,,True,False,Auraiya FSPV,Auraiya FSPV,,Auraiya FSPV,,,,302,
+2420,STAGE1,JHABUA,JHABUA,Jhabua,1,600.0,,5.75,True,False,JHABUA,JHABUA,,JHABUA_IPP,JHABUA_IPP,N,W1,2.592,Subcritical
+2430,STAGE2,KOLYAT-SKB2,KOLYAT-SKB2,Kolyat Solar 2,1,299.99,,,True,False,KOLYAT-SKB2,KOLYAT-SKB2,,KOLYAT-SKB2,,N,N1,281,
+2440,STAGE1,ETTAYAPURAM,ETTAYAPURAM,Ettayapuram Solar,1,230.0,,,True,False,ETTAYAPURAM,ETTAYAPURAM,,ETTAYAPURAM,,N,S1,269,
+2450,STAGE1,DEVIKOTSOLAR-1,DEVIKOTSOLAR-1,Devikot Solar 1,1,150.0,,,True,False,DEVIKOTSOLAR-1,DEVIKOTSOLAR-1,,DEVIKOTSOLAR-1,,N,N1,281,
+2451,STAGE2,DEVIKOTSOLAR-2,DEVIKOTSOLAR-2,Devikot Solar 2,1,90.0,,,True,False,DEVIKOTSOLAR-2,DEVIKOTSOLAR-2,,DEVIKOTSOLAR-2,,N,N1,273,
+2460,STAGE1,NOKHRASOLAR,NOKHRASOLAR,Nokhra Solar,1,300.0,,,True,False,NOKHRASOLAR,NOKHRASOLAR,,NOKHRASOLAR,,N,N1,281,
+2470,STAGE1,SOLAPUR-SOLAR,SOLAPUR-SOLAR,Solapur Solar,1,23.0,,,True,False,SOLAPUR-SOLAR,SOLAPUR-SOLAR,,SOLAPUR-SOLAR,,N,W1,345,
+2480,STAGE1,Dayapar,Dayapar,Dayapar Wind,1,146.0,,,True,False,Dayapar,Dayapar,,Dayapar,,N,R,234,
+2481,STAGE1,AyodhyaSolar,AyodhyaSolar,Ayodhya Solar,1,40.0,,,True,False,AyodhyaSolar,AyodhyaSolar,,AyodhyaSolar,,N,N1,338,
+2482,STAGE1,ChhattargarhSolar,ChhattargarhSolar,Chhattargarh Solar,1,150.0,,,True,False,ChhattargarhSolar,ChhattargarhSolar,,ChhattargarhSolar,,N,W1,257,
+2483,STAGE1,AntaSolar,AntaSolar,AntaSolar,1,90.0,KSNTPC0010139115,,True,False,AntaSolar,AntaSolar,,AntaSolar,,,,277,
+2484,STAGE1,Gujarat Solar,GujaratSolar,Gujarat Solar,1,150.0,,,True,False,Gujrat Solar,Gujrat Solar,,Gujrat Solar,,,,220,
+2485,STAGE1,Bhainsara,BhainsaraSolar,Bhainsara,1,320.0,,,True,False,Bhainsara,Bhainsara,,Bhainsara,,,,201,
+2486,STAGE2,Shajapur-II Solar,Shajapur-II Solar,Shajapur-II Solar,1,220.0,,,True,False,Shajapur-II Solar,Shajapur-II Solar,,Shajapur-II Solar,,,,235,
+2487,STAGE1,Shajapur-I Solar,Shajapur-I Solar,Shajapur-I Solar,1,105.0,,,True,False,Shajapur-I Solar,Shajapur-I Solar,,Shajapur-I Solar,,,,233,
+2488,STAGE1,Sadla GujaratSolar,Sadla GujaratSolar,Sadla GujaratSolar,1,130.72,,,True,False,Sadla GujaratSolar,Sadla GujaratSolar,,Sadla GujaratSolar,,N,W1,199,
+2489,STAGE1,Nokh Solar,Nokh Solar,Nokh Solar,1,245.0,,,True,False,Nokh Solar,Nokh Solar,,Nokh Solar,,,,245,
+2490,STAGE1,ARPOPL,ARPOPL,ARPOPL,1,300.0,,,True,False,ARPOPL,ARPOPL,,ARPOPL,,,,254,
+2491,STAGE1,ARPTPL,ARPTPL,ARPTPL,1,300.0,,,True,False,ARPTPL,ARPTPL,,ARPTPL,,,,238,
+2492,STAGE1,AASPL,AASPL,AASPL,1,250.0,,,True,False,AASPL,AASPL,,AASPL,,,,273,
+2493,STAGE1,ACSEPL,ACSEPL,ACSEPL,1,250.0,,,True,False,ACSEPL,ACSEPL,,ACSEPL,,,,272,
+2494,STAGE1,ASEPL-1,ASEPL-1,ASEPL-1,1,150.0,,,True,False,ASEPL-1,ASEPL-1,,ASEPL-1,,,,291,
+2495,STAGE1,ASEPL-2,ASEPL-2,ASEPL-2,1,150.0,,,True,False,ASEPL-2,ASEPL-2,,ASEPL-2,,,,291,
+2496,STAGE1,TSPPL,TSPPL,TSPPL,1,100.0,,,True,False,TSPPL,TSPPL,,TSPPL,,,,347,
+2497,STAGE1,BRPPL,BRPPL,BRPPL,1,50.0,,,True,False,BRPPL,BRPPL,,BRPPL,,,,262,
+2498,STAGE1,ASPPL-Nargund,ASPPL-Nargund,ASPPL-Nargund,1,20.0,,,True,False,ASPPL-Nargund,ASPPL-Nargund,,ASPPL-Nargund,,,,430,
+2499,STAGE1,TSPPL-Chikodi,TSPPL-Chikodi,TSPPL-Chikodi,1,20.0,,,True,False,TSPPL-Chikodi,TSPPL-Chikodi,,TSPPL-Chikodi,,,,430,
+2500,STAGE1,IRPL,IRPL,IRPL,1,400.0,,,True,False,IRPL,IRPL,,IRPL,,,,247,
+2510,STAGE1,PTRPPL Wind,PTRPPL Wind,PTRPPL Wind,1,142.0,,,True,False,PTRPPL Wind,PTRPPL Wind,,PTRPPL Wind,,,,290,
+2520,STAGE1,ARPSPL,ARPSPL,ARPSPL,1,300.0,,,True,False,ARPSPL,ARPSPL,,ARPSPL,,,,278,
+2530,STAGE1,Khavda-I,Khavda-I,Khavda-I,1,1255.0,,,True,False,Khavda-I,Khavda-I,,Khavda-I,,,,257,
+2540,STAGE1,Nokh Solar-III,Nokh Solar-III,Nokh Solar-III,1,245.0,,,True,False,Nokh Solar-III,Nokh Solar-III,,Nokh Solar-III,,,,245,
+2550,STAGE3,Khavda-III,Khavda-III,Khavda-III,1,300.0,,,True,False,Khavda-III,Khavda-III,,Khavda-III,,,,253,
+2560,STAGE1,ARPFPL-Wind,ARPFPL-Wind,ARPFPL-Wind,1,92.4,,,True,False,ARPFPL-Wind,ARPFPL-Wind,,ARPFPL-Wind,,,,425,
+2570,STAGE1,ARPFPL-BhujSolar,ARPFPL-BhujSolar,ARPFPL-BhujSolar,1,150.0,,,True,False,ARPFPL-BhujSolar,ARPFPL-BhujSolar,,ARPFPL-BhujSolar,,,,425,
+2580,STAGE1,Nokh Solar-I,Nokh Solar-I,Nokh Solar-I,1,245.0,,,True,False,Nokh Solar-I,Nokh Solar-I,,Nokh Solar-I,,,,245,
+2590,STAGE1,ARPFPL-JataveeraSolar,ARPFPL-JataveeraSolar,ARPFPL-JataveeraSolar,1,37.5,,,True,False,ARPFPL-JataveeraSolar,ARPFPL-JataveeraSolar,,ARPFPL-JataveeraSolar,,,,425,
+2591,STAGE1,Bhilai_FloatingSolar,Bhilai_FloatingSolar,Bhilai_FloatingSolar,1,15.0,,,True,False,Bhilai_FloatingSolar,Bhilai_FloatingSolar,,Bhilai_FloatingSolar,,,,245,
+2592,STAGE1,Bhadla-II,Bhadla-II,Bhadla-II,1,425.0,,,True,False,Bhadla-II,Bhadla-II,,Bhadla-II,,,,217,
+2593,STAGE1,Sinnar,Sinnar,Sinnar,5,1350.0,,,True,False,Sinnar,Sinnar,,Sinnar,,,,0,Subcritical
+2594,STAGE1,Khavda-II,Khavda-II,Khavda-II,1,1200.0,,,True,False,Khavda-II,Khavda-II,,Khavda-II,,,,257,
+2595,STAGE1,Kadapa Solar,Kadapa Solar,Kadapa Solar,1,250.0,,,True,False,Kadapa Solar,Kadapa Solar,,Kadapa Solar,,,,0,
+2596,STAGE1,Dayapar-II,Dayapar-II,Dayapar-II,1,50.0,,,True,False,Dayapar-II,Dayapar-II,,Dayapar-II,,N,R,289,
+2597,STAGE1,Project Sixteen RPPL,Project Sixteen RPPL,Project Sixteen RPPL,1,250.0,,,True,False,Project Sixteen RPPL,Project Sixteen RPPL,,Project Sixteen RPPL,,,,417,
+2598,STAGE1,Project Eleven RPPL,Project Eleven RPPL,Project Eleven RPPL,1,150.0,,,True,False,Project Eleven RPPL,Project Eleven RPPL,,Project Eleven RPPL,,,,417,
+2599,STAGE1,RgdmIISOLAR,RgdmIISOLAR,Ramagundam II Solar,1,176.0,,,True,False,RgdmIISOLAR,RgdmIISOLAR,,RGDIISOLAR,,N,R,935,
+2600,STAGE1,Vanki_Wind,Vanki_Wind,Vanki_Wind,1,72.45,,,True,False,Vanki_Wind,Vanki_Wind,,Vanki_Wind,,,,234,
+2601,STAGE1,Khavda-GSECL,Khavda-GSECL,Khavda-GSECL,1,64.76,,,True,False,Khavda-GSECL,Khavda-GSECL,,Khavda-GSECL,,,,253,
+2602,STAGE1,Jamjodhpur_wind_Jamnagar,Jamjodhpur_wind_Jamnagar,Jamjodhpur_wind_Jamnagar,1,50.4,,,True,False,Jamjodhpur_wind_Jamnagar,Jamjodhpur_wind_Jamnagar,,Jamjodhpur_wind_Jamnagar,,,,0,
+3001,STAGE1,Assam GBP,Assam GBP,Assam GBP,9,291.0,,,True,False,Assam GBP,Assam GBP,,Assam GBP,,,,0,
+3002,STAGE1,Agartala GBP,Agartala GBP,Agartala GBP,6,135.0,,,True,False,Agartala GBP,Agartala GBP,,Agartala GBP,,,,0,
+3003,STAGE1,Tripura GBP,Tripura GBP,Tripura GBP,2,101.0,,,True,False,Tripura GBP,Tripura GBP,,Tripura GBP,,,,0,
+3004,STAGE1,Tehri HEP,Tehri HEP,Tehri HEP,4,1000.0,,,True,False,Tehri HEP,Tehri HEP,,Tehri HEP,,,,0,
+3005,STAGE1,Koteshwar HEP,Koteshwar HEP,Koteshwar HEP,4,400.0,,,True,False,Koteshwar HEP,Koteshwar HEP,,Koteshwar HEP,,,,0,
+3006,STAGE1,Dhukwan HEP,Dhukwan HEP,Dhukwan HEP,3,24.0,,,True,False,Dhukwan HEP,Dhukwan HEP,,Dhukwan HEP,,,,0,
+3007,STAGE1,Ranganadi HEP,Ranganadi HEP,Ranganadi HEP,3,405.0,,,True,False,Ranganadi HEP,Ranganadi HEP,,Ranganadi HEP,,,,0,
+3008,STAGE1,Doyang HEP,Doyang HEP,Doyang HEP,3,75.0,,,True,False,Doyang HEP,Doyang HEP,,Doyang HEP,,,,0,
+3009,STAGE1,Pare HEP,Pare HEP,Pare HEP,2,110.0,,,True,False,Pare HEP,Pare HEP,,Pare HEP,,,,0,
+3010,STAGE1,Turial HEP,Turial HEP,Turial HEP,2,60.0,,,True,False,Turial HEP,Turial HEP,,Turial HEP,,,,0,
+3011,STAGE1,Kopili HEP,Kopili HEP,Kopili HEP,4,200.0,,,True,False,Kopili HEP,Kopili HEP,,Kopili HEP,,,,0,
+3012,STAGE1,Kameng HEP,Kameng HEP,Kameng HEP,4,600.0,,,True,False,Kameng HEP,Kameng HEP,,Kameng HEP,,,,0,
+3013,STAGE1,Kasaragod Solar,Kasaragod Solar,Kasaragod Solar,1,50.0,,,True,False,Kasaragod Solar,Kasaragod Solar,,Kasaragod Solar,,,,0,
+3014,STAGE1,Solar TGBPP,Solar TGBPP,Solar TGBPP,1,5.0,,,True,False,Solar TGBPP,Solar TGBPP,,Solar TGBPP,,,,0,
+3015,STAGE1,Patan Wind Plant,Patan Wind Plant,Patan Wind Plant,1,50.0,,,True,False,Patan Wind Plant,Patan Wind Plant,,Patan Wind Plant,,,,0,
+3016,STAGE1,Dewbhumi Wind Plant,Dewbhumi Wind Plant,Dewbhumi Wind Plant,1,63.0,,,True,False,Dewbhumi Wind Plant,Dewbhumi Wind Plant,,Dewbhumi Wind Plant,,,,0,
+3017,STAGE1,Khurja,Khurja,Khurja,2,1320.0,,6.75,True,False,Khurja,Khurja,,THDC_Khurja,THDC_Khurja,,,1.972,Supercritical
+3018,STAGE1,THDC-Pumped Storage Plant,THDC-Pumped Storage Plant,THDC-Pumped Storage Plant,4,1000.0,,,True,False,THDC-Pumped Storage Plant,THDC-Pumped Storage Plant,,THDC-Pumped Storage Plant,,,,0,
+3019,STAGE1,Khurja Solar,Khurja Solar,Khurja Solar,1,11.0,,,True,False,Khurja Solar,Khurja Solar,,Khurja Solar,,,,0,

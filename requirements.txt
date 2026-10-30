@@ -1,0 +1,29 @@
+# NTPC Power Data Chatbot - Python dependencies
+# Install with:  .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# Versions are pinned so the production (possibly offline) server gets exactly the same setup.
+
+# --- Database ---
+pyodbc==5.3.0            # talks to SQL Server through the ODBC driver
+python-dotenv==1.2.3     # reads settings/credentials from the .env file
+
+# --- Config files and SQL safety ---
+PyYAML==6.0.3            # reads the semantic/*.yaml and examples/*.yaml files
+sqlglot==30.19.0         # parses generated SQL so we can check it is a safe SELECT
+
+# --- Entity matching ---
+RapidFuzz==3.14.6        # fuzzy matching of plant/unit names ("dadri" -> "Dadri")
+
+# --- LLM and agent ---
+openai==3.19.2           # OpenAI-compatible client: works with Ollama now and vLLM later
+langgraph==1.2.12        # runs the chatbot's step-by-step graph (router -> tools -> answer)
+
+# --- Vector DB ---
+qdrant-client==1.19.1    # stores example questions / glossary for similarity search
+
+# --- API ---
+fastapi==0.141.1         # web API used by the chat widget
+uvicorn[standard]==0.54.0  # web server that runs the FastAPI app
+sse-starlette==3.4.11    # streaming answers (Server-Sent Events)
+
+# --- Tests ---
+pytest==9.1.1
